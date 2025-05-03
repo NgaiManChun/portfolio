@@ -39,12 +39,17 @@
         a:hover {
             color: #b5ae73;
         }
-        
+
         #works > ul .contents {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
         }
+
+        #works > ul .contents dl {
+            width: 560px;
+        }
+        
         #works > ul .contents dl > dt {
             font-weight: bold;
             background-color: #ABDCFF;
@@ -55,6 +60,12 @@
             background-color: #edf7ff;
             margin: 0;
             padding: 5px 20px;
+        }
+        
+        #works > ul .contents dl > dd a {
+            display: inline-block;
+            max-width: 100%;
+            overflow: auto;
         }
         
         #works > ul {
@@ -71,7 +82,7 @@
             padding-top: 10px;
         }
         
-        @media (max-width: 767px) {
+        @media screen (max-width: 767px) {
             body {
                 font-size: 1.5em;
             }
