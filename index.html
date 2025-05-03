@@ -22,9 +22,9 @@
             font-style: normal;
         }
 
-            body > section {
-                margin: 20px;
-            }
+        body > section {
+            margin: 20px;
+        }
 
         h1 {
             background-image: linear-gradient(135deg, #ABDCFF 10%, #ffffff 100%);
@@ -36,17 +36,17 @@
             color: inherit;
         }
 
-            a[href^="http"]::after {
-                content: "\f08e";
-                font-family: "Font Awesome 6 Free";
-                font-weight: 900;
-                display: inline-block;
-                padding-left: 5px;
-            }
+        a[href^="http"]::after {
+            content: "\f08e";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            display: inline-block;
+            padding-left: 5px;
+        }
 
-            a:hover {
-                color: #b5ae73;
-            }
+        a:hover {
+            color: #b5ae73;
+        }
 
         #works > ul .contents {
             display: flex;
@@ -54,38 +54,38 @@
             gap: 20px;
         }
 
-            #works > ul .contents > * {
-                width: 560px;
-            }
+        #works > ul .contents > * {
+            width: 560px;
+        }
 
-            #works > ul .contents > :nth-child(1) > iframe {
-                aspect-ratio: 560 / 315;
-                width: 100%;
-            }
+        #works > ul .contents > :nth-child(1) > iframe {
+            aspect-ratio: 560 / 315;
+            width: 100%;
+        }
 
-            #works > ul .contents > :nth-child(2) > dl {
-                width: 100%;
-            }
+        #works > ul .contents > :nth-child(2) > dl {
+            width: 100%;
+        }
 
-            #works > ul .contents dl > dt {
-                font-weight: bold;
-                background-color: #ABDCFF;
-                padding: 5px;
-            }
+        #works > ul .contents dl > dt {
+            font-weight: bold;
+            background-color: #ABDCFF;
+            padding: 5px;
+        }
 
-            #works > ul .contents dl > dd {
-                background-color: #edf7ff;
-                margin: 0;
-                padding: 5px 20px;
-            }
+        #works > ul .contents dl > dd {
+            background-color: #edf7ff;
+            margin: 0;
+            padding: 5px 20px;
+        }
 
-                #works > ul .contents dl > dd a {
-                    display: inline-block;
-                    max-width: 100%;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
+            #works > ul .contents dl > dd a {
+                display: inline-block;
+                max-width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
 
         #works > ul {
             list-style: none;
@@ -101,6 +101,15 @@
             padding-top: 10px;
         }
 
+        .team_job + h3::after, a.team_job::after {
+            content: "チーム制作";
+            font-size: 0.5em;
+            font-style: italic;
+            color: gray;
+            display: inline-block;
+            margin-left: 5px;
+        }
+
         @media only screen and (max-width: 767px) {
             #works > ul .contents > :nth-child(2) {
                 width: 100%;
@@ -114,11 +123,11 @@
     <section id="index">
         <h2>目次</h2>
         <ul>
-            <li><a href="#milky_wave">銀河激流ミルキーウェーブ</a></li>
+            <li><a href="#milky_wave" class="team_job">銀河激流ミルキーウェーブ</a></li>
             <li><a href="#golf">ボールをとりもどせ!!</a></li>
             <li><a href="#running_finger">爆走ランニングフィンガー</a></li>
             <li><a href="#puzzle_game">パズルゲーム</a></li>
-            <li><a href="#soumen_slider">SOUMEN SLIDER</a></li>
+            <li><a href="#soumen_slider" class="team_job">SOUMEN SLIDER</a></li>
             <li><a href="#karadaful">カラダ振る～お前もギタリストにしてやろうか～</a></li>
             <li><a href="#satellite_mission">SATELLITE MISSION</a></li>
             <li><a href="#landmine">地雷ゲーム</a></li>
@@ -127,7 +136,7 @@
     <section id="works">
         <ul>
             <li>
-                <a id="milky_wave"></a>
+                <a id="milky_wave" class="team_job"></a>
                 <h3>銀河激流ミルキーウェーブ</h3>
                 <div class="contents">
                     <div>
@@ -213,7 +222,7 @@
                 </div>
             </li>
             <li>
-                <a id="soumen_slider"></a>
+                <a id="soumen_slider" class="team_job"></a>
                 <h3>SOUMEN SLIDER</h3>
                 <div class="contents">
                     <div>
