@@ -71,11 +71,13 @@
             margin: 0;
             padding: 5px 20px;
         }
-        
+
         #works > ul .contents dl > dd a {
             display: inline-block;
             max-width: 100%;
-            overflow: auto;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         
         #works > ul {
