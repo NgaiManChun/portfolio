@@ -3,6 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>魏文俊のポートフォリオ</title>
     <style>
         html {
@@ -46,8 +47,17 @@
             gap: 20px;
         }
 
-        #works > ul .contents dl {
+        #works > ul .contents > * {
             width: 560px;
+        }
+
+        #works > ul .contents > :nth-child(1) > iframe {
+            aspect-ratio: 560 / 315;
+            width: 100%;
+        }
+
+        #works > ul .contents > :nth-child(2) > dl {
+            width: 100%;
         }
         
         #works > ul .contents dl > dt {
@@ -81,14 +91,10 @@
             border-top: solid 2px;
             padding-top: 10px;
         }
-        
-        @media screen (max-width: 767px) {
-            body {
-                font-size: 1.5em;
-            }
+
+        @media only screen and (max-width: 767px) {
             #works > ul .contents > :nth-child(2) {
                 width: 100%;
-                overflow-x: auto;
             }
         }
     </style>
@@ -116,7 +122,7 @@
                 <h3>銀河激流ミルキーウェーブ</h3>
                 <div class="contents">
                     <div>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/_FClnpZHCsM?si=POHh9M-5hxZez4Am" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/_FClnpZHCsM?si=POHh9M-5hxZez4Am" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div>
                         <dl>
@@ -139,7 +145,7 @@
                 <h3>ボールをとりもどせ!!</h3>
                 <div class="contents">
                     <div>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/EHuAcm5lv1Y?si=CwFGkMesKC1brE6B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/EHuAcm5lv1Y?si=CwFGkMesKC1brE6B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div>
                         <dl>
@@ -160,7 +166,7 @@
                 <h3>爆走ランニングフィンガー</h3>
                 <div class="contents">
                     <div>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/usSkmJEs9w4?si=AuyrTFCHsZdmcop3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/usSkmJEs9w4?si=AuyrTFCHsZdmcop3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div>
                         <dl>
@@ -183,7 +189,7 @@
                 <h3>パズルゲーム</h3>
                 <div class="contents">
                     <div>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/LsuBDuJ15w4?si=wIbdMZ4OfzylJ3Up" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/LsuBDuJ15w4?si=wIbdMZ4OfzylJ3Up" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div>
                         <dl>
@@ -202,7 +208,7 @@
                 <h3>SOUMEN SLIDER</h3>
                 <div class="contents">
                     <div>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/OigaxxVG-No?si=OgeaD5mVItm4iEVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/OigaxxVG-No?si=OgeaD5mVItm4iEVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div>
                         <dl>
@@ -225,7 +231,7 @@
                 <h3>カラダ振る～お前もギタリストにしてやろうか～</h3>
                 <div class="contents">
                     <div>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/VMUpB2KFo5g?si=QHxT-Q5YIiUEbJfn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/VMUpB2KFo5g?si=QHxT-Q5YIiUEbJfn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div>
                         <dl>
@@ -250,7 +256,7 @@
                 <h3>SATELLITE MISSION</h3>
                 <div class="contents">
                     <div>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/kQ2IMom_x7c?si=kJaerLnJWK71hzOh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/kQ2IMom_x7c?si=kJaerLnJWK71hzOh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div>
                         <dl>
@@ -271,7 +277,7 @@
                 <h3>地雷ゲーム</h3>
                 <div class="contents">
                     <div>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/q2VGZxDSw2A?si=sxokrWvG8xVmcBtg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/q2VGZxDSw2A?si=sxokrWvG8xVmcBtg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div>
                         <dl>
