@@ -32,6 +32,14 @@
             margin: 0;
         }
 
+        h3 {
+            font-size: 1.2em;
+            text-decoration: underline;
+            text-decoration-thickness: 0.5em;
+            text-decoration-color: rgba(255, 228, 0, 0.4);
+            text-underline-offset: -0.2em;
+        }
+
         a {
             color: inherit;
         }
@@ -48,14 +56,35 @@
             color: #b5ae73;
         }
 
+        #works > ul {
+            list-style: none;
+            padding: 0;
+            --col-width: 560px;
+            --gap: 20px;
+            --cols: 2;
+        }
+
+        #works > ul > li {
+            padding-bottom: 40px;
+        }
+
         #works > ul .contents {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: var(--gap);
+            max-width: calc(var(--col-width) * var(--cols) + var(--gap) * (var(--cols) - 1));
+        }
+
+        #works > ul .contents::after {
+            content: "◆　◆　◆　◆　◆　◆";
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            width: 100%;
         }
 
         #works > ul .contents > * {
-            width: 560px;
+            width: var(--col-width);
         }
 
         #works > ul .contents > :nth-child(1) > iframe {
@@ -65,36 +94,30 @@
 
         #works > ul .contents > :nth-child(2) > dl {
             width: 100%;
+            border-style: dashed;
+            border-radius: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+            background-color: #ebf6ff;
         }
 
         #works > ul .contents dl > dt {
             font-weight: bold;
-            background-color: #ABDCFF;
             padding: 5px;
         }
 
         #works > ul .contents dl > dd {
-            background-color: #edf7ff;
             margin: 0;
             padding: 5px 20px;
         }
 
-            #works > ul .contents dl > dd a {
-                display: inline-block;
-                max-width: 100%;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-        #works > ul {
-            list-style: none;
-            padding: 0;
+        #works > ul .contents dl > dd a {
+            display: inline-block;
+            max-width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-
-            #works > ul > li {
-                padding-bottom: 40px;
-            }
 
         #works {
             border-top: solid 2px;
@@ -208,6 +231,18 @@
                             <dd><a target="_blank" href="https://github.com/NgaiManChun/Golf">https://github.com/NgaiManChun/Golf</a></dd>
                         </dl>
                     </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+                            
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり</h4>
+                        <p>
+                            
+                        </p>
+                    </div>
                 </div>
             </li>
             <li>
@@ -231,6 +266,18 @@
                             <dd><a target="_blank" href="https://drive.google.com/file/d/1XzGvtuiFCXRaNoehHLBCLQYMfzesBf4r/view?usp=sharing">https://drive.google.com/file/d/1XzGvtuiFCXRaNoehHLBCLQYMfzesBf4r/view?usp=sharing</a></dd>
                         </dl>
                     </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり</h4>
+                        <p>
+
+                        </p>
+                    </div>
                 </div>
             </li>
             <li>
@@ -249,6 +296,18 @@
                             <dt>ソース／実行ファイル</dt>
                             <dd><a target="_blank" href="https://github.com/NgaiManChun/PuzzleGame">https://github.com/NgaiManChun/PuzzleGame</a></dd>
                         </dl>
+                    </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり</h4>
+                        <p>
+
+                        </p>
                     </div>
                 </div>
             </li>
@@ -272,6 +331,18 @@
                             <dt>ソース／実行ファイル</dt>
                             <dd><a target="_blank" href="https://github.com/NgaiManChun/SoumenSlider">https://github.com/NgaiManChun/SoumenSlider</a></dd>
                         </dl>
+                    </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり</h4>
+                        <p>
+
+                        </p>
                     </div>
                 </div>
             </li>
@@ -298,6 +369,18 @@
                             </dd>
                         </dl>
                     </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり</h4>
+                        <p>
+
+                        </p>
+                    </div>
                 </div>
             </li>
             <li>
@@ -319,6 +402,18 @@
                             <dd><a target="_blank" href="https://drive.google.com/drive/folders/157H_fz9dh3hqUr8_ZoMHgTR8iSem_0hp?usp=sharing">https://drive.google.com/drive/folders/157H_fz9dh3hqUr8_ZoMHgTR8iSem_0hp?usp=sharing</a></dd>
                         </dl>
                     </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり</h4>
+                        <p>
+
+                        </p>
+                    </div>
                 </div>
             </li>
             <li>
@@ -337,6 +432,18 @@
                             <dt>ソース／実行ファイル</dt>
                             <dd><a target="_blank" href="https://github.com/NgaiManChun/Landmine">https://github.com/NgaiManChun/Landmine</a></dd>
                         </dl>
+                    </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり</h4>
+                        <p>
+
+                        </p>
                     </div>
                 </div>
             </li>
