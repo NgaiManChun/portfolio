@@ -56,7 +56,11 @@
             color: #b5ae73;
         }
 
-        #works > ul {
+        section#index > ul > li {
+            padding-bottom: 20px;
+        }
+
+        .works > ul {
             list-style: none;
             padding: 0;
             --col-width: 560px;
@@ -64,18 +68,18 @@
             --cols: 2;
         }
 
-        #works > ul > li {
+        .works > ul > li {
             padding-bottom: 40px;
         }
 
-        #works > ul .contents {
+        .works > ul .contents {
             display: flex;
             flex-wrap: wrap;
             gap: var(--gap);
             max-width: calc(var(--col-width) * var(--cols) + var(--gap) * (var(--cols) - 1));
         }
 
-        #works > ul .contents::after {
+        .works > ul .contents::after {
             content: "◆　◆　◆　◆　◆　◆";
             display: block;
             text-align: center;
@@ -83,16 +87,16 @@
             width: 100%;
         }
 
-        #works > ul .contents > * {
+        .works > ul .contents > * {
             width: var(--col-width);
         }
 
-        #works > ul .contents > :nth-child(1) > iframe {
+        .works > ul .contents > :nth-child(1) > iframe {
             aspect-ratio: 560 / 315;
             width: 100%;
         }
 
-        #works > ul .contents > :nth-child(2) > dl {
+        .works > ul .contents > :nth-child(2) > dl {
             width: 100%;
             border-style: dashed;
             border-radius: 5px;
@@ -101,17 +105,17 @@
             background-color: #ebf6ff;
         }
 
-        #works > ul .contents dl > dt {
+        .works > ul .contents dl > dt {
             font-weight: bold;
             padding: 5px;
         }
 
-        #works > ul .contents dl > dd {
+        .works > ul .contents dl > dd {
             margin: 0;
             padding: 5px 20px;
         }
 
-        #works > ul .contents dl > dd a {
+        .works > ul .contents dl > dd a {
             display: inline-block;
             max-width: 100%;
             white-space: nowrap;
@@ -119,7 +123,7 @@
             text-overflow: ellipsis;
         }
 
-        #works {
+        .works {
             border-top: solid 2px;
             padding-top: 10px;
         }
@@ -134,7 +138,7 @@
         }
 
         @media only screen and (max-width: 1190px) {
-            #works > ul .contents > * {
+            .works > ul .contents > * {
                 width: 100%;
             }
         }
@@ -146,17 +150,33 @@
     <section id="index">
         <h2>目次</h2>
         <ul>
-            <li><a href="#milky_wave" class="team_job">銀河激流ミルキーウェーブ</a></li>
-            <li><a href="#golf">ボールをとりもどせ!!</a></li>
-            <li><a href="#running_finger">爆走ランニングフィンガー</a></li>
-            <li><a href="#puzzle_game">パズルゲーム</a></li>
-            <li><a href="#soumen_slider" class="team_job">SOUMEN SLIDER</a></li>
-            <li><a href="#karadaful">カラダ振る～お前もギタリストにしてやろうか～</a></li>
-            <li><a href="#satellite_mission">SATELLITE MISSION</a></li>
-            <li><a href="#landmine">地雷ゲーム</a></li>
+            <li>
+                <b>🏆 Main Works（主要作品）</b>
+                <ul>
+                    <li><a href="#milky_wave" class="team_job">銀河激流ミルキーウェーブ</a></li>
+                    <li><a href="#golf">ボールをとりもどせ!!</a></li>
+                    <li><a href="#running_finger">爆走ランニングフィンガー</a></li>
+                    <li><a href="#karadaful">カラダ振る～お前もギタリストにしてやろうか～</a></li>
+                    <li><a href="#satellite_mission">SATELLITE MISSION</a></li>
+                </ul>
+            </li>
+            <li>
+                <b>🔧 Practice & Prototypes（課題・技術検証）</b>
+                <ul>
+                    <li><a href="#puzzle_game">パズルゲーム</a></li>
+                    <li><a href="#landmine">地雷ゲーム</a></li>
+                </ul>
+            </li>
+            <li>
+                <b>⚡ Hackathons（短期制作）</b>
+                <ul>
+                    <li><a href="#soumen_slider" class="team_job">SOUMEN SLIDER</a></li>
+                </ul>
+            </li>
         </ul>
     </section>
-    <section id="works">
+    <section class="works">
+        <h2>主要作品</h2>
         <ul>
             <li>
                 <a id="milky_wave" class="team_job"></a>
@@ -182,7 +202,7 @@
                     <div>
                         <h4>🔹 概要</h4>
                         <p>
-                            『銀河激流ミルキーウェーブ』は、「天の川の川下り」というコンセプトから生まれた宇宙高速レースゲームです。
+                            『銀河激流ミルキーウェーブ』は、「天の川の川下り」というコンセプトから生まれたタイムアタックレースゲームです。
                             プレイヤーはねじれた宇宙コースを滑走しながら、アイテムを集めてゲージをチャージし、ブースターで一気に加速する爽快なゲーム体験が特徴です。
                             波打つコースに船が傾く挙動や浮き沈みの表現など、物理的なリアリティにもこだわりました。
                         </p>
@@ -234,13 +254,29 @@
                     <div>
                         <h4>🔹 概要</h4>
                         <p>
-                            
+                            本作は、フィールド上に配置されたアイテムを集め、最終的に中央の巨大なボタンを押すことでクリアとなるミニゲームです。もともとは複数ステージ構成のゴルフゲームを目指していましたが、制作時間の見積もりが甘く、開発途中で方向転換を決断。結果的に、1ステージ完結型かつ派手な演出で締めくくる構成に落ち着きました。
+                        </p>
+                        <p>
+                            制作時間の制約から仕様を絞った分、印象に残る演出や操作感を重視して設計しました。
                         </p>
                     </div>
                     <div>
                         <h4>🔸 こだわり</h4>
                         <p>
-                            
+                            <b>短期間でも印象に残る演出設計</b><br />
+                            当初の計画から方向転換したミニゲーム形式において、1ステージでも遊びごたえと達成感が得られるよう、ゲーム終盤には必殺技演出を導入。短期間でも「記憶に残る体験」を目指しました。
+                        </p>
+                        <p>
+                            <b>視認性への配慮：半透明化と軌道予測</b><br />
+                            カメラとプレイヤーの間にオブジェクトが入った際、それらを半透明化する処理を実装。加えて、弾道の予測線を描画することで、操作性を向上させています。
+                        </p>
+                        <p>
+                            <b>物理表現の自力実装</b><br />
+                            ステージにはわずかですが斜面を含む構造があり、当たり判定には変形や回転を考慮した処理が必要でした。当時授業ではAABBまでしか扱われていませんでしたが、必要性を感じ、自力で拡張しました。
+                        </p>
+                        <p>
+                            <b>技術検証のプロトタイプとしての位置づけ</b><br />
+                            『銀河激流ミルキーウェーブ』で本格的に使用した自作フレームワークのプロトタイプにあたる作品であり、「オリジナル3Dアセット管理ツール」や「開発と運用の効率化」といった機能をこの時点で試行していました。
                         </p>
                     </div>
                 </div>
@@ -269,79 +305,26 @@
                     <div>
                         <h4>🔹 概要</h4>
                         <p>
-
+                            『爆走ランニングフィンガー』は、指人形を机の上で走らせるという身近な遊びを、Nintendo Switchで再現したミニゲームです。Joy-ConのIRカメラを使って、実際の指の動きでキャラクターを操作する仕組みになっています。
+                        </p>
+                        <p>
+                            初めてのNintendo Switch（OpenGL）向けに開発した作品で、ステージは擬似3Dを使って奥行きを表現しています。IRカメラを活用した遊び方が特徴です。
                         </p>
                     </div>
                     <div>
                         <h4>🔸 こだわり</h4>
                         <p>
-
+                            <b>IRカメラによる直感的な操作</b><br />
+                            Joy-ConのIRカメラに2本の指を映し、指の動きに合わせてキャラクターが前進・左右移動・ジャンプする操作を実現しました。特別な装置を使わず、素手で遊べます。
                         </p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a id="puzzle_game"></a>
-                <h3>パズルゲーム</h3>
-                <div class="contents">
-                    <div>
-                        <iframe src="https://www.youtube.com/embed/LsuBDuJ15w4?si=wIbdMZ4OfzylJ3Up" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div>
-                        <dl>
-                            <dt>プラットフォーム</dt>
-                            <dd>Windows(DirectX)</dd>
-                            <dt>制作期間</dt>
-                            <dd>2024年9月4日～2024年9月13日（9日）</dd>
-                            <dt>ソース／実行ファイル</dt>
-                            <dd><a target="_blank" href="https://github.com/NgaiManChun/PuzzleGame">https://github.com/NgaiManChun/PuzzleGame</a></dd>
-                        </dl>
-                    </div>
-                    <div>
-                        <h4>🔹 概要</h4>
                         <p>
-
+                            <b>SwitchとPC両対応を意識した構成</b><br />
+                            Switchでの開発は学校設備に依存するため、多くの学生が夏休みにも通学して作業していました。そこで私はアダプターパターンを用い、Switch（OpenGL）とPC（DirectX）それぞれの環境で、ゲームロジック部分を変えずに動作する構造を設計し、自宅での開発を中心に進められるように工夫しました。
                         </p>
-                    </div>
-                    <div>
-                        <h4>🔸 こだわり</h4>
                         <p>
-
-                        </p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a id="soumen_slider" class="team_job"></a>
-                <h3>SOUMEN SLIDER</h3>
-                <div class="contents">
-                    <div>
-                        <iframe src="https://www.youtube.com/embed/OigaxxVG-No?si=OgeaD5mVItm4iEVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div>
-                        <dl>
-                            <dt>プラットフォーム</dt>
-                            <dd>Windows(DirectX)</dd>
-                            <dt>制作期間</dt>
-                            <dd>2024年8月30日（1日）</dd>
-                            <dt>チーム構成</dt>
-                            <dd>プログラマ2名</dd>
-                            <dt>担当</dt>
-                            <dd>フレームワーク、スプライトアニメーション</dd>
-                            <dt>ソース／実行ファイル</dt>
-                            <dd><a target="_blank" href="https://github.com/NgaiManChun/SoumenSlider">https://github.com/NgaiManChun/SoumenSlider</a></dd>
-                        </dl>
-                    </div>
-                    <div>
-                        <h4>🔹 概要</h4>
-                        <p>
-
-                        </p>
-                    </div>
-                    <div>
-                        <h4>🔸 こだわり</h4>
-                        <p>
-
+                            <b>擬似3Dの実装</b><br />
+                            もともとは横スクロール型の構成を想定していましたが、実際に指人形で遊ぶ際は「前に進む」動きのほうが自然で操作しやすいと感じたため、ゲーム画面もそれに合わせて奥行き方向のステージに変更しました。
+                            レギュレーション上は2Dゲームに限られており、当時の授業でも3Dゲーム制作はまだ扱われていなかったため、擬似3Dの表現を試みました。
                         </p>
                     </div>
                 </div>
@@ -372,13 +355,27 @@
                     <div>
                         <h4>🔹 概要</h4>
                         <p>
-
+                            キーボードをギターに見立てて遊ぶ、リズムアクションゲームです。F1～F6キーを押さえながら、タイミングよくEnterキーでピッキングすることでノーツを消していきます。タイミングに応じてスコアが加算され、さらに「サスティン」や「ハンマリング・プリング」など、実際のギター奏法も再現したシステムが特徴です。
+                            「カラフル」というテーマのもと、ビジュアルや演出、そしてギターを鳴らし「カラダ振る」という解釈で展開しました。
                         </p>
                     </div>
                     <div>
                         <h4>🔸 こだわり</h4>
                         <p>
-
+                            <b>実在の奏法を再現した入力システム</b><br />
+                            ギターのピッキング、ハンマリング、プリングを模したキー入力を導入。音楽ゲームとしての独自性と操作の面白さを図りました。
+                        </p>
+                        <p>
+                            <b>本物のギター譜面を参考に譜面を設計</b><br />
+                            実際の演奏に近い感覚を意識して譜面を作成。ミュージック学科の先輩にプレイさせたら、いきなり私よりも高得点という実績もありました。なお、譜面データは外部のCSVファイルに格納しています。
+                        </p>
+                        <p>
+                            <b>BMPファイルからの色情報読み込みによるカラフルな演出</b><br />
+                            画面上のドット絵風演出は、画像データから色情報を読み取って文字の背景色に反映しています。アルファ合成を意識したエフェクトも実装しています。
+                        </p>
+                        <p>
+                            <b>ちらつきを抑えるバッファ描画処理</b><br />
+                            全画面分の文字情報を事前にバッファで構築し、一括描画することで、コンソール環境でもスムーズな画面更新を実現しています。
                         </p>
                     </div>
                 </div>
@@ -405,13 +402,59 @@
                     <div>
                         <h4>🔹 概要</h4>
                         <p>
-
+                            入学から3か月目に制作した、はじめてのUnity製3Dアクションシューティングゲームです。プレイヤーは空を飛べるキャラクターを操作し、自機と味方レーダーを守りながら、敵ユニットと敵レーダーを殲滅することが目的としたゲームです。ミサイルとマシンガンを使い分けて戦うTPSスタイルで、拠点防衛と撃破を両立させる戦術性が特徴です。
                         </p>
                     </div>
                     <div>
                         <h4>🔸 こだわり</h4>
                         <p>
+                            <b>自機の周囲を飛び回る「サテライトライフル」の演出</b><br />
+                            不規則に飛び交う複数の軌道を重ね、SFアニメに登場する精神感応兵器のような動きを再現しました。本作の象徴的なギミックです。
+                        </p>
+                        <p>
+                            <b>戦術を持つ敵AI</b><br />
+                            敵は4つの行動パターン（自陣防衛・プレイヤー攻撃・レーダー攻撃・距離優先）を20秒ごとに見直し、残存数に応じて役割を自動分担します。単なる動く的ではない緊張感ある戦闘を実現しています。
+                        </p>
+                        <p>
+                            <b>UI・演出のディテール再現</b><br />
+                            ホログラム風パネルUIを採用し、SFらしいビジュアルを表現。撃破時の連続爆発、ダメージ時のUI振動・点滅、敵との距離表示、画面外の敵を示すインジケーターなど、既存のゲームを参考に細かい演出を多数実装しました。
+                        </p>
+                    </div>
+                </div>
+            </li>
 
+        </ul>
+    </section>
+    <section class="works">
+        <h2>課題・技術検証</h2>
+        <ul>
+            <li>
+                <a id="puzzle_game"></a>
+                <h3>パズルゲーム</h3>
+                <div class="contents">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/LsuBDuJ15w4?si=wIbdMZ4OfzylJ3Up" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>プラットフォーム</dt>
+                            <dd>Windows(DirectX)</dd>
+                            <dt>制作期間</dt>
+                            <dd>2024年9月4日～2024年9月13日（9日）</dd>
+                            <dt>ソース／実行ファイル</dt>
+                            <dd><a target="_blank" href="https://github.com/NgaiManChun/PuzzleGame">https://github.com/NgaiManChun/PuzzleGame</a></dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+                            授業課題として制作した落ち物パズルゲーム。『コラムス』をベースに、色が揃うとブロックが消える仕組みを持つ2Dゲームです。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり</h4>
+                        <p>
+                            スコア加算時の演出や背景の変化など、プレイ中の視覚的な気持ちよさを意識して作りました。特に、シーン遷移時には暗転を使わずにフェードイン・フェードアウトを同時に行う処理を実装し、自然な切り替えにこだわっています。
                         </p>
                     </div>
                 </div>
@@ -436,19 +479,59 @@
                     <div>
                         <h4>🔹 概要</h4>
                         <p>
-
+                            入学2か月目に、C言語の授業の課題「動きのあるコンソールゲーム」として、『マインスイーパ』を模倣して制作しました。
                         </p>
                     </div>
                     <div>
                         <h4>🔸 こだわり</h4>
                         <p>
-
+                            空白マスの自動展開を再帰関数で実装。限られたコンソール環境でも遊びやすくするため、現在選択中のマスを色で表示するなど、視認性にも配慮しました。
+                            本物の『マインスイーパ』の代用品を目指して制作していました。
                         </p>
                     </div>
                 </div>
             </li>
         </ul>
     </section>
-    
+    <section class="works">
+        <h2>短期制作</h2>
+        <ul>
+            <li>
+                <a id="soumen_slider" class="team_job"></a>
+                <h3>SOUMEN SLIDER</h3>
+                <div class="contents">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/OigaxxVG-No?si=OgeaD5mVItm4iEVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>プラットフォーム</dt>
+                            <dd>Windows(DirectX)</dd>
+                            <dt>制作期間</dt>
+                            <dd>2024年8月30日（1日）</dd>
+                            <dt>チーム構成</dt>
+                            <dd>プログラマ2名</dd>
+                            <dt>担当</dt>
+                            <dd>スプライトアニメーション</dd>
+                            <dt>ソース／実行ファイル</dt>
+                            <dd><a target="_blank" href="https://github.com/NgaiManChun/SoumenSlider">https://github.com/NgaiManChun/SoumenSlider</a></dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+                            ハッカソンで1日で制作した、お箸を避けながら流しそうめんとして長く流れ続けることを目指すミニゲームです。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり</h4>
+                        <p>
+                            シンプルなルールとテンポ感を重視して設計しました。
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
 </body>
 </html>
