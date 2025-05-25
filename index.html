@@ -223,6 +223,11 @@
                 <b>課題・技術検証</b>
                 <ul>
                     <li>
+                        <a href="#animation_transition">アニメーション遷移テスト</a>
+                        <span class="directx_tag tag">DirectX</span>
+                        <span class="cpp_tag tag">C++</span>
+                    </li>
+                    <li>
                         <a href="#puzzle_game">パズルゲーム</a>
                         <span class="directx_tag tag">DirectX</span>
                         <span class="cpp_tag tag">C++</span>
@@ -512,6 +517,39 @@
     <section class="works">
         <h2>課題・技術検証</h2>
         <ul>
+            <li>
+                <a id="animation_transition"></a>
+                <h3>アニメーション遷移テスト<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span></h3>
+                <div class="contents">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/i8rK-puj5S4?si=DnZXjFYehGcrEMZb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>開発環境／プラットフォーム</dt>
+                            <dd>Windows、DirectX、C++、Visual Studio</dd>
+                            <dt>制作期間</dt>
+                            <dd>2024年3月26日</dd>
+                            <dt>ソース／実行ファイル</dt>
+                            <dd><a target="_blank" href="https://github.com/NgaiManChun/AnimationTransition">https://github.com/NgaiManChun/AnimationTransition</a></dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+                            複数の3Dアニメーションを、状態に応じて自然に遷移させるためのテスト。停止、歩行、攻撃の3状態間をスムーズに補間させる挙動を検証した。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり</h4>
+                        <p>
+                            アニメーション同士を自然につなげるため、線形補間によるスムーズな遷移制御を行い、状態の切り替え時に違和感が出ないよう調整しています。
+                            また、どの状態でも独立して進行し続けるまばたきアニメーションも組み込んでいます。
+                            加えて、キャラクターの手に持ったアイテムを追従させ、スラッシュ軌道のエフェクトを連動させる処理も実装しています。
+                        </p>
+                    </div>
+                </div>
+            </li>
             <li>
                 <a id="puzzle_game"></a>
                 <h3>パズルゲーム<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span></h3>
