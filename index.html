@@ -177,9 +177,21 @@
             color: #000;
         }
 
+        #qrcode_container {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+        #qrcode {
+            width: 200px;
+        }
+
         @media only screen and (max-width: 1190px) {
             .works > ul .contents > * {
                 width: 100%;
+            }
+            #qrcode_container{
+                display: none;
             }
         }
     </style>
@@ -187,6 +199,9 @@
 </head>
 <body>
     <h1>魏文俊のポートフォリオ</h1>
+    <div id="qrcode_container">
+        <img id="qrcode" src="qrcode_ngaimanchun.github.io.png" />
+    </div>
     <section id="index">
         <h2>目次</h2>
         <ul>
