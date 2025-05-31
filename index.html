@@ -177,6 +177,11 @@
             color: #000;
         }
 
+        .maya_tag {
+            background-color: #32a5c7;
+            color: #fff;
+        }
+
         #qrcode_container {
             position: fixed;
             right: 0;
@@ -212,11 +217,13 @@
                         <a href="#milky_wave" class="team_job">銀河激流ミルキーウェーブ</a>
                         <span class="directx_tag tag">DirectX</span>
                         <span class="cpp_tag tag">C++</span>
+                        <span class="maya_tag tag">Maya</span>
                     </li>
                     <li>
                         <a href="#golf">ボールをとりもどせ!!</a>
                         <span class="directx_tag tag">DirectX</span>
                         <span class="cpp_tag tag">C++</span>
+                        <span class="maya_tag tag">Maya</span>
                     </li>
                     <li>
                         <a href="#running_finger">爆走ランニングフィンガー</a>
@@ -241,6 +248,7 @@
                         <a href="#animation_transition">3Dアニメーション遷移テスト</a>
                         <span class="directx_tag tag">DirectX</span>
                         <span class="cpp_tag tag">C++</span>
+                        <span class="maya_tag tag">Maya</span>
                     </li>
                     <li>
                         <a href="#puzzle_game">パズルゲーム</a>
@@ -263,6 +271,24 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                <b>CG演習・アセット制作</b>
+                <ul>
+                    <li>
+                        <a href="#milky_wave_cg">『銀河激流ミルキーウェーブ』アセット</a>
+                        <span class="maya_tag tag">Maya</span>
+                    </li>
+                    <li>
+                        <a href="#kumacchi">くまっちの部屋</a>
+                        <span class="maya_tag tag">Maya</span>
+                    </li>
+                    <li>
+                        <a href="#treasure_box">宝箱と王子</a>
+                        <span class="maya_tag tag">Maya</span>
+                    </li>
+                </ul>
+                
+            </li>
         </ul>
     </section>
     <section class="works">
@@ -270,7 +296,7 @@
         <ul>
             <li>
                 <a id="milky_wave" class="team_job"></a>
-                <h3>銀河激流ミルキーウェーブ<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span></h3>
+                <h3>銀河激流ミルキーウェーブ<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
                 <div class="contents">
                     <div>
                         <iframe src="https://www.youtube.com/embed/_FClnpZHCsM?si=POHh9M-5hxZez4Am" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -278,7 +304,7 @@
                     <div>
                         <dl>
                             <dt>開発環境／プラットフォーム</dt>
-                            <dd>Windows、DirectX、C++、Visual Studio</dd>
+                            <dd>Windows、DirectX、C++、Visual Studio、Maya、Clip Studio</dd>
                             <dt>制作期間</dt>
                             <dd>2024年11月1日～2025年2月28日（約4カ月）</dd>
                             <dt>チーム構成</dt>
@@ -300,12 +326,16 @@
                             以下、チーム内の説明用資料
                         </p>
                         <p>
-                            プランナー向けのコースの仕組みと作り方の説明:<br />
+                            プランナー向けのコースの仕組みと作り方の説明：<br />
                             <a target="_blank" href="https://docs.google.com/presentation/d/1FDspmDovDWTyDWHrZSDHzWWC2dq8yXcM3by3zSOZSyE/edit?usp=sharing">Google Driveスライド</a>
                         </p>
                         <p>
-                            アセット変換ツールReadme:<br />
+                            アセット変換ツールReadme：<br />
                             <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/MGFBX_readme.txt">GitHub</a>
+                        </p>
+                        <p>
+                            担当したアセットの制作：<br />
+                            <a href="#milky_wave_cg">『銀河激流ミルキーウェーブ』アセット</a>
                         </p>
                     </div>
                     <div>
@@ -316,12 +346,13 @@
                             さらにコースの当たり判定をエリア分けし、表面法線を使って船を細かく傾けながら波の頂点で飛ばし、再び重力と水の浮力でバウンドさせることで、船の自然な浮き沈みを演出しています。
                         </p>
                         <p>
-                            <b>オリジナル3Dアセット変換ツール</b><br />
+                            <b>オリジナル3Dアセット変換CLIツール</b><br />
                             FBXファイルから、モデル・アニメーション・インスタンス座標の3種データに変換するツールを開発。シンプルで再利用性の高いデータ構造とすることで、メモリ使用量を抑えながら高速な読み込みを試みました。
                         </p>
                         <p>
                             <b>開発と運用の効率化</b><br />
-                            コース設計はMaya上で行い、上記の専用ツールでゲームデータへ変換できるフローを構築。さらに、各種パラメータはCSVで管理しており、非エンジニアでも柔軟な調整が可能です。
+                            上記の専用ツールを用いてワークフローを構築しました。デザイナーとプランナーはMaya上でモデルとコースを設計し、ツールでそのままゲームで適用できるゲームデータに変換しています。
+                            加えて、各種パラメータはCSVで管理しており、非エンジニアでも柔軟な調整が可能にしています。
                         </p>
                         <p>
                             <b>ボーンアニメーションの実装</b><br />
@@ -347,7 +378,7 @@
             </li>
             <li>
                 <a id="golf"></a>
-                <h3>ボールをとりもどせ!!<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span></h3>
+                <h3>ボールをとりもどせ!!<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
                 <div class="contents">
                     <div>
                         <iframe src="https://www.youtube.com/embed/EHuAcm5lv1Y?si=CwFGkMesKC1brE6B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -355,7 +386,7 @@
                     <div>
                         <dl>
                             <dt>開発環境／プラットフォーム</dt>
-                            <dd>Windows、DirectX、C++、Visual Studio</dd>
+                            <dd>Windows、DirectX、C++、Visual Studio、Maya</dd>
                             <dt>制作期間</dt>
                             <dd>2025年1月10日～2025年1月13日（4日）</dd>
                             <dt>受賞</dt>
@@ -389,14 +420,15 @@
                         </p>
                         <p>
                             <b>技術検証のプロトタイプとしての位置づけ</b><br />
-                            『銀河激流ミルキーウェーブ』で本格的に使用した自作フレームワークのプロトタイプにあたる作品であり、「オリジナル3Dアセット管理ツール」や「開発と運用の効率化」といった機能をこの時点で試行していました。
+                            『銀河激流ミルキーウェーブ』で本格的に使用した自作フレームワークのプロトタイプにあたる作品であり、「オリジナル3Dアセット変換CLIツール」や「開発と運用の効率化」といった機能をこの時点で試行していました。
                         </p>
                     </div>
                 </div>
             </li>
             <li>
                 <a id="running_finger"></a>
-                <h3>爆走ランニングフィンガー<span class="openGL_tag tag">OpenGL</span><span class="cpp_tag tag">C++</span>
+                <h3>
+                    爆走ランニングフィンガー<span class="openGL_tag tag">OpenGL</span><span class="cpp_tag tag">C++</span>
                 </h3>
                 <div class="contents">
                     <div>
@@ -496,7 +528,8 @@
             </li>
             <li>
                 <a id="satellite_mission"></a>
-                <h3>SATELLITE MISSION<span class="unity_tag tag">Unity</span><span class="cShape_tag tag">C#</span>
+                <h3>
+                    SATELLITE MISSION<span class="unity_tag tag">Unity</span><span class="cShape_tag tag">C#</span>
                 </h3>
                 <div class="contents">
                     <div>
@@ -545,7 +578,7 @@
         <ul>
             <li>
                 <a id="animation_transition"></a>
-                <h3>3Dアニメーション遷移テスト<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span></h3>
+                <h3>3Dアニメーション遷移テスト<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
                 <div class="contents">
                     <div>
                         <iframe src="https://www.youtube.com/embed/i8rK-puj5S4?si=DnZXjFYehGcrEMZb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -553,7 +586,7 @@
                     <div>
                         <dl>
                             <dt>開発環境／プラットフォーム</dt>
-                            <dd>Windows、DirectX、C++、Visual Studio</dd>
+                            <dd>Windows、DirectX、C++、Visual Studio、Maya</dd>
                             <dt>制作期間</dt>
                             <dd>2025年3月26日</dd>
                             <dt>ソース／実行ファイル</dt>
@@ -680,6 +713,48 @@
                 </div>
             </li>
         </ul>
+    </section>
+    <section class="works">
+        <h2>CG・アセット</h2>
+        <ul>
+            <li>
+                <a id="milky_wave_cg"></a>
+                <h3>『銀河激流ミルキーウェーブ』アセット</h3>
+
+                <video controls style="max-width: 560px">
+                    <source src="booster.mp4" type="video/mp4" />
+                </video>
+                <img style="max-width: 560px" src="booster.png" />
+                <br />
+                『銀河激流ミルキーウェーブ』で使われているブースターのエフェクト<br />
+                テクスチャはClip Studioで制作<br />
+                <img style="max-width: 560px" src="water.png" /><br />
+                水面のテクスチャ。引き伸ばして、UV値の更新で水流の演出に使用<br />
+                Clip Studioで制作
+
+            </li>
+            <li>
+                <a id="kumacchi"></a>
+                <h3>くまっちの部屋</h3>
+                Maya＋Arnoldレンダリング、制作時間：約3日<br />
+                <img style="max-width: 560px" src="kuma.jpg" />
+                <img style="max-width: 560px" src="kuma2.jpg" />
+                <br />
+                学校課題として学習目的で制作。既存IPキャラは学内提出のみを想定
+            </li>
+            <li>
+                <a id="treasure_box"></a>
+                <h3>宝箱と王子</h3>
+                Maya＋Arnoldレンダリング、制作時間：約3日<br />
+                <img style="max-width: 560px" src="ouji.jpg" />
+                <img style="max-width: 560px" src="ouji2.jpg" />
+                <br />
+                学校課題として学習目的で制作。既存IPキャラは学内提出のみを想定
+            </li>
+            
+        </ul>
+                
+                
     </section>
 </body>
 </html>
