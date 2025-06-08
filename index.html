@@ -62,6 +62,10 @@
             max-width: 100%;
         }
 
+        section#profile {
+            max-width: 780px;
+        }
+
         section#index > ul > li {
             padding-bottom: 20px;
         }
@@ -279,6 +283,21 @@
     <div id="qrcode_container">
         <img id="qrcode" src="qrcode_ngaimanchun.github.io.png" />
     </div>
+    <section id="profile">
+        <h2>プロフィール</h2>
+        氏名：魏 文俊（ガイ マンチュン）<br />
+        E-mail：ngaimanchungai@gmail.com<br />
+        使用言語：C、C++、C#、PHP、SQL、HTML、JavaScript、CSS、Objective-C、Java、Python(学習中)<br />
+        使用ツール：Visual Studio、Xcode、Maya 2023、Unity 6、Unreal Engine 5.3、CLIP STUDIO PAINT ver.1<br />
+        <p>
+            香港出身。現在はHAL東京ゲーム制作学科の3年次に在学中。<br />
+            以前はWeb系のフルスタックエンジニアとして、設計から実装、外注との連携まで幅広く担当していました。
+            開発の中でも特に「仕組みや土台を整えること」が好きです。<br />
+            幼少期から日本のゲームに親しみ、一番古い記憶は『ストリートファイターII' TURBO』や『ドラゴンボールZ 超武闘伝2』辺りです。
+            一番印象に残ったゲームは『大神』で、特に表現力に衝撃を受けました。<br />
+            趣味はギターで、中学から続けています。ベースやピアノも少し嗜んでいます。
+        </p>
+    </section>
     <section id="index">
         <h2>目次</h2>
         <ul>
@@ -291,12 +310,7 @@
                         <span class="cpp_tag tag">C++</span>
                         <span class="maya_tag tag">Maya</span>
                     </li>
-                    <li>
-                        <a href="#golf">ボールをとりもどせ!!</a>
-                        <span class="directx_tag tag">DirectX</span>
-                        <span class="cpp_tag tag">C++</span>
-                        <span class="maya_tag tag">Maya</span>
-                    </li>
+
                     <li>
                         <a href="#running_finger">爆走ランニングフィンガー</a>
                         <span class="openGL_tag tag">OpenGL</span>
@@ -314,10 +328,10 @@
                 </ul>
             </li>
             <li>
-                <b>課題・技術検証</b>
+                <b>短期制作</b>
                 <ul>
                     <li>
-                        <a href="#animation_transition">3Dアニメーション遷移テスト</a>
+                        <a href="#golf">ボールをとりもどせ!!</a>
                         <span class="directx_tag tag">DirectX</span>
                         <span class="cpp_tag tag">C++</span>
                         <span class="maya_tag tag">Maya</span>
@@ -331,15 +345,21 @@
                         <a href="#landmine">地雷ゲーム</a>
                         <span class="console_tag tag">C言語</span>
                     </li>
-                </ul>
-            </li>
-            <li>
-                <b>短期制作</b>
-                <ul>
                     <li>
                         <a href="#soumen_slider" class="team_job">SOUMEN SLIDER</a>
                         <span class="directx_tag tag">DirectX</span>
                         <span class="cpp_tag tag">C++</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <b>技術検証</b>
+                <ul>
+                    <li>
+                        <a href="#animation_transition">3Dアニメーション遷移テスト</a>
+                        <span class="directx_tag tag">DirectX</span>
+                        <span class="cpp_tag tag">C++</span>
+                        <span class="maya_tag tag">Maya</span>
                     </li>
                 </ul>
             </li>
@@ -359,7 +379,7 @@
                         <span class="maya_tag tag">Maya</span>
                     </li>
                 </ul>
-                
+
             </li>
         </ul>
     </section>
@@ -422,11 +442,15 @@
                         </p>
                     </div>
                     <div>
-                        <h4>🔸 こだわり</h4>
+                        <h4>🔸 こだわり・チャレンジ</h4>
                         <p>
                             <b>波打つコースと船の浮き沈み</b><br />
                             コースに沿って重力の導線を設定し、位置によって重力方向が変化。
                             さらにコースの当たり判定をエリア分けし、表面法線を使って船を細かく傾けながら波の頂点で飛ばし、再び重力と水の浮力でバウンドさせることで、船の自然な浮き沈みを演出しています。
+                        </p>
+                        <p>
+                            <b>使いやすさを重視したフレームワーク設計</b><br />
+                            本作は、これまで複数のプロトタイプで培ってきた自作フレームワークを3Dゲーム向けに拡張し、チームにも提供した作品です。使いやすさを重視し、デモシーンやサンプルの用意、チーム内での説明会も実施しました。
                         </p>
                         <p>
                             <b>オリジナル3Dアセット変換CLIツール</b><br />
@@ -459,66 +483,7 @@
                     </div>
                 </div>
             </li>
-            <li>
-                <a id="golf"></a>
-                <h3>ボールをとりもどせ!!<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
-                <div class="contents">
-                    <div>
-                        <iframe src="https://www.youtube.com/embed/EHuAcm5lv1Y?si=CwFGkMesKC1brE6B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <ul class="alt_images">
-                            <li style="grid-column: 1 / span 3;"><img src="golf_3.png" /></li>
-                            <li><img src="golf_1.png" /></li>
-                            <li><img src="golf_2.png" /></li>
-                            <li><img src="golf_4.png" /></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <dl>
-                            <dt>開発環境／プラットフォーム</dt>
-                            <dd>Windows、DirectX、C++、Visual Studio、Maya</dd>
-                            <dt>制作期間</dt>
-                            <dd>2025年1月10日～2025年1月13日（4日）</dd>
-                            <dt>受賞</dt>
-                            <dd>ＤＸオリジナルゲーム学内コンペ　技術力賞（校内コンテスト）</dd>
-                            <dt>ソース／実行ファイル</dt>
-                            <dd><a target="_blank" href="https://github.com/NgaiManChun/Golf">https://github.com/NgaiManChun/Golf</a></dd>
-                            <dt>デモ動画</dt>
-                            <dd><a target="_blank" href="https://youtu.be/EHuAcm5lv1Y">https://youtu.be/EHuAcm5lv1Y</a></dd>
-                        </dl>
-                        <div class="trailer_qr">
-                            <img src="golf_qr.png" />
-                        </div>
-                    </div>
-                    <div>
-                        <h4>🔹 概要</h4>
-                        <p>
-                            本作は、フィールド上に配置されたアイテムを集め、最終的に中央の巨大なボタンを押すことでクリアとなるミニゲームです。もともとは複数ステージ構成のゴルフゲームを目指していましたが、制作時間の見積もりが甘く、開発途中で方向転換を決断。結果的に、1ステージ完結型かつ派手な演出で締めくくる構成に落ち着きました。
-                        </p>
-                        <p>
-                            制作時間の制約から仕様を絞った分、印象に残る演出や操作感を重視して設計しました。
-                        </p>
-                    </div>
-                    <div>
-                        <h4>🔸 こだわり</h4>
-                        <p>
-                            <b>短期間でも印象に残る演出設計</b><br />
-                            当初の計画から方向転換したミニゲーム形式において、1ステージでも遊びごたえと達成感が得られるよう、ゲーム終盤には必殺技演出を導入。短期間でも「記憶に残る体験」を目指しました。
-                        </p>
-                        <p>
-                            <b>視認性への配慮：半透明化と軌道予測</b><br />
-                            カメラとプレイヤーの間にオブジェクトが入った際、それらを半透明化する処理を実装。加えて、弾道の予測線を描画することで、操作性を向上させています。
-                        </p>
-                        <p>
-                            <b>物理表現の自力実装</b><br />
-                            ステージにはわずかですが斜面を含む構造があり、当たり判定には変形や回転を考慮した処理が必要でした。当時授業ではAABBまでしか扱われていませんでしたが、必要性を感じ、自力で拡張しました。
-                        </p>
-                        <p>
-                            <b>技術検証のプロトタイプとしての位置づけ</b><br />
-                            『銀河激流ミルキーウェーブ』で本格的に使用した自作フレームワークのプロトタイプにあたる作品であり、「オリジナル3Dアセット変換CLIツール」や「開発と運用の効率化」といった機能をこの時点で試行していました。
-                        </p>
-                    </div>
-                </div>
-            </li>
+
             <li>
                 <a id="running_finger"></a>
                 <h3>
@@ -563,7 +528,7 @@
                         </p>
                     </div>
                     <div>
-                        <h4>🔸 こだわり</h4>
+                        <h4>🔸 こだわり・チャレンジ</h4>
                         <p>
                             <b>IRカメラによる直感的な操作</b><br />
                             Joy-ConのIRカメラに2本の指を映し、指の動きに合わせてキャラクターが前進・左右移動・ジャンプする操作を実現しました。特別な装置を使わず、素手で遊べます。
@@ -623,7 +588,7 @@
                         </p>
                     </div>
                     <div>
-                        <h4>🔸 こだわり</h4>
+                        <h4>🔸 こだわり・チャレンジ</h4>
                         <p>
                             <b>実在の奏法を再現した入力システム</b><br />
                             ギターのピッキング、ハンマリング、プリングを模したキー入力を導入。音楽ゲームとしての独自性と操作の面白さを図りました。
@@ -683,7 +648,7 @@
                         </p>
                     </div>
                     <div>
-                        <h4>🔸 こだわり</h4>
+                        <h4>🔸 こだわり・チャレンジ</h4>
                         <p>
                             <b>プレイヤーを中心に飛び回る「サテライトライフル」の演出</b><br />
                             不規則に飛び交う複数の軌道を重ね、SFアニメに登場する精神感応兵器のような動きを再現しました。本作の象徴的なギミックです。
@@ -702,17 +667,21 @@
 
         </ul>
     </section>
+
     <section class="works">
-        <h2>課題・技術検証</h2>
+        <h2>短期制作</h2>
         <ul>
             <li>
-                <a id="animation_transition"></a>
-                <h3>3Dアニメーション遷移テスト<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
+                <a id="golf"></a>
+                <h3>ボールをとりもどせ!!<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
                 <div class="contents">
                     <div>
-                        <iframe src="https://www.youtube.com/embed/i8rK-puj5S4?si=DnZXjFYehGcrEMZb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/EHuAcm5lv1Y?si=CwFGkMesKC1brE6B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <ul class="alt_images">
-                            <li><img src="animation_1.png" /></li>
+                            <li style="grid-column: 1 / span 3;"><img src="golf_3.png" /></li>
+                            <li><img src="golf_1.png" /></li>
+                            <li><img src="golf_2.png" /></li>
+                            <li><img src="golf_4.png" /></li>
                         </ul>
                     </div>
                     <div>
@@ -720,29 +689,44 @@
                             <dt>開発環境／プラットフォーム</dt>
                             <dd>Windows、DirectX、C++、Visual Studio、Maya</dd>
                             <dt>制作期間</dt>
-                            <dd>2025年3月26日</dd>
+                            <dd>2025年1月10日～2025年1月13日（4日）</dd>
+                            <dt>受賞</dt>
+                            <dd>ＤＸオリジナルゲーム学内コンペ　技術力賞（校内コンテスト）</dd>
                             <dt>ソース／実行ファイル</dt>
-                            <dd><a target="_blank" href="https://github.com/NgaiManChun/AnimationTransition">https://github.com/NgaiManChun/AnimationTransition</a></dd>
+                            <dd><a target="_blank" href="https://github.com/NgaiManChun/Golf">https://github.com/NgaiManChun/Golf</a></dd>
                             <dt>デモ動画</dt>
-                            <dd><a target="_blank" href="https://youtu.be/i8rK-puj5S4">https://youtu.be/i8rK-puj5S4</a></dd>
+                            <dd><a target="_blank" href="https://youtu.be/EHuAcm5lv1Y">https://youtu.be/EHuAcm5lv1Y</a></dd>
                         </dl>
                         <div class="trailer_qr">
-                            <img src="animation_qr.png" />
+                            <img src="golf_qr.png" />
                         </div>
                     </div>
-                    <span class="print_page_break"></span>
                     <div>
                         <h4>🔹 概要</h4>
                         <p>
-                            複数の3Dアニメーションを、状態に応じて自然に遷移させるためのテスト。停止、歩行、攻撃の3状態間をスムーズに補間させる挙動を検証した。
+                            本作は、フィールド上に配置されたアイテムを集め、最終的に中央の巨大なボタンを押すことでクリアとなるミニゲームです。もともとは複数ステージ構成のゴルフゲームを目指していましたが、制作時間の見積もりが甘く、開発途中で方向転換を決断。結果的に、1ステージ完結型かつ派手な演出で締めくくる構成に落ち着きました。
+                        </p>
+                        <p>
+                            制作時間の制約から仕様を絞った分、印象に残る演出や操作感を重視して設計しました。
                         </p>
                     </div>
                     <div>
-                        <h4>🔸 こだわり</h4>
+                        <h4>🔸 こだわり・チャレンジ</h4>
                         <p>
-                            アニメーション同士を自然につなげるため、線形補間によるスムーズな遷移制御を行い、状態の切り替え時に違和感が出ないよう調整しています。
-                            また、どの状態でも独立して進行し続けるまばたきアニメーションも組み込んでいます。
-                            加えて、キャラクターの手に持ったアイテムを追従させ、スラッシュ軌道のエフェクトを連動させる処理も実装しています。
+                            <b>短期間でも印象に残る演出設計</b><br />
+                            当初の計画から方向転換したミニゲーム形式において、1ステージでも遊びごたえと達成感が得られるよう、ゲーム終盤には必殺技演出を導入。短期間でも「記憶に残る体験」を目指しました。
+                        </p>
+                        <p>
+                            <b>視認性への配慮：半透明化と軌道予測</b><br />
+                            カメラとプレイヤーの間にオブジェクトが入った際、それらを半透明化する処理を実装。加えて、弾道の予測線を描画することで、操作性を向上させています。
+                        </p>
+                        <p>
+                            <b>物理表現の自力実装</b><br />
+                            ステージにはわずかですが斜面を含む構造があり、当たり判定には変形や回転を考慮した処理が必要でした。当時授業ではAABBまでしか扱われていませんでしたが、必要性を感じ、自力で拡張しました。
+                        </p>
+                        <p>
+                            <b>技術検証のプロトタイプとしての位置づけ</b><br />
+                            『銀河激流ミルキーウェーブ』で本格的に使用した自作フレームワークのプロトタイプにあたる作品であり、「オリジナル3Dアセット変換CLIツール」や「開発と運用の効率化」といった機能をこの時点で試行していました。
                         </p>
                     </div>
                 </div>
@@ -783,7 +767,7 @@
                         </p>
                     </div>
                     <div>
-                        <h4>🔸 こだわり</h4>
+                        <h4>🔸 こだわり・チャレンジ</h4>
                         <p>
                             スコア加算時の演出や背景の変化など、プレイ中の視覚的な気持ちよさを意識して作りました。特に、シーン遷移時には暗転を使わずにフェードイン・フェードアウトを同時に行う処理を実装し、自然な切り替えにこだわっています。
                         </p>
@@ -823,7 +807,7 @@
                         </p>
                     </div>
                     <div>
-                        <h4>🔸 こだわり</h4>
+                        <h4>🔸 こだわり・チャレンジ</h4>
                         <p>
                             空白マスの自動展開を再帰関数で実装。限られたコンソール環境でも遊びやすくするため、現在選択中のマスを色で表示するなど、視認性にも配慮しました。
                             本物の『マインスイーパ』の代用品を目指して制作していました。
@@ -831,11 +815,6 @@
                     </div>
                 </div>
             </li>
-        </ul>
-    </section>
-    <section class="works">
-        <h2>短期制作</h2>
-        <ul>
             <li>
                 <a id="soumen_slider" class="team_job"></a>
                 <h3>SOUMEN SLIDER<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span></h3>
@@ -873,13 +852,61 @@
                         </p>
                     </div>
                     <div>
-                        <h4>🔸 こだわり</h4>
+                        <h4>🔸 こだわり・チャレンジ</h4>
                         <p>
                             シンプルなルールとテンポ感を重視して設計しました。
                         </p>
                     </div>
                 </div>
             </li>
+        </ul>
+    </section>
+    <section class="works">
+        <h2>技術検証</h2>
+        <ul>
+            <li>
+                <a id="animation_transition"></a>
+                <h3>3Dアニメーション遷移テスト<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
+                <div class="contents">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/i8rK-puj5S4?si=DnZXjFYehGcrEMZb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <ul class="alt_images">
+                            <li><img src="animation_1.png" /></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>開発環境／プラットフォーム</dt>
+                            <dd>Windows、DirectX、C++、Visual Studio、Maya</dd>
+                            <dt>制作期間</dt>
+                            <dd>2025年3月26日</dd>
+                            <dt>ソース／実行ファイル</dt>
+                            <dd><a target="_blank" href="https://github.com/NgaiManChun/AnimationTransition">https://github.com/NgaiManChun/AnimationTransition</a></dd>
+                            <dt>デモ動画</dt>
+                            <dd><a target="_blank" href="https://youtu.be/i8rK-puj5S4">https://youtu.be/i8rK-puj5S4</a></dd>
+                        </dl>
+                        <div class="trailer_qr">
+                            <img src="animation_qr.png" />
+                        </div>
+                    </div>
+                    <span class="print_page_break"></span>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+                            複数の3Dアニメーションを、状態に応じて自然に遷移させるためのテスト。停止、歩行、攻撃の3状態間をスムーズに補間させる挙動を検証した。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり・チャレンジ</h4>
+                        <p>
+                            アニメーション同士を自然につなげるため、線形補間によるスムーズな遷移制御を行い、状態の切り替え時に違和感が出ないよう調整しています。
+                            また、どの状態でも独立して進行し続けるまばたきアニメーションも組み込んでいます。
+                            加えて、キャラクターの手に持ったアイテムを追従させ、スラッシュ軌道のエフェクトを連動させる処理も実装しています。
+                        </p>
+                    </div>
+                </div>
+            </li>
+
         </ul>
     </section>
     <section class="works">
@@ -896,8 +923,6 @@
                     </div>
                     <div>
                         <img src="booster_2.png" />
-                        <br />
-                        テクスチャはClip Studioで制作
                     </div>
                     <div>
                         <img src="stone_1.png" />
@@ -912,7 +937,7 @@
                     <div>
                         <img src="milkywave_making.png" />
                         <br />
-                        チーム内デモ用試作ステージ。水面のテクスチャはClip Studioで制作
+                        チーム内デモ用試作ステージ。
                     </div>
                 </div>
             </li>
@@ -944,10 +969,10 @@
                     学校課題として学習目的で制作。既存IPキャラは学内提出のみを想定<br />
                 </div>
             </li>
-            
+
         </ul>
-                
-                
+
+
     </section>
 </body>
 </html>
