@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SATELLITE MISSION</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: #3c3c3c;
+            font-family: "Noto Sans JP", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            -webkit-print-color-adjust: exact;
+        }
+
+        body > section {
+            margin: 20px;
+        }
+
+        h1 {
+            background-image: linear-gradient(135deg, #ABDCFF 10%, #ffffff 100%);
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        h3 {
+            font-size: 1.2em;
+        }
+
+        a {
+            color: inherit;
+        }
+
+            a:hover {
+                color: #b5ae73;
+            }
+
+        img {
+            vertical-align: bottom;
+            max-width: 100%;
+        }
+
+        section#profile {
+            max-width: 780px;
+        }
+
+        section#index > ul > li {
+            padding-bottom: 20px;
+        }
+
+        .works > ul {
+            list-style: none;
+            padding: 0;
+            --col-width: 560px;
+            --gap: 20px;
+            --cols: 2;
+        }
+
+            .works > ul > li {
+                padding-bottom: 40px;
+                page-break-after: always;
+            }
+
+            .works > ul .contents {
+                display: flex;
+                flex-wrap: wrap;
+                gap: var(--gap);
+                max-width: calc(var(--col-width) * var(--cols) + var(--gap) * (var(--cols) - 1));
+            }
+
+                .works > ul .contents > * {
+                    width: var(--col-width);
+                    position: relative;
+                }
+
+                .works > ul .contents > :nth-child(1) > iframe {
+                    aspect-ratio: 560 / 315;
+                    width: 100%;
+                }
+
+        .alt_images {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: none;
+            gap: 10px;
+        }
+
+        .works > ul .contents > :nth-child(2) > dl {
+            width: 100%;
+            border-style: dashed;
+            border-radius: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+            background-color: #ebf6ff;
+        }
+
+        .works > ul .contents dl > dt {
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        .works > ul .contents dl > dd {
+            margin: 0;
+            padding: 5px 20px;
+        }
+
+            .works > ul .contents dl > dd a {
+                display: inline-block;
+                max-width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+        .works {
+            page-break-before: always;
+        }
+
+        .team_job + h3::after, #index a.team_job::after {
+            content: "チーム制作";
+            font-size: 0.5em;
+            font-style: italic;
+            color: gray;
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .directx_tag {
+            background-color: #107c0f;
+            color: #fff;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.5em;
+            font-weight: 400;
+            padding: 0 5px;
+            border-radius: 5px;
+            margin-left: 5px;
+            user-select: none;
+        }
+
+        .openGL_tag {
+            background-color: #e9091a;
+            color: #fff;
+        }
+
+        .unity_tag {
+            background-color: #7272a6;
+            color: #fff;
+        }
+
+        .console_tag {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .cpp_tag {
+            background-color: #0037be;
+            color: #fff;
+        }
+
+        .cShape_tag {
+            background-color: #bff547;
+            color: #000;
+        }
+
+        .maya_tag {
+            background-color: #32a5c7;
+            color: #fff;
+        }
+
+        #qrcode_container {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+
+        #qrcode {
+            width: 200px;
+        }
+
+        .trailer_qr {
+            width: 120px;
+            right: 3px;
+            top: 3px;
+            position: absolute;
+            display: none;
+        }
+
+            .trailer_qr::after {
+                content: "↑動画";
+            }
+
+            .trailer_qr a[href^="http"]::after {
+                content: none;
+            }
+
+        .print_page_break {
+            display: none;
+        }
+
+        td {
+            background-color: #ebf6ff;
+            padding: 5px 10px;
+        }
+
+        table {
+            border-style: dashed;
+            border-radius: 5px;
+        }
+
+        tr:nth-child(even) > td {
+            background-color: #cfeaff;
+        }
+
+        @media only screen and (max-width: 1190px) {
+            .works > ul .contents > * {
+                width: 100%;
+            }
+
+            #qrcode_container {
+                display: none;
+            }
+        }
+
+        @media only print {
+            h2 {
+                margin: 0;
+            }
+
+            .works {
+                border-top: none;
+                padding-top: 0;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+                .works > ul .contents > :nth-child(1) > iframe {
+                    display: none;
+                }
+
+            .alt_images {
+                display: grid;
+            }
+
+            .works > ul .contents > * {
+                width: 100%;
+            }
+
+            .trailer_qr {
+                display: block;
+            }
+
+            #qrcode_container {
+                display: none;
+            }
+
+            .print_page_break {
+                display: inline-block;
+                page-break-after: always;
+            }
+
+            .works > ul .contents.short {
+                --gap: 10px;
+            }
+
+            .works > ul > li {
+                padding-bottom: 0;
+            }
+
+            .works > ul .contents.short dt {
+                padding: 0 5px;
+            }
+
+            .works > ul .contents.short dd {
+                padding: 0 20px;
+            }
+
+            .works > ul .contents.short h4 {
+                margin: 0;
+            }
+
+            .works > ul .contents.short p {
+                margin: 10px 0;
+            }
+
+            .works > ul .contents.short::after {
+                margin-top: 0;
+            }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/279d58192c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="works">
+        <ul>
+            <li>
+                <a id="satellite_mission"></a>
+                <h3>
+                    SATELLITE MISSION<span class="unity_tag tag">Unity</span><span class="cShape_tag tag">C#</span>
+                </h3>
+                <div class="contents">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/kQ2IMom_x7c?si=kJaerLnJWK71hzOh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <ul class="alt_images">
+                            <li style="grid-column: 1 / span 3;"><img src="satellite_1.png" /></li>
+                            <li><img src="satellite_2.png" /></li>
+                            <li><img src="satellite_3.png" /></li>
+                            <li><img src="satellite_4.png" /></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>動作環境</dt>
+                            <dd>Windows</dd>
+                            <dt>制作期間</dt>
+                            <dd>2023年12月17日～2024年1月12日（約1カ月）</dd>
+                            <dt>チーム構成・担当</dt>
+                            <dd>個人作品（フリー素材使用、クレジットはゲーム内に掲載）</dd>
+                            <dt>受賞</dt>
+                            <dd>オリジナルＴＰＳ学内コンペ　技術賞（校内コンテスト）</dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+                            入学から3か月目に制作した、はじめてのUnity製3Dアクションシューティングゲームです。プレイヤーは空を飛べるキャラクターを操作し、味方拠点を守りながら、敵ユニットと敵拠点を殲滅することが目的としたゲームです。ミサイルとマシンガンを使い分けて戦うTPSスタイルで、拠点防衛と撃破を両立させる戦術性が特徴です。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 操作方法</h4>
+                        <p>
+                            キーボード・マウス、Nintendo Switch Proコントローラーで操作可能
+                        </p>
+                        <p>
+                            <ul>
+                                <li>
+                                    <h5>マウス・キーボード</h5>
+                                    <table>
+                                        <tr>
+                                            <td>WASDキー</td>
+                                            <td>移動</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Space</td>
+                                            <td>上昇</td>
+                                        </tr>
+                                        <tr>
+                                            <td>左クリック長押し</td>
+                                            <td>マシンガン</td>
+                                        </tr>
+                                        <tr>
+                                            <td>右クリック</td>
+                                            <td>ミサイル</td>
+                                        </tr>
+                                        <tr>
+                                            <td>左Shift</td>
+                                            <td>アシストOn/Off</td>
+                                        </tr>
+                                    </table>
+                                </li>
+                                <li>
+                                    <h5>Nintendo Switch Proコントローラー</h5>
+                                    <table>
+                                        <tr>
+                                            <td>左スティック</td>
+                                            <td>横移動</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ZL</td>
+                                            <td>上昇</td>
+                                        </tr>
+                                        <tr>
+                                            <td>R長押し</td>
+                                            <td>マシンガン</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ZR</td>
+                                            <td>ミサイル</td>
+                                        </tr>
+                                        <tr>
+                                            <td>X</td>
+                                            <td>アシストOn/Off</td>
+                                        </tr>
+                                    </table>
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔹 こだわり・チャレンジ</h4>
+                        <p>
+                            <b>プレイヤーを中心に飛び回る「サテライトライフル」の演出</b><br />
+                            不規則に飛び交う複数の軌道を重ね、SFアニメに登場する精神感応兵器のような動きを再現しました。本作の象徴的なギミックです。
+                        </p>
+                        <p>
+                            <b>戦術を持つ敵AI</b><br />
+                            敵は4つの行動パターン（自陣防衛・プレイヤー攻撃・レーダー攻撃・距離優先）を20秒ごとに見直し、残存数に応じて役割を自動分担します。単なる動く的ではない緊張感ある戦闘を実現しています。
+                        </p>
+                        <p>
+                            <b>UI・演出のディテール再現</b><br />
+                            ホログラム風パネルUIを採用し、SFらしいビジュアルを表現。撃破時の連続爆発、ダメージ時のUI振動・点滅、敵との距離表示、画面外の敵を示すインジケーターなど、既存のゲームを参考に細かい演出を多数実装しました。
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>
