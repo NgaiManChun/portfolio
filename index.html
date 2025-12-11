@@ -36,9 +36,8 @@
         h3 {
             font-size: 1.2em;
             text-decoration: underline;
-            text-decoration-thickness: 0.5em;
+            text-decoration-thickness: 0.3em;
             text-decoration-color: rgba(255, 228, 0, 0.4);
-            text-underline-offset: -0.2em;
         }
 
         a {
@@ -60,6 +59,7 @@
         img {
             vertical-align: bottom;
             max-width: 100%;
+            box-shadow: rgb(0 0 0 / 54%) 0 0 6px 2px;
         }
 
         section#profile {
@@ -202,6 +202,10 @@
             background-color: #32a5c7;
             color: #fff;
         }
+        .python_tag {
+            color: #013b5e;
+            background-color: #ffd966;
+        }
 
         #qrcode_container {
             position: fixed;
@@ -319,10 +323,10 @@
         <h2>プロフィール</h2>
         氏名：魏 文俊（ガイ マンチュン）<br />
         E-mail：ngaimanchungai@gmail.com<br />
-        使用言語：C、C++、C#、PHP、SQL、HTML、JavaScript、CSS、Objective-C、Java、Python(学習中)<br />
-        使用ツール：Visual Studio、Xcode、Maya 2023、Unity 6、Unreal Engine 5.4、CLIP STUDIO PAINT ver.1<br />
+        使用言語：C、C++、C#、Python、PHP、SQL、HTML、JavaScript、CSS、Objective-C<br />
+        使用ツール：Visual Studio、Xcode、Maya、Unity 6、Unreal Engine 5<br />
         <p>
-            香港出身。現在はHAL東京ゲーム制作学科の3年次に在学中。<br />
+            香港出身。現在はHAL東京ゲーム4年制学科ゲーム制作コースに在学中。<br />
             以前はWeb系のフルスタックエンジニアとして、設計から実装、外注との連携まで幅広く担当していました。
             開発の中でも特に「仕組みや土台を整えること」が好きです。<br />
             幼少期から日本のゲームに親しみ、一番古い記憶は『ストリートファイターII' TURBO』や『ドラゴンボールZ 超武闘伝2』辺りです。
@@ -342,12 +346,6 @@
                         <span class="cpp_tag tag">C++</span>
                         <span class="maya_tag tag">Maya</span>
                     </li>
-
-                    <li>
-                        <a href="#running_finger">爆走ランニングフィンガー</a>
-                        <span class="openGL_tag tag">OpenGL</span>
-                        <span class="cpp_tag tag">C++</span>
-                    </li>
                     <li>
                         <a href="#karadaful">カラダ振る～お前もギタリストにしてやろうか～</a>
                         <span class="console_tag tag">C言語</span>
@@ -357,16 +355,29 @@
                         <span class="unity_tag tag">Unity</span>
                         <span class="cShape_tag tag">C#</span>
                     </li>
+                    <li>
+                        <a href="#running_finger">爆走ランニングフィンガー</a>
+                        <span class="openGL_tag tag">OpenGL</span>
+                        <span class="cpp_tag tag">C++</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <b>DCCツール プラグイン</b>
+                <ul>
+                    <li>
+                        <a href="#csv_export">CSV・FBX出力 Mayaプラグイン</a>
+                        <span class="python_tag tag">Python</span>
+                        <span class="maya_tag tag">Maya</span>
+                    </li>
                 </ul>
             </li>
             <li>
                 <b>短期制作</b>
                 <ul>
                     <li>
-                        <a href="#golf">ボールをとりもどせ!!</a>
-                        <span class="directx_tag tag">DirectX</span>
-                        <span class="cpp_tag tag">C++</span>
-                        <span class="maya_tag tag">Maya</span>
+                        <a href="#landmine">地雷ゲーム</a>
+                        <span class="console_tag tag">C言語</span>
                     </li>
                     <li>
                         <a href="#puzzle_game">パズルゲーム</a>
@@ -374,8 +385,10 @@
                         <span class="cpp_tag tag">C++</span>
                     </li>
                     <li>
-                        <a href="#landmine">地雷ゲーム</a>
-                        <span class="console_tag tag">C言語</span>
+                        <a href="#golf">ボールをとりもどせ!!</a>
+                        <span class="directx_tag tag">DirectX</span>
+                        <span class="cpp_tag tag">C++</span>
+                        <span class="maya_tag tag">Maya</span>
                     </li>
                     <li>
                         <a href="#soumen_slider" class="team_job">SOUMEN SLIDER</a>
@@ -404,10 +417,6 @@
                     </li>
                     <li>
                         <a href="#kumacchi">くまっちの部屋</a>
-                        <span class="maya_tag tag">Maya</span>
-                    </li>
-                    <li>
-                        <a href="#treasure_box">宝箱と王子</a>
                         <span class="maya_tag tag">Maya</span>
                     </li>
                 </ul>
@@ -515,67 +524,6 @@
                     </div>
                 </div>
             </li>
-
-            <li>
-                <a id="running_finger"></a>
-                <h3>
-                    爆走ランニングフィンガー<span class="openGL_tag tag">OpenGL</span><span class="cpp_tag tag">C++</span>
-                </h3>
-                <div class="contents">
-                    <div>
-                        <iframe src="https://www.youtube.com/embed/usSkmJEs9w4?si=AuyrTFCHsZdmcop3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <ul class="alt_images">
-                            <li style="grid-column: 1 / span 3;"><img src="finger_1.png" /></li>
-                            <li><img src="finger_2.png" /></li>
-                            <li><img src="finger_3.png" /></li>
-                            <li><img src="finger_4.png" /></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <dl>
-                            <dt>開発環境／プラットフォーム</dt>
-                            <dd>Nintendo Switch、OpenGL、C++、Visual Studio</dd>
-                            <dt>制作期間</dt>
-                            <dd>2024年7月21日～2024年9月6日（約7週間）</dd>
-                            <dt>受賞</dt>
-                            <dd>Ｓｗｉｔｃｈ２Ｄゲーム　学内コンテスト　銅賞（校内コンテスト）</dd>
-                            <dt>ソース／実行ファイル</dt>
-                            <dd>守秘義務により公開出来ません</dd>
-                            <dt>デモ動画</dt>
-                            <dd><a target="_blank" href="https://youtu.be/usSkmJEs9w4">https://youtu.be/usSkmJEs9w4</a></dd>
-                        </dl>
-                        <div class="trailer_qr">
-                            <a target="_blank" href="https://youtu.be/usSkmJEs9w4"><img src="finger_qr.png" /></a>
-                        </div>
-                    </div>
-                    <span class="print_page_break"></span>
-                    <div>
-                        <h4>🔹 概要</h4>
-                        <p>
-                            『爆走ランニングフィンガー』は、指人形を机の上で走らせるという身近な遊びを、Nintendo Switchで再現したミニゲームです。Joy-ConのIRカメラを使って、実際の指の動きでキャラクターを操作する仕組みになっています。
-                        </p>
-                        <p>
-                            初めてのNintendo Switch向けに開発した作品で、ステージは擬似3Dを使って奥行きを表現しています。IRカメラを活用した遊び方が特徴です。
-                        </p>
-                    </div>
-                    <div>
-                        <h4>🔸 こだわり・チャレンジ</h4>
-                        <p>
-                            <b>IRカメラによる直感的な操作</b><br />
-                            Joy-ConのIRカメラに2本の指を映し、指の動きに合わせてキャラクターが前進・左右移動・ジャンプする操作を実現しました。特別な装置を使わず、素手で遊べます。
-                        </p>
-                        <p>
-                            <b>SwitchとPC両対応を意識した構成</b><br />
-                            Switchでの開発は学校設備に依存するため、多くの学生が夏休みにも通学して作業していました。そこで私はアダプターパターンを用い、Switch（OpenGL）とPC（DirectX）それぞれの環境で、ゲームロジック部分を変えずに動作する構造を設計し、自宅での開発を中心に進められるように工夫しました。
-                        </p>
-                        <p>
-                            <b>擬似3Dの実装</b><br />
-                            もともとは横スクロール型の構成を想定していましたが、実際に指人形で遊ぶ際は「前に進む」動きのほうが自然で操作しやすいと感じたため、ゲーム画面もそれに合わせて奥行き方向のステージに変更しました。
-                            レギュレーション上は2Dゲームに限られており、当時の授業でも3Dゲーム制作はまだ扱われていなかったため、擬似3Dの表現を試みました。
-                        </p>
-                    </div>
-                </div>
-            </li>
             <li>
                 <a id="karadaful"></a>
                 <h3>カラダ振る～お前もギタリストにしてやろうか～<span class="console_tag tag">C言語</span></h3>
@@ -592,7 +540,7 @@
                     <div>
                         <dl>
                             <dt>開発環境／プラットフォーム</dt>
-                            <dd>Windows（コンソール）、C++、Visual Studio</dd>
+                            <dd>Windows（コンソール）、C、Visual Studio</dd>
                             <dt>制作期間</dt>
                             <dd>2024年1月15日～2024年1月31日（約3週間）</dd>
                             <dt>受賞</dt>
@@ -695,13 +643,193 @@
                     </div>
                 </div>
             </li>
-
+            <li>
+                <a id="running_finger"></a>
+                <h3>
+                    爆走ランニングフィンガー<span class="openGL_tag tag">OpenGL</span><span class="cpp_tag tag">C++</span>
+                </h3>
+                <div class="contents">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/usSkmJEs9w4?si=AuyrTFCHsZdmcop3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <ul class="alt_images">
+                            <li style="grid-column: 1 / span 3;"><img src="finger_1.png" /></li>
+                            <li><img src="finger_2.png" /></li>
+                            <li><img src="finger_3.png" /></li>
+                            <li><img src="finger_4.png" /></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>開発環境／プラットフォーム</dt>
+                            <dd>Nintendo Switch、OpenGL、C++、Visual Studio</dd>
+                            <dt>制作期間</dt>
+                            <dd>2024年7月21日～2024年9月6日（約7週間）</dd>
+                            <dt>受賞</dt>
+                            <dd>Ｓｗｉｔｃｈ２Ｄゲーム　学内コンテスト　銅賞（校内コンテスト）</dd>
+                            <dt>ソース／実行ファイル</dt>
+                            <dd>守秘義務により公開出来ません</dd>
+                            <dt>デモ動画</dt>
+                            <dd><a target="_blank" href="https://youtu.be/usSkmJEs9w4">https://youtu.be/usSkmJEs9w4</a></dd>
+                        </dl>
+                        <div class="trailer_qr">
+                            <a target="_blank" href="https://youtu.be/usSkmJEs9w4"><img src="finger_qr.png" /></a>
+                        </div>
+                    </div>
+                    <span class="print_page_break"></span>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+                            『爆走ランニングフィンガー』は、指人形を机の上で走らせるという身近な遊びを、Nintendo Switchで再現したミニゲームです。Joy-ConのIRカメラを使って、実際の指の動きでキャラクターを操作する仕組みになっています。
+                        </p>
+                        <p>
+                            初めてのNintendo Switch向けに開発した作品で、ステージは擬似3Dを使って奥行きを表現しています。IRカメラを活用した遊び方が特徴です。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり・チャレンジ</h4>
+                        <p>
+                            <b>IRカメラによる直感的な操作</b><br />
+                            Joy-ConのIRカメラに2本の指を映し、指の動きに合わせてキャラクターが前進・左右移動・ジャンプする操作を実現しました。特別な装置を使わず、素手で遊べます。
+                        </p>
+                        <p>
+                            <b>SwitchとPC両対応を意識した構成</b><br />
+                            Switchでの開発は学校設備に依存するため、多くの学生が夏休みにも通学して作業していました。そこで私はアダプターパターンを用い、Switch（OpenGL）とPC（DirectX）それぞれの環境で、ゲームロジック部分を変えずに動作する構造を設計し、自宅での開発を中心に進められるように工夫しました。
+                        </p>
+                        <p>
+                            <b>擬似3Dの実装</b><br />
+                            もともとは横スクロール型の構成を想定していましたが、実際に指人形で遊ぶ際は「前に進む」動きのほうが自然で操作しやすいと感じたため、ゲーム画面もそれに合わせて奥行き方向のステージに変更しました。
+                            レギュレーション上は2Dゲームに限られており、当時の授業でも3Dゲーム制作はまだ扱われていなかったため、擬似3Dの表現を試みました。
+                        </p>
+                    </div>
+                </div>
+            </li>
         </ul>
     </section>
-
+    <section class="works">
+        <h2>DCCツール プラグイン</h2>
+        <ul>
+            <li>
+                <a id="csv_export"></a>
+                <h3>CSV・FBX出力 Mayaプラグイン<span class="python_tag tag">Maya</span><span class="maya_tag tag">Maya</span></h3>
+                <div class="contents">
+                    <div>
+                        <img src="csvexport1.png" />
+                        <br />
+                        <br />
+                        <img src="csvexport2.png" />
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>開発環境／プラットフォーム</dt>
+                            <dd>Python、VSCode、Maya 2023</dd>
+                            <dt>制作期間</dt>
+                            <dd>2025年10月20日～2025年10月24日（約一週間）</dd>
+                            <dt>ソース／実行ファイル</dt>
+                            <dd><a target="_blank" href="https://github.com/NgaiManChun/MayaCSVExport">https://github.com/NgaiManChun/MayaCSVExport</a></dd>
+                        </dl>
+                        <div>
+                            <h4>🔹 概要</h4>
+                            <p>
+                                Mayaシーンに配置されたリファレンス情報を読み取り、CSV形式で書き出すためのプラグインです。
+                                必要に応じて、同じフォルダへFBXも同時にエクスポートできます。
+                                大量の参照データを扱う場面で、外部ツールとの連携をスムーズにすることを目的に制作しました。
+                            </p>
+                        </div>
+                        <div>
+                            <h4>🔸 こだわり・チャレンジ</h4>
+                            <p>
+                                同じリファレンスを複製しただけのものやインスタンスは、重複出力を避けて効率的にエクスポートできるようにしました。
+                                座標系変換やスケール指定、選択項目だけの書き出し、シーン全体の一括出力など、運用でよく使われるオプションにも対応しています。
+                                また、設定したオプション内容をコンフィグとして保存し、次回以降は同じ条件で素早く出力できる仕組みも整えています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
     <section class="works">
         <h2>短期制作</h2>
         <ul>
+            <li>
+                <a id="landmine"></a>
+                <h3>地雷ゲーム<span class="console_tag tag">C言語</span></h3>
+                <div class="contents short">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/q2VGZxDSw2A?si=sxokrWvG8xVmcBtg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <ul class="alt_images">
+                            <li><img src="landmine_1.png" /></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>開発環境／プラットフォーム</dt>
+                            <dd>Windows（コンソール）、C++、Visual Studio</dd>
+                            <dt>制作期間</dt>
+                            <dd>2023年11月24日～2023年11月26日（3日）</dd>
+                            <dt>ソース／実行ファイル</dt>
+                            <dd><a target="_blank" href="https://github.com/NgaiManChun/Landmine">https://github.com/NgaiManChun/Landmine</a></dd>
+                            <dt>デモ動画</dt>
+                            <dd><a target="_blank" href="https://youtu.be/q2VGZxDSw2A">https://youtu.be/q2VGZxDSw2A</a></dd>
+                        </dl>
+                        <div class="trailer_qr">
+                            <a target="_blank" href="https://youtu.be/q2VGZxDSw2A"><img src="landmine_qr.png" /></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+                            入学2か月目に、C言語の授業の課題「動きのあるコンソールゲーム」として、『マインスイーパ』を模倣して制作しました。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり・チャレンジ</h4>
+                        <p>
+                            空白マスの自動展開を再帰関数で実装。限られたコンソール環境でも遊びやすくするため、現在選択中のマスを色で表示するなど、視認性にも配慮しました。
+                            本物の『マインスイーパ』の代用品を目指して制作していました。
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a id="puzzle_game"></a>
+                <h3>パズルゲーム<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span></h3>
+                <div class="contents short">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/LsuBDuJ15w4?si=wIbdMZ4OfzylJ3Up" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <ul class="alt_images">
+                            <li><img src="puzzle_3.png" /></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>開発環境／プラットフォーム</dt>
+                            <dd>Windows、DirectX、C++、Visual Studio</dd>
+                            <dt>制作期間</dt>
+                            <dd>2024年9月4日～2024年9月13日（9日）</dd>
+                            <dt>ソース／実行ファイル</dt>
+                            <dd><a target="_blank" href="https://github.com/NgaiManChun/PuzzleGame">https://github.com/NgaiManChun/PuzzleGame</a></dd>
+                            <dt>デモ動画</dt>
+                            <dd><a target="_blank" href="https://youtu.be/LsuBDuJ15w4">https://youtu.be/LsuBDuJ15w4</a></dd>
+                        </dl>
+                        <div class="trailer_qr">
+                            <a target="_blank" href="https://youtu.be/LsuBDuJ15w4"><img src="puzzle_qr.png" /></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+                            授業課題として制作した落ち物パズルゲーム。『コラムス』に似せた、色が揃うとブロックが消えるDirectXの2Dゲームです。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり・チャレンジ</h4>
+                        <p>
+                            スコア加算時の演出や背景の変化など、プレイ中の視覚的な気持ちよさを意識して作りました。特に、シーン遷移時には暗転を使わずにフェードイン・フェードアウトを同時に行う処理を実装し、自然な切り替えにこだわっています。
+                        </p>
+                    </div>
+                </div>
+            </li>
             <li>
                 <a id="golf"></a>
                 <h3>ボールをとりもどせ!!<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
@@ -758,85 +886,6 @@
                         <p>
                             <b>技術検証のプロトタイプとしての位置づけ</b><br />
                             『銀河激流ミルキーウェーブ』で本格的に使用した自作フレームワークのプロトタイプにあたる作品であり、「オリジナル3Dアセット変換CLIツール」や「開発と運用の効率化」といった機能をこの時点で試行していました。
-                        </p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a id="puzzle_game"></a>
-                <h3>パズルゲーム<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span></h3>
-                <div class="contents short">
-                    <div>
-                        <iframe src="https://www.youtube.com/embed/LsuBDuJ15w4?si=wIbdMZ4OfzylJ3Up" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <ul class="alt_images">
-                            <li><img src="puzzle_3.png" /></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <dl>
-                            <dt>開発環境／プラットフォーム</dt>
-                            <dd>Windows、DirectX、C++、Visual Studio</dd>
-                            <dt>制作期間</dt>
-                            <dd>2024年9月4日～2024年9月13日（9日）</dd>
-                            <dt>ソース／実行ファイル</dt>
-                            <dd><a target="_blank" href="https://github.com/NgaiManChun/PuzzleGame">https://github.com/NgaiManChun/PuzzleGame</a></dd>
-                            <dt>デモ動画</dt>
-                            <dd><a target="_blank" href="https://youtu.be/LsuBDuJ15w4">https://youtu.be/LsuBDuJ15w4</a></dd>
-                        </dl>
-                        <div class="trailer_qr">
-                            <a target="_blank" href="https://youtu.be/LsuBDuJ15w4"><img src="puzzle_qr.png" /></a>
-                        </div>
-                    </div>
-                    <div>
-                        <h4>🔹 概要</h4>
-                        <p>
-                            授業課題として制作した落ち物パズルゲーム。『コラムス』に似せた、色が揃うとブロックが消えるDirectXの2Dゲームです。
-                        </p>
-                    </div>
-                    <div>
-                        <h4>🔸 こだわり・チャレンジ</h4>
-                        <p>
-                            スコア加算時の演出や背景の変化など、プレイ中の視覚的な気持ちよさを意識して作りました。特に、シーン遷移時には暗転を使わずにフェードイン・フェードアウトを同時に行う処理を実装し、自然な切り替えにこだわっています。
-                        </p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a id="landmine"></a>
-                <h3>地雷ゲーム<span class="console_tag tag">C言語</span></h3>
-                <div class="contents short">
-                    <div>
-                        <iframe src="https://www.youtube.com/embed/q2VGZxDSw2A?si=sxokrWvG8xVmcBtg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <ul class="alt_images">
-                            <li><img src="landmine_1.png" /></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <dl>
-                            <dt>開発環境／プラットフォーム</dt>
-                            <dd>Windows（コンソール）、C++、Visual Studio</dd>
-                            <dt>制作期間</dt>
-                            <dd>2023年11月24日～2023年11月26日（3日）</dd>
-                            <dt>ソース／実行ファイル</dt>
-                            <dd><a target="_blank" href="https://github.com/NgaiManChun/Landmine">https://github.com/NgaiManChun/Landmine</a></dd>
-                            <dt>デモ動画</dt>
-                            <dd><a target="_blank" href="https://youtu.be/q2VGZxDSw2A">https://youtu.be/q2VGZxDSw2A</a></dd>
-                        </dl>
-                        <div class="trailer_qr">
-                            <a target="_blank" href="https://youtu.be/q2VGZxDSw2A"><img src="landmine_qr.png" /></a>
-                        </div>
-                    </div>
-                    <div>
-                        <h4>🔹 概要</h4>
-                        <p>
-                            入学2か月目に、C言語の授業の課題「動きのあるコンソールゲーム」として、『マインスイーパ』を模倣して制作しました。
-                        </p>
-                    </div>
-                    <div>
-                        <h4>🔸 こだわり・チャレンジ</h4>
-                        <p>
-                            空白マスの自動展開を再帰関数で実装。限られたコンソール環境でも遊びやすくするため、現在選択中のマスを色で表示するなど、視認性にも配慮しました。
-                            本物の『マインスイーパ』の代用品を目指して制作していました。
                         </p>
                     </div>
                 </div>
@@ -968,27 +1017,12 @@
                 <h3>くまっちの部屋</h3>
                 <div class="contents">
                     <div>
-                        <img src="kuma.jpg" />
+                        <img src="kuma.png" />
                     </div>
                     <div>
                         <img src="kuma2.jpg" />
                     </div>
                     Maya＋Arnoldレンダリング、制作時間：約3日<br />
-                    学校課題として学習目的で制作。既存IPキャラは学内提出のみを想定<br />
-                </div>
-            </li>
-            <li>
-                <a id="treasure_box"></a>
-                <h3>宝箱と王子</h3>
-                <div class="contents">
-                    <div>
-                        <img src="ouji.jpg" />
-                    </div>
-                    <div>
-                        <img src="ouji2.jpg" />
-                    </div>
-                    Maya＋Arnoldレンダリング、制作時間：約3日<br />
-                    学校課題として学習目的で制作。既存IPキャラは学内提出のみを想定<br />
                 </div>
             </li>
 
