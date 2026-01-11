@@ -1,0 +1,520 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>魏文俊のポートフォリオ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: #3c3c3c;
+            font-family: "Noto Sans JP", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            -webkit-print-color-adjust: exact;
+        }
+
+            body > section {
+                margin: 20px;
+            }
+
+        h1 {
+            background-image: linear-gradient(135deg, #ABDCFF 10%, #ffffff 100%);
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            text-decoration: underline;
+            text-decoration-thickness: 0.3em;
+            text-decoration-color: rgba(255, 228, 0, 0.4);
+        }
+
+        a {
+            color: inherit;
+        }
+
+            a[href^="http"]::after {
+                content: "\f08e";
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                display: inline-block;
+                padding-left: 5px;
+            }
+
+            a:hover {
+                color: #b5ae73;
+            }
+
+        img {
+            vertical-align: bottom;
+            max-width: 100%;
+            box-shadow: rgb(0 0 0 / 54%) 0 0 6px 2px;
+        }
+
+        section#profile {
+            max-width: 720px;
+        }
+
+        section#index > ul > li {
+            padding-bottom: 20px;
+        }
+
+        .works > ul {
+            list-style: none;
+            padding: 0;
+            --col-width: 560px;
+            --gap: 20px;
+            --cols: 2;
+        }
+
+            .works > ul > li {
+                padding-bottom: 40px;
+                page-break-after: always;
+            }
+
+            .works > ul .contents {
+                display: flex;
+                flex-wrap: wrap;
+                gap: var(--gap);
+                max-width: calc(var(--col-width) * var(--cols) + var(--gap) * (var(--cols) - 1));
+            }
+
+                .works > ul .contents::after {
+                    content: "◆　◆　◆　◆　◆　◆";
+                    display: block;
+                    text-align: center;
+                    margin-top: 40px;
+                    width: 100%;
+                }
+
+                .works > ul .contents > * {
+                    width: var(--col-width);
+                    position: relative;
+                }
+
+                .works > ul .contents > :nth-child(1) > iframe {
+                    aspect-ratio: 560 / 315;
+                    width: 100%;
+                }
+
+        .alt_images {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: none;
+            gap: 10px;
+        }
+
+        .works > ul .contents > :nth-child(2) > dl {
+            width: 100%;
+            border-style: dashed;
+            border-radius: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+            background-color: #ebf6ff;
+        }
+
+        .works > ul .contents dl > dt {
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        .works > ul .contents dl > dd {
+            margin: 0;
+            padding: 5px 20px;
+        }
+
+            .works > ul .contents dl > dd a {
+                display: inline-block;
+                max-width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+        .works {
+            border-top: solid 2px;
+            padding-top: 10px;
+            page-break-before: always;
+        }
+
+        .team_job + h3::after, #index a.team_job::after {
+            content: "チーム制作";
+            font-size: 0.5em;
+            font-style: italic;
+            color: gray;
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .directx_tag {
+            background-color: #107c0f;
+            color: #fff;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.5em;
+            font-weight: 400;
+            padding: 0 5px;
+            border-radius: 5px;
+            margin-left: 5px;
+            user-select: none;
+        }
+
+        .openGL_tag {
+            background-color: #e9091a;
+            color: #fff;
+        }
+
+        .unity_tag {
+            background-color: #7272a6;
+            color: #fff;
+        }
+
+        .console_tag {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .cpp_tag {
+            background-color: #0037be;
+            color: #fff;
+        }
+
+        .cShape_tag {
+            background-color: #bff547;
+            color: #000;
+        }
+
+        .maya_tag {
+            background-color: #32a5c7;
+            color: #fff;
+        }
+
+        .python_tag {
+            color: #013b5e;
+            background-color: #ffd966;
+        }
+
+        #qrcode_container {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+
+        #qrcode {
+            width: 200px;
+        }
+
+        .trailer_qr {
+            width: 120px;
+            right: 3px;
+            top: 3px;
+            position: absolute;
+            display: none;
+        }
+
+            .trailer_qr::after {
+                content: "↑動画";
+            }
+
+            .trailer_qr a[href^="http"]::after {
+                content: none;
+            }
+
+        .print_page_break {
+            display: none;
+        }
+
+        @media only screen and (max-width: 1190px) {
+            .works > ul .contents > * {
+                width: 100%;
+            }
+
+            #qrcode_container {
+                display: none;
+            }
+        }
+
+        @media only print {
+            h2 {
+                margin: 0;
+            }
+
+            .works {
+                border-top: none;
+                padding-top: 0;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+                .works > ul .contents > :nth-child(1) > iframe {
+                    display: none;
+                }
+
+            .alt_images {
+                display: grid;
+            }
+
+            .works > ul .contents > * {
+                width: 100%;
+            }
+
+            .trailer_qr {
+                display: block;
+            }
+
+            #qrcode_container {
+                display: none;
+            }
+
+            .print_page_break {
+                display: inline-block;
+                page-break-after: always;
+            }
+
+            .works > ul .contents.short {
+                --gap: 10px;
+            }
+
+            .works > ul > li {
+                padding-bottom: 0;
+            }
+
+            .works > ul .contents.short dt {
+                padding: 0 5px;
+            }
+
+            .works > ul .contents.short dd {
+                padding: 0 20px;
+            }
+
+            .works > ul .contents.short h4 {
+                margin: 0;
+            }
+
+            .works > ul .contents.short p {
+                margin: 10px 0;
+            }
+
+            .works > ul .contents.short::after {
+                margin-top: 0;
+            }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/279d58192c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="works">
+        <ul>
+            <li>
+                <a id="milky_wave" class="team_job"></a>
+                <h3>銀河激流ミルキーウェーブ<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
+                <div class="contents">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/_FClnpZHCsM?si=POHh9M-5hxZez4Am" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <ul class="alt_images">
+                            <li style="grid-column: 1 / span 3;"><img src="milkywave_1.png" /></li>
+                            <li><img src="milkywave_2.png" /></li>
+                            <li><img src="milkywave_3.png" /></li>
+                            <li><img src="milkywave_4.png" /></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>開発環境／プラットフォーム</dt>
+                            <dd>Windows、DirectX、C++、Visual Studio、Maya、Clip Studio</dd>
+                            <dt>制作期間</dt>
+                            <dd>2024年11月1日～2025年2月28日（約4カ月）</dd>
+                            <dt>チーム構成</dt>
+                            <dd>プランナー3名、プログラマ7名、デザイナー3名</dd>
+                            <dt>担当</dt>
+                            <dd>プログラマ統括、フレームワーク、メインゲームロジック、アセット制作、各種演出</dd>
+                            <dt>ソース／実行ファイル</dt>
+                            <dd><a target="_blank" href="https://github.com/NgaiManChun/MilkyWave">https://github.com/NgaiManChun/MilkyWave</a></dd>
+                            <dt>デモ動画</dt>
+                            <dd><a target="_blank" href="https://youtu.be/_FClnpZHCsM">https://youtu.be/_FClnpZHCsM</a></dd>
+                        </dl>
+                        <div class="trailer_qr">
+                            <a target="_blank" href="https://youtu.be/_FClnpZHCsM"><img src="milkywave_qr.png" /></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+                            『銀河激流ミルキーウェーブ』は、「天の川の川下り」というコンセプトから生まれたタイムアタックレースゲームです。
+                            プレイヤーはねじれた宇宙コースを滑走しながら、アイテムを集めてゲージをチャージし、ブースターで一気に加速する爽快なゲーム体験が特徴です。
+                            波打つコースに船が傾く挙動や浮き沈みの表現など、物理的なリアリティにもこだわりました。
+                        </p>
+                        <p>
+                            以下、チーム内の説明用資料
+                        </p>
+                        <p>
+                            プランナー向けのコースの仕組みと作り方の説明：<br />
+                            <a target="_blank" href="https://docs.google.com/presentation/d/1FDspmDovDWTyDWHrZSDHzWWC2dq8yXcM3by3zSOZSyE/edit?usp=sharing">Google Driveスライド</a>
+                        </p>
+                        <p>
+                            アセット変換ツールReadme：<br />
+                            <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/MGFBX_readme.txt">GitHub</a>
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり・チャレンジ</h4>
+                        <p>
+                            <b>波打つコースと船の浮き沈み</b><br />
+                            コースに沿って重力の導線を設定し、位置によって重力方向が変化。
+                            さらにコースの当たり判定をエリア分けし、表面法線を使って船を細かく傾けながら波の頂点で飛ばし、再び重力と水の浮力でバウンドさせることで、船の自然な浮き沈みを演出しています。
+                        </p>
+                        <p>
+                            <b>使いやすさを重視したフレームワーク設計</b><br />
+                            本作は、これまで複数のプロトタイプで培ってきた自作フレームワークを3Dゲーム向けに拡張し、チームにも提供した作品です。使いやすさを重視し、デモシーンやサンプルの用意、チーム内での説明会も実施しました。
+                        </p>
+                        <p>
+                            <b>オリジナル3Dアセット変換CLIツール</b><br />
+                            FBXファイルから、モデル・アニメーション・インスタンス座標の3種データに変換するツールを開発。シンプルで再利用性の高いデータ構造とすることで、メモリ使用量を抑えながら高速な読み込みを試みました。
+                        </p>
+                        <p>
+                            <b>開発と運用の効率化</b><br />
+                            上記の専用ツールを用いてワークフローを構築しました。デザイナーとプランナーは慣れ親しんだMaya上でモデルとコースを設計し、ツールでモデルデータ・コリジョン設定・インスタンスの配置情報などのゲームデータに変換しています。
+                            加えて、各種パラメータはCSVで管理しており、非エンジニアでも柔軟な調整が可能にしています。
+                        </p>
+                        <p>
+                            <b>ボーンアニメーションの実装</b><br />
+                            キャラクターに3Dボーンアニメーションを導入し、滑らかで自然な動きを実現。
+                        </p>
+                        <p>
+                            <b>スムーズなコースプレビュー</b><br />
+                            マルチスレッド処理を用いて、ステージ選択中のコースプレビューを非同期で読み込み。テンポを損なわないユーザー体験を提供しています。
+                        </p>
+                        <p>
+                            <b>各種演出の実装</b><br />
+                            タイトル画面でのキャラクターの目パチや、流れ星を使ったシーン遷移、船の翼が水面に触れたときの星型の水しぶき、
+                            加速時のブラー効果、アイテム取得演出の3D→2Dの連動、隕石衝突時の速度と角度に応じて飛ばし具合の変化、加速時のキャラの叫びカットインなど、細部にわたってゲーム体験を盛り上げる演出を多数実装しました。
+                        </p>
+                        <p>
+                            <b>コントローラーの切替えとジャイロ操作対応</b><br />
+                            本作はキーボードのほか、XInput対応のコントローラーとDualSenseコントローラーに対応しており、プレイ中でも自由に切り替え可能。
+                            画面上の操作ガイドも使用中のデバイスに応じて動的に変化します。
+                            さらに、DualSenseコントローラーではHIDレポートに解析によるジャイロ操作の対応を実装しています。
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a id="karadaful"></a>
+                <h3>カラダ振る～お前もギタリストにしてやろうか～<span class="console_tag tag">C言語</span></h3>
+                <div class="contents">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/VMUpB2KFo5g?si=QHxT-Q5YIiUEbJfn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <ul class="alt_images">
+                            <li style="grid-column: 1 / span 3;"><img src="karada_1.png" /></li>
+                            <li><img src="karada_2.png" /></li>
+                            <li><img src="karada_3.png" /></li>
+                            <li><img src="karada_4.png" /></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>開発環境／プラットフォーム</dt>
+                            <dd>Windows（コンソール）、C、Visual Studio</dd>
+                            <dt>制作期間</dt>
+                            <dd>2024年1月15日～2024年1月31日（約3週間）</dd>
+                            <dt>受賞</dt>
+                            <dd>ＨＡＬ　ＥＶＥＮＴ　ＷＥＥＫ　銀賞（校内コンテスト）</dd>
+                            <dt>ソース／実行ファイル</dt>
+                            <dd>
+                                <a target="_blank" href="https://github.com/NgaiManChun/Karadaful">https://github.com/NgaiManChun/Karadaful</a>
+                                <br />
+                                ※音源ファイルはミュート処理済みです。
+                            </dd>
+                            <dt>デモ動画</dt>
+                            <dd><a target="_blank" href="https://youtu.be/VMUpB2KFo5g">https://youtu.be/VMUpB2KFo5g</a></dd>
+                        </dl>
+                        <div class="trailer_qr">
+                            <a target="_blank" href="https://youtu.be/VMUpB2KFo5g"><img src="karada_qr.png" /></a>
+                        </div>
+                    </div>
+                    <span class="print_page_break"></span>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+                            キーボードをギターに見立てて遊ぶ、リズムアクションゲームです。F1～F6キーを押さえながら、タイミングよくEnterキーでピッキングすることでノーツを消していきます。タイミングに応じてスコアが加算され、さらに「サスティン」や「ハンマリング・プリング」など、実際のギター奏法も再現したシステムが特徴です。
+                            「カラフル」というテーマのもと、ビジュアルや演出、そしてギターを鳴らし「カラダ振る」という解釈で展開しました。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり・チャレンジ</h4>
+                        <p>
+                            <b>実在の奏法を再現した入力システム</b><br />
+                            ギターのピッキング、ハンマリング、プリングを模したキー入力を導入。音楽ゲームとしての独自性と操作の面白さを図りました。
+                        </p>
+                        <p>
+                            <b>本物のギター譜面を参考に譜面を設計</b><br />
+                            実際の演奏に近い感覚を意識して譜面を作成。ミュージック学科の先輩にプレイさせたら、いきなり私よりも高得点という実績もありました。なお、譜面データは外部のCSVファイルに格納しています。
+                        </p>
+                        <p>
+                            <b>BMPファイルからの色情報読み込みによるカラフルな演出</b><br />
+                            画面上のドット絵風演出は、画像データから色情報を読み取って文字の背景色に反映しています。アルファ合成を意識したエフェクトも実装しています。
+                        </p>
+                        <p>
+                            <b>ちらつきを抑えるバッファ描画処理</b><br />
+                            全画面分の文字情報を事前にバッファで構築し、一括描画することで、コンソール環境でもスムーズな画面更新を実現しています。
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="works">
+        <ul>
+            <li>
+                <a id="csv_export"></a>
+                <h3>CSV・FBX出力 Mayaプラグイン<span class="python_tag tag">Python</span><span class="maya_tag tag">Maya</span></h3>
+                <div class="contents">
+                    <div>
+                        <img src="csvexport1.png" />
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>開発環境／プラットフォーム</dt>
+                            <dd>Python、VSCode、Maya 2023</dd>
+                            <dt>制作期間</dt>
+                            <dd>2025年10月20日～2025年10月24日（約一週間）</dd>
+                            <dt>ソース／実行ファイル</dt>
+                            <dd><a target="_blank" href="https://github.com/NgaiManChun/MayaCSVExport">https://github.com/NgaiManChun/MayaCSVExport</a></dd>
+                        </dl>
+                        <div>
+                            <h4>🔹 概要</h4>
+                            <p>
+                                Mayaシーンに配置されたリファレンス情報を読み取り、CSV形式で書き出すためのプラグインです。
+                                必要に応じて、同じフォルダへFBXも同時にエクスポートできます。
+                                大量の参照データを扱う場面で、外部ツールとの連携をスムーズにすることを目的に制作しました。
+                            </p>
+                        </div>
+                        <div>
+                            <h4>🔸 こだわり・チャレンジ</h4>
+                            <p>
+                                同じリファレンスを複製しただけのものやインスタンスは、重複出力を避けて効率的にエクスポートできるようにしました。
+                                座標系変換やスケール指定、選択項目だけの書き出し、シーン全体の一括出力など、運用でよく使われるオプションにも対応しています。
+                                また、設定したオプション内容をコンフィグとして保存し、次回以降は同じ条件で素早く出力できる仕組みも整えています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>
