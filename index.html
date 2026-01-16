@@ -9,9 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 
-    <link type="text/css" rel="stylesheet" href="css/lightgallery.css" />
-    <link type="text/css" rel="stylesheet" href="css/lightgallery-bundle.css" />
-
 
     <style>
         html {
@@ -121,6 +118,10 @@
             gap: 10px;
         }
 
+        .alt_images.gallery {
+            display: flex;
+        }
+
         .works > ul .contents > :nth-child(2) > dl {
             width: 100%;
             border-style: dashed;
@@ -140,13 +141,13 @@
             padding: 5px 20px;
         }
 
-            .works > ul .contents dl > dd a {
-                display: inline-block;
-                max-width: 100%;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
+        .works > ul .contents dl > dd a {
+            display: inline-block;
+            max-width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
         .works {
             border-top: solid 2px;
@@ -231,13 +232,13 @@
             display: none;
         }
 
-            .trailer_qr::after {
-                content: "↑動画";
-            }
+        .trailer_qr::after {
+            content: "↑動画";
+        }
 
-            .trailer_qr a[href^="http"]::after {
-                content: none;
-            }
+        .trailer_qr a[href^="http"]::after {
+            content: none;
+        }
 
         .print_page_break {
             display: none;
@@ -319,15 +320,17 @@
             }
         }
     </style>
+
+
+    <link rel="stylesheet" href="photoswipe.css">
+    <script src="photoswipe.umd.min.js"></script>
+    <script src="photoswipe-lightbox.umd.min.js"></script>
+
     <script src="https://kit.fontawesome.com/279d58192c.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <script src="js/lightgallery.min.js"></script>
 
-    <!-- lightgallery plugins -->
-    <script src="js/plugins/lg-thumbnail.umd.js"></script>
-    <script src="js/plugins/lg-zoom.umd.js"></script>
 
 
     <h1>魏文俊のポートフォリオ</h1>
@@ -448,11 +451,27 @@
                 <div class="contents">
                     <div>
                         <iframe src="https://www.youtube.com/embed/_FClnpZHCsM?si=POHh9M-5hxZez4Am" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <ul class="alt_images">
-                            <li style="grid-column: 1 / span 3;"><img src="milkywave_1.png" /></li>
-                            <li><img src="milkywave_2.png" /></li>
-                            <li><img src="milkywave_3.png" /></li>
-                            <li><img src="milkywave_4.png" /></li>
+                        <ul class="alt_images gallery">
+                            <li style="grid-column: 1 / span 3;">
+                                <a href="milkywave_1.png" data-pswp-width="1920" data-pswp-height="1020">
+                                    <img src="milkywave_1.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="milkywave_2.png" data-pswp-width="1920" data-pswp-height="1020">
+                                    <img src="milkywave_2.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="milkywave_3.png" data-pswp-width="1920" data-pswp-height="1020">
+                                    <img src="milkywave_3.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="milkywave_4.png" data-pswp-width="1920" data-pswp-height="1020">
+                                    <img src="milkywave_4.png" />
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div>
@@ -545,11 +564,27 @@
                 <div class="contents">
                     <div>
                         <iframe src="https://www.youtube.com/embed/VMUpB2KFo5g?si=QHxT-Q5YIiUEbJfn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <ul class="alt_images">
-                            <li style="grid-column: 1 / span 3;"><img src="karada_1.png" /></li>
-                            <li><img src="karada_2.png" /></li>
-                            <li><img src="karada_3.png" /></li>
-                            <li><img src="karada_4.png" /></li>
+                        <ul class="alt_images gallery">
+                            <li style="grid-column: 1 / span 3;">
+                                <a href="karada_1.png" data-pswp-width="1920" data-pswp-height="1020">
+                                    <img src="karada_1.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="karada_2.png" data-pswp-width="1920" data-pswp-height="1020">
+                                    <img src="karada_2.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="karada_3.png" data-pswp-width="1920" data-pswp-height="1020">
+                                    <img src="karada_3.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="karada_4.png" data-pswp-width="1920" data-pswp-height="1020">
+                                    <img src="karada_4.png" />
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div>
@@ -610,11 +645,27 @@
                 <div class="contents">
                     <div>
                         <iframe src="https://www.youtube.com/embed/kQ2IMom_x7c?si=kJaerLnJWK71hzOh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <ul class="alt_images">
-                            <li style="grid-column: 1 / span 3;"><img src="satellite_1.png" /></li>
-                            <li><img src="satellite_2.png" /></li>
-                            <li><img src="satellite_3.png" /></li>
-                            <li><img src="satellite_4.png" /></li>
+                        <ul class="alt_images gallery">
+                            <li style="grid-column: 1 / span 3;">
+                                <a href="satellite_1.png" data-pswp-width="1920" data-pswp-height="1080">
+                                    <img src="satellite_1.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="satellite_2.png" data-pswp-width="1920" data-pswp-height="1080">
+                                    <img src="satellite_2.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="satellite_3.png" data-pswp-width="1920" data-pswp-height="1080">
+                                    <img src="satellite_3.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="satellite_4.png" data-pswp-width="1920" data-pswp-height="1080">
+                                    <img src="satellite_4.png" />
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div>
@@ -666,11 +717,27 @@
                 <div class="contents">
                     <div>
                         <iframe src="https://www.youtube.com/embed/usSkmJEs9w4?si=AuyrTFCHsZdmcop3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <ul class="alt_images">
-                            <li style="grid-column: 1 / span 3;"><img src="finger_1.png" /></li>
-                            <li><img src="finger_2.png" /></li>
-                            <li><img src="finger_3.png" /></li>
-                            <li><img src="finger_4.png" /></li>
+                        <ul class="alt_images gallery">
+                            <li style="grid-column: 1 / span 3;">
+                                <a href="finger_1.png" data-pswp-width="1920" data-pswp-height="1080">
+                                    <img src="finger_1.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="finger_2.png" data-pswp-width="1920" data-pswp-height="1080">
+                                    <img src="finger_2.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="finger_3.png" data-pswp-width="1920" data-pswp-height="1080">
+                                    <img src="finger_3.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="finger_4.png" data-pswp-width="1920" data-pswp-height="1080">
+                                    <img src="finger_4.png" />
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div>
@@ -1051,22 +1118,14 @@
 
     </section>
 
-    <div id="lightgallery">
-        <a href="milkywave_1.png" data-lg-size="1600-2400">
-            <img alt="img1" src="milkywave_1.png" />
-        </a>
-        <a href="milkywave_2.png" data-lg-size="1024-800">
-            <img alt="img2" src="milkywave_2.png" />
-        </a>
-    </div>
-
     <script type="text/javascript">
-        lightGallery(document.getElementById('lightgallery'), {
-            plugins: [lgZoom, lgThumbnail],
-            licenseKey: 'your_license_key',
-            speed: 500,
-            // ... other settings
+        var lightbox = new PhotoSwipeLightbox({
+            gallery: '.gallery',
+            children: 'a',
+            // dynamic import is not supported in UMD version
+            pswpModule: PhotoSwipe
         });
+        lightbox.init();
     </script>
 
 </body>
