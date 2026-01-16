@@ -8,6 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="css/lightgallery.css" />
+    <link type="text/css" rel="stylesheet" href="css/lightgallery-bundle.css" />
+
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -23,9 +28,9 @@
             -webkit-print-color-adjust: exact;
         }
 
-        body > section {
-            margin: 20px;
-        }
+            body > section {
+                margin: 20px;
+            }
 
         h1 {
             background-image: linear-gradient(135deg, #ABDCFF 10%, #ffffff 100%);
@@ -44,17 +49,17 @@
             color: inherit;
         }
 
-        a[href^="http"]::after {
-            content: "\f08e";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            display: inline-block;
-            padding-left: 5px;
-        }
+            a[href^="http"]::after {
+                content: "\f08e";
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                display: inline-block;
+                padding-left: 5px;
+            }
 
-        a:hover {
-            color: #b5ae73;
-        }
+            a:hover {
+                color: #b5ae73;
+            }
 
         img {
             vertical-align: bottom;
@@ -78,35 +83,35 @@
             --cols: 2;
         }
 
-        .works > ul > li {
-            padding-bottom: 40px;
-            page-break-after: always;
-        }
+            .works > ul > li {
+                padding-bottom: 40px;
+                page-break-after: always;
+            }
 
-        .works > ul .contents {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--gap);
-            max-width: calc(var(--col-width) * var(--cols) + var(--gap) * (var(--cols) - 1));
-        }
+            .works > ul .contents {
+                display: flex;
+                flex-wrap: wrap;
+                gap: var(--gap);
+                max-width: calc(var(--col-width) * var(--cols) + var(--gap) * (var(--cols) - 1));
+            }
 
-        .works > ul .contents::after {
-            content: "◆　◆　◆　◆　◆　◆";
-            display: block;
-            text-align: center;
-            margin-top: 40px;
-            width: 100%;
-        }
+                .works > ul .contents::after {
+                    content: "◆　◆　◆　◆　◆　◆";
+                    display: block;
+                    text-align: center;
+                    margin-top: 40px;
+                    width: 100%;
+                }
 
-        .works > ul .contents > * {
-            width: var(--col-width);
-            position: relative;
-        }
+                .works > ul .contents > * {
+                    width: var(--col-width);
+                    position: relative;
+                }
 
-        .works > ul .contents > :nth-child(1) > iframe {
-            aspect-ratio: 560 / 315;
-            width: 100%;
-        }
+                .works > ul .contents > :nth-child(1) > iframe {
+                    aspect-ratio: 560 / 315;
+                    width: 100%;
+                }
 
         .alt_images {
             list-style: none;
@@ -135,13 +140,13 @@
             padding: 5px 20px;
         }
 
-        .works > ul .contents dl > dd a {
-            display: inline-block;
-            max-width: 100%;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+            .works > ul .contents dl > dd a {
+                display: inline-block;
+                max-width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
 
         .works {
             border-top: solid 2px;
@@ -202,6 +207,7 @@
             background-color: #32a5c7;
             color: #fff;
         }
+
         .python_tag {
             color: #013b5e;
             background-color: #ffd966;
@@ -212,6 +218,7 @@
             right: 0;
             bottom: 0;
         }
+
         #qrcode {
             width: 200px;
         }
@@ -224,13 +231,13 @@
             display: none;
         }
 
-        .trailer_qr::after {
-            content: "↑動画";
-        }
+            .trailer_qr::after {
+                content: "↑動画";
+            }
 
-        .trailer_qr a[href^="http"]::after {
-            content: none;
-        }
+            .trailer_qr a[href^="http"]::after {
+                content: none;
+            }
 
         .print_page_break {
             display: none;
@@ -240,7 +247,8 @@
             .works > ul .contents > * {
                 width: 100%;
             }
-            #qrcode_container{
+
+            #qrcode_container {
                 display: none;
             }
         }
@@ -257,9 +265,9 @@
                 margin-bottom: 0;
             }
 
-            .works > ul .contents > :nth-child(1) > iframe {
-                display: none;
-            }
+                .works > ul .contents > :nth-child(1) > iframe {
+                    display: none;
+                }
 
             .alt_images {
                 display: grid;
@@ -310,11 +318,18 @@
                 margin-top: 0;
             }
         }
-
     </style>
     <script src="https://kit.fontawesome.com/279d58192c.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <script src="js/lightgallery.min.js"></script>
+
+    <!-- lightgallery plugins -->
+    <script src="js/plugins/lg-thumbnail.umd.js"></script>
+    <script src="js/plugins/lg-zoom.umd.js"></script>
+
+
     <h1>魏文俊のポートフォリオ</h1>
     <div id="qrcode_container">
         <img id="qrcode" src="qrcode_ngaimanchun.github.io.png" />
@@ -1035,5 +1050,24 @@
 
 
     </section>
+
+    <div id="lightgallery">
+        <a href="milkywave_1.png" data-lg-size="1600-2400">
+            <img alt="img1" src="milkywave_1.png" />
+        </a>
+        <a href="milkywave_2.png" data-lg-size="1024-800">
+            <img alt="img2" src="milkywave_2.png" />
+        </a>
+    </div>
+
+    <script type="text/javascript">
+        lightGallery(document.getElementById('lightgallery'), {
+            plugins: [lgZoom, lgThumbnail],
+            licenseKey: 'your_license_key',
+            speed: 500,
+            // ... other settings
+        });
+    </script>
+
 </body>
 </html>
