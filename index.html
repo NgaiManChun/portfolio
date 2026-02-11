@@ -254,6 +254,7 @@
         .python_tag {
             color: #013b5e;
             background-color: #ffd966;
+            z-index: 2;
         }
 
         #qrcode_container {
@@ -597,6 +598,94 @@
     <section class="works">
         <h2>主要作品</h2>
         <ul>
+            <li>
+                <a id="mg2" pop-logo=".pop_logo_mg2"></a>
+                <img class="pop_logo pop_logo_mg2" src="milkywave_logo.png" />
+                <h3>MG2（開発中）<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span></h3>
+                <div class="contents">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/5FTcXXSfiC4?si=AtzRl-olyMIdfJcU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <ul class="alt_images gallery">
+                            <li style="grid-column: 1 / span 3;">
+                                <a href="mg2_1.png" data-pswp-width="1600" data-pswp-height="900">
+                                    <img src="mg2_1.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mg2_2.png" data-pswp-width="1600" data-pswp-height="900">
+                                    <img src="mg2_2.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mg2_3.png" data-pswp-width="1600" data-pswp-height="900">
+                                    <img src="mg2_3.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mg2_4.png" data-pswp-width="1600" data-pswp-height="900">
+                                    <img src="mg2_4.png" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>開発環境／プラットフォーム</dt>
+                            <dd>Windows、DirectX、C++、Visual Studio</dd>
+                            <dt>制作期間</dt>
+                            <dd>2025年12月1日～開発中</dd>
+                            <dt>ソース／実行ファイル／ライセンス情報</dt>
+                            <dd><a target="_blank" href="https://github.com/NgaiManChun/MG2">https://github.com/NgaiManChun/MG2</a></dd>
+                            <dt>デモ動画</dt>
+                            <dd><a target="_blank" href="https://youtu.be/5FTcXXSfiC4">https://youtu.be/5FTcXXSfiC4</a></dd>
+                        </dl>
+                        <div class="trailer_qr">
+                            <a target="_blank" href="https://youtu.be/5FTcXXSfiC4"><img src="mg2_qr.png" /></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+                            【1000体以上のスキニングキャラクターが個別行動！？】本作品は、大量のキャラクターを同時に扱うことを目的として制作しているゲームフレームワークです。
+                            データ指向設計やプール型メモリ管理、GPUメッシュアニメーション、GPUカリングなどを用い、パフォーマンス向上を重視した作品になってます。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり・チャレンジ</h4>
+                        <p>
+                            <b>データ指向設計</b><br />
+                            コンポーネント型単位で更新処理をまとめ、オーバーヘッドの削減とキャッシュ効率を意識した設計を採用しています。
+                        </p>
+                        <p>
+                            <b>GPUを活用した描画最適化</b><br />
+                            GPUメッシュアニメーションやIndirectDraw、インスタンシングなど、並列処理を積極的に活用することで描画コストを抑えています。
+                            また、GPUカリング、LOD、デファードレンダリングを組み合わせ、大量描画時の処理負荷を軽減しています。
+                        </p>
+                        <p>
+                            <b>GPUデータ転送最適化</b><br />
+                            描画に必要なデータを一箇所に集約し、キー（ハンドル）を通じて参照する構成としています。
+                            これにより、データ本体を一括でGPUへ転送でき、転送回数の削減を実現しています。
+                        </p>
+                        <p>
+                            <b>データの前処理</b><br />
+                            モデルやアニメーションデータは、実行時の読み込み処理や変換コストをを抑えるため、独自フォーマットへ事前変換しています。
+                        </p>
+                        <p>
+                            <b>データの前処理</b><br />
+                            当たり判定はGameObjectに付与するコンポーネントとして実装しており、Transform情報に基づいて形状が決定されます。
+                            これにより、スケールや回転の変更がそのまま当たり判定へ反映されます。
+                        </p>
+                        <p>
+                            <b>シャドーマップ</b><br />
+                            カリングやLODを活用し、必要な範囲に限定することで、動的オブジェクトに対応しつつ、パフォーマンスとのバランスを意識しています。
+                        </p>
+                        <p>
+                            <b>アタッチメント</b><br />
+                            ボーンアニメーションに加え、武器や装備などのアタッチメントを再現しています。
+                        </p>
+                    </div>
+                </div>
+            </li>
             <li>
                 <a id="milky_wave" class="team_job" pop-logo=".pop_logo_milkywave"></a>
                 <img class="pop_logo pop_logo_milkywave" src="milkywave_logo.png" />
