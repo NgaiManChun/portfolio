@@ -822,7 +822,7 @@
                                 3D空間上で取得したアイテムが2Dゲージへ吸収される演出を実装。<br />
                                 <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/player.cpp">source/player.cpp(line 94-105, line 321-341)</a>
                             </p>
-                            
+
                         </div>
                         <p>
                             <img src="milkywave_result.gif" class="float_right" style="width: 200px;">
@@ -832,24 +832,29 @@
                             プレイ前後も含めた体験設計を意識しました。<br />
                             <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/resultScene.cpp">source/resultScene.cpp</a>
                         </p>
-                        <p>
-                            <b>加速時の視覚効果</b><br />
-                            カメラを引きつつ多重レンダリングによるブラーを付加。
-                            視覚的変化でスピード感を伝えています。
-                        </p>
-                        <p>
-                            <b>細部のリアクション設計</b><br />
-                            隕石衝突時の速度・角度に応じた吹き飛び挙動
-                            水面接触時の星型エフェクト
-                            加速時のキャラカットイン
-                        </p>
+                        <div class="float_area">
+                            <p>
+                                <img src="milkywave_boost.gif" class="float_left" style="width: 200px;">
+                                <b>加速時の視覚効果</b><br />
+                                カメラを引きつつ多重レンダリングによるブラーを付加。
+                                視覚的変化でスピード感を伝えています。<br />
+                                <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/mainGameScene.cpp">source/mainGameScene.cpp(line 841-879)</a>
+                            </p>
+                            <p>
+                                <b>細部のリアクション設計</b><br />
+                                隕石衝突時の速度・角度に応じた吹き飛び挙動
+                                水面接触時の星型エフェクト
+                                加速時のキャラカットイン
+                            </p>
+                        </div>
                     </div>
                     <div>
                         <h4>🔸 技術的工夫</h4>
                         <p>
                             <b>3D向けに拡張した自作フレームワーク</b><br />
                             これまでのプロトタイプ開発で構築した自作フレームワークを3Dゲーム向けに再設計。
-                            描画・入力・リソース管理を整理し、デモシーンやサンプルを用意することでチーム全体で利用可能な基盤として提供しました。
+                            描画・入力・リソース管理を整理し、デモシーンやサンプルを用意することでチーム全体で利用可能な基盤として提供しました。<br />
+                            <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/tree/main/source/hew_year2_base">source/hew_year2_base</a>
                         </p>
                         <p>
                             <b>ゲームデータ前処理CLIツール</b><br />
