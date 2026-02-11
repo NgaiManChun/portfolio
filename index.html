@@ -65,24 +65,17 @@
             box-shadow: rgb(0 0 0 / 54%) 0 0 6px 2px;
         }
 
-        #index_background {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            box-sizing: border-box;
-            pointer-events: none;
-        }
-
         #profile_img {
-            position: absolute;
-            top: 20px;
-            width: 500px;
+            float: right;
+            width: 560px;
+            margin-left: 20px;
             z-index: -1;
             filter: opacity(0) blur(8px) contrast(1);
             left: min(600px, calc(100% - 540px));
             transition-duration: 1000ms;
             transition-delay: 500ms;
             transition-timing-function: ease-out;
+            transition-property: filter, transform;
             transform: translateY(100px);
         }
 
@@ -92,15 +85,17 @@
             }
 
         section#profile {
-            max-width: 720px;
+            max-width: 1140px;
             background-color: #ffffffe3;
         }
 
+            section#profile > p {
+                max-width: 500px;
+            }
+
         section#index > ul {
-            display: inline-block;
             padding-right: 20px;
             margin: 0;
-            background: #ffffff8c;
         }
 
         section#index > ul > li {
@@ -280,6 +275,7 @@
             position: fixed;
             right: 0;
             bottom: 0;
+            z-index: 1;
         }
 
         #qrcode {
@@ -384,8 +380,9 @@
         }
 
         @media only screen and (max-width: 820px) {
-            #index_background {
-                position: relative;
+            #profile_img {
+                float: none;
+                margin: 0;
             }
         }
 
@@ -507,24 +504,43 @@
         <img id="qrcode" src="qrcode_ngaimanchun.github.io.png" />
     </div>
     <section id="profile">
+        <img id="profile_img" src="S__11755571.jpg">
         <h2>プロフィール</h2>
-        氏名：魏 文俊（ガイ マンチュン）<br />
-        使用言語：C、C++、C#、Python、PHP、SQL、HTML、JavaScript、CSS、Objective-C<br />
-        使用ツール：Visual Studio、Maya、Unity 6、Unreal Engine 5、Xcode<br />
-        香港出身。現在は HAL東京に在学しています。<br />
-        <!--<p>
-            香港出身で、現在は HAL東京ゲーム4年制学科ゲーム制作コースに在学しています。<br />
-            以前はWeb系のフルスタックエンジニアとして、設計から実装、外注との連携まで幅広く担当していました。
-            開発では、特に仕組みや基盤を整える工程にやりがいを感じます。<br />
-            幼少期から日本のゲームに親しみ、初期の記憶は『ストリートファイターII' TURBO』や『ドラゴンボールZ 超武闘伝2』などです。<br />
-            もっとも影響を受けた作品は『大神』で、その表現力に強い衝撃を受けました。<br />
-            趣味はギターで、中学から続けています。ベースやピアノも少し弾きます。
-        </p>-->
+        <p>
+            <b>氏名：</b>魏 文俊（ガイ マンチュン）<br />
+            <b>使用言語：</b><br />
+            C、C++、C#、Python、PHP、SQL、HTML、JavaScript、CSS、Objective-C<br />
+            <b>使用ツール：</b><br />
+            Visual Studio、Maya、Unity 6、Unreal Engine 5、Xcode
+        </p>
+        <b>受賞：</b><br />
+        <table style="border-spacing: 10px 0;">
+            <tr>
+                <td>Microsoft Summer Coding 2012</td>
+                <td>Best Design App</td>
+            </tr>
+            <tr>
+                <td>学内進級制作展(HAL EVENT WEEK)</td>
+                <td>銀賞</td>
+            </tr>
+            <tr>
+                <td>HAL3校合同学内コンテスト(Switch2Dゲーム)</td>
+                <td>銅賞</td>
+            </tr>
+            <tr>
+                <td>HAL3校合同学内コンテスト(Unity TPS)</td>
+                <td>技術賞</td>
+            </tr>
+            <tr>
+                <td>HAL3校合同学内コンテスト(DrectX)</td>
+                <td>技術力賞</td>
+            </tr>
+        </table>
+        <p>
+            香港出身。現在は HAL東京に在学しています。
+        </p>
     </section>
     <section id="index">
-        <div id="index_background">
-            <img id="profile_img" src="S__11755571.jpg">
-        </div>
         <h2>目次</h2>
         <ul>
             <li>
@@ -1441,13 +1457,6 @@
                         <img src="stone_2.png" />
                         <br />
                         破壊される時のアニメーション
-                    </div>
-                    <span class="print_page_break"></span>
-                    <div>
-                        <br />
-                        <img src="milkywave_making.png" />
-                        <br />
-                        チーム内デモ用試作ステージ。
                     </div>
                 </div>
             </li>
