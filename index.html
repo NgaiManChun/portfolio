@@ -179,9 +179,9 @@
                 display: flex;
             }
 
-                .alt_images.gallery a {
-                    cursor: zoom-in;
-                }
+        a.gallery_image {
+            cursor: zoom-in;
+        }
 
         .works > ul .contents > :nth-child(2) > dl {
             width: 100%;
@@ -631,22 +631,22 @@
                         <iframe src="https://www.youtube.com/embed/53yHbu8jmB0?si=gIY77z3h8tHjn6fC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <ul class="alt_images gallery">
                             <li style="grid-column: 1 / span 3;">
-                                <a href="mg2_1.png" data-pswp-width="1600" data-pswp-height="900">
+                                <a class="gallery_image" href="mg2_1.png" data-pswp-width="1600" data-pswp-height="900">
                                     <img src="mg2_1.png" />
                                 </a>
                             </li>
                             <li>
-                                <a href="mg2_2.png" data-pswp-width="1600" data-pswp-height="900">
+                                <a class="gallery_image" href="mg2_2.png" data-pswp-width="1600" data-pswp-height="900">
                                     <img src="mg2_2.png" />
                                 </a>
                             </li>
                             <li>
-                                <a href="mg2_3.png" data-pswp-width="1600" data-pswp-height="900">
+                                <a class="gallery_image" href="mg2_3.png" data-pswp-width="1600" data-pswp-height="900">
                                     <img src="mg2_3.png" />
                                 </a>
                             </li>
                             <li>
-                                <a href="mg2_4.png" data-pswp-width="1600" data-pswp-height="900">
+                                <a class="gallery_image" href="mg2_4.png" data-pswp-width="1600" data-pswp-height="900">
                                     <img src="mg2_4.png" />
                                 </a>
                             </li>
@@ -745,22 +745,22 @@
                         <iframe src="https://www.youtube.com/embed/_FClnpZHCsM?si=POHh9M-5hxZez4Am" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <ul class="alt_images gallery">
                             <li style="grid-column: 1 / span 3;">
-                                <a href="milkywave_1.png" data-pswp-width="1920" data-pswp-height="1020">
+                                <a class="gallery_image" href="milkywave_1.png" data-pswp-width="1920" data-pswp-height="1020">
                                     <img src="milkywave_1.png" />
                                 </a>
                             </li>
                             <li>
-                                <a href="milkywave_2.png" data-pswp-width="1920" data-pswp-height="1020">
+                                <a class="gallery_image" href="milkywave_2.png" data-pswp-width="1920" data-pswp-height="1020">
                                     <img src="milkywave_2.png" />
                                 </a>
                             </li>
                             <li>
-                                <a href="milkywave_3.png" data-pswp-width="1920" data-pswp-height="1020">
+                                <a class="gallery_image" href="milkywave_3.png" data-pswp-width="1920" data-pswp-height="1020">
                                     <img src="milkywave_3.png" />
                                 </a>
                             </li>
                             <li>
-                                <a href="milkywave_4.png" data-pswp-width="1920" data-pswp-height="1020">
+                                <a class="gallery_image" href="milkywave_4.png" data-pswp-width="1920" data-pswp-height="1020">
                                     <img src="milkywave_4.png" />
                                 </a>
                             </li>
@@ -810,7 +810,9 @@
                         <h4>🔸 こだわり（ゲーム表現の工夫）</h4>
                         <div class="float_area">
                             <p>
-                                <img src="milkywave_item.gif" class="float_left" style="width: 200px;">
+                                <a class="gallery_image" href="milkywave_item.gif" data-pswp-width="320" data-pswp-height="240">
+                                    <img src="milkywave_item.gif" class="float_left" style="width: 200px;">
+                                </a>
                                 <b>波打つコースを支える重力設計と当たり判定処理</b><br />
                                 コースに沿って重力の導線を設定し、位置によって重力方向が変化。
                                 表面法線を使って船を細かく傾けながら浮力でバウンドさせたり、
@@ -825,7 +827,9 @@
 
                         </div>
                         <p>
-                            <img src="milkywave_result.gif" class="float_right" style="width: 200px;">
+                            <a class="gallery_image" href="milkywave_result.gif" data-pswp-width="426" data-pswp-height="240">
+                                <img src="milkywave_result.gif" class="float_right" style="width: 200px;">
+                            </a>
                             <b>リザルト・タイトル演出の強化</b><br />
                             ランク表示の光沢エフェクトや、
                             背景宇宙の映り込み演出などを実装。
@@ -834,7 +838,9 @@
                         </p>
                         <div class="float_area">
                             <p>
-                                <img src="milkywave_boost.gif" class="float_left" style="width: 200px;">
+                                <a class="gallery_image" href="milkywave_boost.gif" data-pswp-width="426" data-pswp-height="240">
+                                    <img src="milkywave_boost.gif" class="float_left" style="width: 200px;">
+                                </a>
                                 <b>加速時の視覚効果</b><br />
                                 カメラを引きつつ多重レンダリングによるブラーを付加。
                                 視覚的変化でスピード感を伝えています。<br />
@@ -867,7 +873,9 @@
                         </p>
                         <div class="float_area">
                             <p>
-                                <img src="milkywave_making_clip.png" class="float_left" style="width: 200px;">
+                                <a class="gallery_image" href="milkywave_making_clip.png" data-pswp-width="1312" data-pswp-height="677">
+                                    <img src="milkywave_making_clip.png" class="float_left" style="width: 200px;">
+                                </a>
                                 <b>ワークフローの構築</b><br />
                                 デザイナーとプランナーは慣れ親しんだMaya上でモデルとコースを設計し、
                                 ツールでモデル・コリジョン設定・オブジェクトの配置情報などのゲームデータに変換しています。
@@ -875,7 +883,9 @@
                             </p>
                         </div>
                         <p>
-                            <img src="milkywave_select.gif" class="float_right" style="width: 200px;">
+                            <a class="gallery_image" href="milkywave_select.gif" data-pswp-width="426" data-pswp-height="240">
+                                <img src="milkywave_select.gif" class="float_right" style="width: 200px;">
+                            </a>
                             <b>非同期処理によるステージプレビュー</b><br />
                             マルチスレッド処理を用いて、ステージ選択中のステージプレビューを非同期で読み込み。
                             ユーザー体験を損なわない設計を意識しています。<br />
@@ -901,22 +911,22 @@
                         <iframe src="https://www.youtube.com/embed/VMUpB2KFo5g?si=QHxT-Q5YIiUEbJfn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <ul class="alt_images gallery">
                             <li style="grid-column: 1 / span 3;">
-                                <a href="karada_1.png" data-pswp-width="1920" data-pswp-height="1020">
+                                <a class="gallery_image" href="karada_1.png" data-pswp-width="1920" data-pswp-height="1020">
                                     <img src="karada_1.png" />
                                 </a>
                             </li>
                             <li>
-                                <a href="karada_2.png" data-pswp-width="1920" data-pswp-height="1020">
+                                <a class="gallery_image" href="karada_2.png" data-pswp-width="1920" data-pswp-height="1020">
                                     <img src="karada_2.png" />
                                 </a>
                             </li>
                             <li>
-                                <a href="karada_3.png" data-pswp-width="1920" data-pswp-height="1020">
+                                <a class="gallery_image" href="karada_3.png" data-pswp-width="1920" data-pswp-height="1020">
                                     <img src="karada_3.png" />
                                 </a>
                             </li>
                             <li>
-                                <a href="karada_4.png" data-pswp-width="1920" data-pswp-height="1020">
+                                <a class="gallery_image" href="karada_4.png" data-pswp-width="1920" data-pswp-height="1020">
                                     <img src="karada_4.png" />
                                 </a>
                             </li>
@@ -983,22 +993,22 @@
                         <iframe src="https://www.youtube.com/embed/kQ2IMom_x7c?si=kJaerLnJWK71hzOh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <ul class="alt_images gallery">
                             <li style="grid-column: 1 / span 3;">
-                                <a href="satellite_1.png" data-pswp-width="1920" data-pswp-height="1080">
+                                <a class="gallery_image" href="satellite_1.png" data-pswp-width="1920" data-pswp-height="1080">
                                     <img src="satellite_1.png" />
                                 </a>
                             </li>
                             <li>
-                                <a href="satellite_2.png" data-pswp-width="1920" data-pswp-height="1080">
+                                <a class="gallery_image" href="satellite_2.png" data-pswp-width="1920" data-pswp-height="1080">
                                     <img src="satellite_2.png" />
                                 </a>
                             </li>
                             <li>
-                                <a href="satellite_3.png" data-pswp-width="1920" data-pswp-height="1080">
+                                <a class="gallery_image" href="satellite_3.png" data-pswp-width="1920" data-pswp-height="1080">
                                     <img src="satellite_3.png" />
                                 </a>
                             </li>
                             <li>
-                                <a href="satellite_4.png" data-pswp-width="1920" data-pswp-height="1080">
+                                <a class="gallery_image" href="satellite_4.png" data-pswp-width="1920" data-pswp-height="1080">
                                     <img src="satellite_4.png" />
                                 </a>
                             </li>
@@ -1056,22 +1066,22 @@
                         <iframe src="https://www.youtube.com/embed/usSkmJEs9w4?si=AuyrTFCHsZdmcop3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <ul class="alt_images gallery">
                             <li style="grid-column: 1 / span 3;">
-                                <a href="finger_1.png" data-pswp-width="1920" data-pswp-height="1020">
+                                <a class="gallery_image" href="finger_1.png" data-pswp-width="1920" data-pswp-height="1020">
                                     <img src="finger_1.png" />
                                 </a>
                             </li>
                             <li>
-                                <a href="finger_2.png" data-pswp-width="1920" data-pswp-height="1020">
+                                <a class="gallery_image" href="finger_2.png" data-pswp-width="1920" data-pswp-height="1020">
                                     <img src="finger_2.png" />
                                 </a>
                             </li>
                             <li>
-                                <a href="finger_3.png" data-pswp-width="1920" data-pswp-height="1020">
+                                <a class="gallery_image" href="finger_3.png" data-pswp-width="1920" data-pswp-height="1020">
                                     <img src="finger_3.png" />
                                 </a>
                             </li>
                             <li>
-                                <a href="finger_4.png" data-pswp-width="1920" data-pswp-height="1020">
+                                <a class="gallery_image" href="finger_4.png" data-pswp-width="1920" data-pswp-height="1020">
                                     <img src="finger_4.png" />
                                 </a>
                             </li>
@@ -1458,8 +1468,8 @@
 
     <script type="text/javascript">
         var lightbox = new PhotoSwipeLightbox({
-            gallery: '.gallery',
-            children: 'a',
+            gallery: '.contents',
+            children: '.gallery_image',
             // dynamic import is not supported in UMD version
             pswpModule: PhotoSwipe
         });
