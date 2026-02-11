@@ -153,6 +153,20 @@
                     color: #0b1287;
                 }
 
+                .works > ul .contents .float_area {
+                    display: flow-root;
+                }
+
+                .works > ul .contents .float_left {
+                    float: left;
+                    margin-right: 10px;
+                }
+
+                .works > ul .contents .float_right {
+                    float: right;
+                    margin-left: 10px;
+                }
+
         .alt_images {
             list-style: none;
             padding: 0;
@@ -660,15 +674,19 @@
                             データ指向設計やプール型メモリ管理、GPUメッシュアニメーション、GPUカリングなどを用い、パフォーマンス向上を重視した作品になってます。
                         </p>
                         <h4>🔸 こだわり（ゲーム表現の工夫）</h4>
+                        <div class="float_area">
+                            <p>
+                                <img src="mg2_rotate.gif" class="float_left" style="width: 200px;">
+                                <b>移動慣性表現</b><br />
+                                反対方向への入力時に自然な回旋と加速が発生するよう調整し、機械的にならない動きを意識しています。
+                            </p>
+                            <p>
+                                <b>遅延追従カメラ</b><br />
+                                プレイヤーの動きに対してわずかな遅れを持たせることで、視覚的な重量感と滑らかさを表現しています。
+                            </p>
+                        </div>
                         <p>
-                            <b>移動慣性表現</b><br />
-                            反対方向への入力時に自然な回旋と加速が発生するよう調整し、機械的にならない動きを意識しています。
-                        </p>
-                        <p>
-                            <b>遅延追従カメラ</b><br />
-                            プレイヤーの動きに対してわずかな遅れを持たせることで、視覚的な重量感と滑らかさを表現しています。
-                        </p>
-                        <p>
+                            <img src="mg2_outline.png" class="float_right" style="width: 200px;">
                             <b>アウトライン表現</b><br />
                             キャラクターの視認性向上を目的としてアウトライン描画を実装しています。
                             アニメ的なルックを意識し、色味は映画『サマーウォーズ』を参考に赤系で調整してみました。
