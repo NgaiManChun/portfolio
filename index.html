@@ -90,7 +90,7 @@
                 transform: translateY(0px);
             }
 
-        section#profile {
+        section#profile, section#index {
             max-width: 1140px;
             background-color: #ffffffe3;
             --col-width: 560px;
@@ -113,18 +113,13 @@
             padding: 6px 20px;
         }
 
-        section#index {
-            display:flow-root;
-        }
-
-        section#index > ul {
+        section#index ul {
             padding: 0;
             margin: 0;
-            display: inline-block;
             list-style: none;
         }
 
-            section#index > ul ul {
+            section#index ul ul {
                 padding-left: 20px;
             }
 
@@ -161,7 +156,7 @@
                 page-break-after: always;
             }
 
-            .works > ul .contents, #profile .contents {
+            .works > ul .contents, section > .contents {
                 display: flex;
                 flex-wrap: wrap;
                 gap: var(--gap);
@@ -608,98 +603,106 @@
     </section>
     <section id="index">
         <h2>目次</h2>
-        <ul>
-            <li>
-                <b>主要作品</b>
+        <div class="contents">
+            <div>
                 <ul>
                     <li>
-                        <a href="#mg2">MG2</a>
-                        <span class="directx_tag tag">DirectX</span>
-                        <span class="cpp_tag tag">C++</span>
+                        <b>主要作品</b>
+                        <ul>
+                            <li>
+                                <a href="#mg2">MG2</a>
+                                <span class="directx_tag tag">DirectX</span>
+                                <span class="cpp_tag tag">C++</span>
+                            </li>
+                            <li>
+                                <a href="#milky_wave" class="team_job">銀河激流ミルキーウェーブ</a>
+                                <span class="directx_tag tag">DirectX</span>
+                                <span class="cpp_tag tag">C++</span>
+                                <span class="maya_tag tag">Maya</span>
+                            </li>
+                            <li>
+                                <a href="#karadaful">カラダ振る～お前もギタリストにしてやろうか～</a>
+                                <span class="console_tag tag">C言語</span>
+                            </li>
+                            <li>
+                                <a href="#satellite_mission">SATELLITE MISSION</a>
+                                <span class="unity_tag tag">Unity</span>
+                                <span class="cShape_tag tag">C#</span>
+                            </li>
+                            <li>
+                                <a href="#running_finger">爆走ランニングフィンガー</a>
+                                <span class="openGL_tag tag">OpenGL</span>
+                                <span class="cpp_tag tag">C++</span>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="#milky_wave" class="team_job">銀河激流ミルキーウェーブ</a>
-                        <span class="directx_tag tag">DirectX</span>
-                        <span class="cpp_tag tag">C++</span>
-                        <span class="maya_tag tag">Maya</span>
-                    </li>
-                    <li>
-                        <a href="#karadaful">カラダ振る～お前もギタリストにしてやろうか～</a>
-                        <span class="console_tag tag">C言語</span>
-                    </li>
-                    <li>
-                        <a href="#satellite_mission">SATELLITE MISSION</a>
-                        <span class="unity_tag tag">Unity</span>
-                        <span class="cShape_tag tag">C#</span>
-                    </li>
-                    <li>
-                        <a href="#running_finger">爆走ランニングフィンガー</a>
-                        <span class="openGL_tag tag">OpenGL</span>
-                        <span class="cpp_tag tag">C++</span>
+                        <b>DCCツール プラグイン</b>
+                        <ul>
+                            <li>
+                                <a href="#csv_export">CSV・FBX出力 Mayaプラグイン</a>
+                                <span class="python_tag tag">Python</span>
+                                <span class="maya_tag tag">Maya</span>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
-            </li>
-            <li>
-                <b>DCCツール プラグイン</b>
+            </div>
+            <div>
                 <ul>
                     <li>
-                        <a href="#csv_export">CSV・FBX出力 Mayaプラグイン</a>
-                        <span class="python_tag tag">Python</span>
-                        <span class="maya_tag tag">Maya</span>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <b>短期制作</b>
-                <ul>
-                    <li>
-                        <a href="#landmine">地雷ゲーム</a>
-                        <span class="console_tag tag">C言語</span>
-                    </li>
-                    <li>
-                        <a href="#puzzle_game">パズルゲーム</a>
-                        <span class="directx_tag tag">DirectX</span>
-                        <span class="cpp_tag tag">C++</span>
-                    </li>
-                    <li>
-                        <a href="#golf">ボールをとりもどせ!!</a>
-                        <span class="directx_tag tag">DirectX</span>
-                        <span class="cpp_tag tag">C++</span>
-                        <span class="maya_tag tag">Maya</span>
-                    </li>
-                    <li>
-                        <a href="#soumen_slider" class="team_job">SOUMEN SLIDER</a>
-                        <span class="directx_tag tag">DirectX</span>
-                        <span class="cpp_tag tag">C++</span>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <b>技術検証</b>
-                <ul>
-                    <li>
-                        <a href="#animation_transition">3Dアニメーション遷移テスト</a>
-                        <span class="directx_tag tag">DirectX</span>
-                        <span class="cpp_tag tag">C++</span>
-                        <span class="maya_tag tag">Maya</span>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <b>CG演習・アセット制作</b>
-                <ul>
-                    <li>
-                        <a href="#milky_wave_cg">『銀河激流ミルキーウェーブ』アセット</a>
-                        <span class="maya_tag tag">Maya</span>
+                        <b>短期制作</b>
+                        <ul>
+                            <li>
+                                <a href="#landmine">地雷ゲーム</a>
+                                <span class="console_tag tag">C言語</span>
+                            </li>
+                            <li>
+                                <a href="#puzzle_game">パズルゲーム</a>
+                                <span class="directx_tag tag">DirectX</span>
+                                <span class="cpp_tag tag">C++</span>
+                            </li>
+                            <li>
+                                <a href="#golf">ボールをとりもどせ!!</a>
+                                <span class="directx_tag tag">DirectX</span>
+                                <span class="cpp_tag tag">C++</span>
+                                <span class="maya_tag tag">Maya</span>
+                            </li>
+                            <li>
+                                <a href="#soumen_slider" class="team_job">SOUMEN SLIDER</a>
+                                <span class="directx_tag tag">DirectX</span>
+                                <span class="cpp_tag tag">C++</span>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="#kumacchi">くまっちの部屋</a>
-                        <span class="maya_tag tag">Maya</span>
+                        <b>技術検証</b>
+                        <ul>
+                            <li>
+                                <a href="#animation_transition">3Dアニメーション遷移テスト</a>
+                                <span class="directx_tag tag">DirectX</span>
+                                <span class="cpp_tag tag">C++</span>
+                                <span class="maya_tag tag">Maya</span>
+                            </li>
+                        </ul>
                     </li>
-                </ul>
+                    <li>
+                        <b>CG演習・アセット制作</b>
+                        <ul>
+                            <li>
+                                <a href="#milky_wave_cg">『銀河激流ミルキーウェーブ』アセット</a>
+                                <span class="maya_tag tag">Maya</span>
+                            </li>
+                            <li>
+                                <a href="#kumacchi">くまっちの部屋</a>
+                                <span class="maya_tag tag">Maya</span>
+                            </li>
+                        </ul>
 
-            </li>
-        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </section>
     <section class="works">
         <h2>主要作品</h2>
