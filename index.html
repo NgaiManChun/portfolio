@@ -36,6 +36,12 @@
             margin: 0;
         }
 
+        h2 {
+            background-image: linear-gradient(135deg, #ABDCFF 10%, #ffffff 100%);
+            padding: 20px;
+            max-width: 500px;
+        }
+
         h3 {
             font-size: 1.2em;
             text-decoration: underline;
@@ -70,12 +76,8 @@
         }
 
         #profile_img {
-            float: right;
-            width: 560px;
-            margin-left: 20px;
-            z-index: -1;
+            width: 500px;
             filter: opacity(0) blur(8px) contrast(1);
-            left: min(600px, calc(100% - 540px));
             transition-duration: 1000ms;
             transition-delay: 500ms;
             transition-timing-function: ease-out;
@@ -91,16 +93,52 @@
         section#profile {
             max-width: 1140px;
             background-color: #ffffffe3;
+            --col-width: 560px;
+            --gap: 20px;
+            --cols: 2;
         }
 
-            section#profile > p {
-                max-width: 500px;
-            }
+        #profile dl {
+            margin: 0;
+            padding: 0;
+        }
+
+        #profile > div.contents {
+            flex-wrap: wrap-reverse;
+        }
+
+        section#profile td {
+            border-bottom: 1px dashed #5AA0D6;
+            line-height: 1.6;
+            padding: 6px 20px;
+        }
+
+        section#index {
+            display:flow-root;
+        }
 
         section#index > ul {
             padding-right: 20px;
             margin: 0;
+            display: inline-block;
+            list-style: none;
         }
+
+        section#index ul ul li {
+            border-bottom: 1px dashed #5AA0D6;
+            margin-bottom: 0;
+            list-style-type: none;
+            line-height: 1.6;
+            padding: 6px 20px 6px 0;
+            margin: 5px 0px;
+        }
+
+            section#index ul ul li:before {
+                content: '◆';
+                padding: 10px;
+                font-weight: 900;
+                color: #5AA0D6;
+            }
 
         section#index > ul > li {
             padding-bottom: 20px;
@@ -119,7 +157,7 @@
                 page-break-after: always;
             }
 
-            .works > ul .contents {
+            .works > ul .contents, #profile .contents {
                 display: flex;
                 flex-wrap: wrap;
                 gap: var(--gap);
@@ -149,7 +187,7 @@
                 }
 
                 .works > ul .contents b {
-                    color: #0b1287;
+                    color: #0f67ab;
                     font-size: 1.1em;
                 }
 
@@ -183,26 +221,33 @@
             cursor: zoom-in;
         }
 
-        .works > ul .contents > :nth-child(2) > dl {
+        .works {
+            page-break-before: always;
+        }
+
+        .works .contents > :nth-child(2) > dl {
             width: 100%;
             border-style: dashed;
             border-radius: 5px;
-            padding: 5px;
-            box-sizing: border-box;
             background-color: #e0f1feb3;
         }
 
-        .works > ul .contents dl > dt {
+        .contents dl {
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .contents dl > dt {
             font-weight: bold;
             padding: 5px;
         }
 
-        .works > ul .contents dl > dd {
+        .contents dl > dd {
             margin: 0;
             padding: 5px 20px;
         }
 
-            .works > ul .contents dl > dd a {
+            .contents dl > dd a {
                 display: inline-block;
                 max-width: 100%;
                 white-space: nowrap;
@@ -210,11 +255,7 @@
                 text-overflow: ellipsis;
             }
 
-        .works {
-            border-top: solid 2px;
-            padding-top: 10px;
-            page-break-before: always;
-        }
+        
 
         .team_job + h3::after, #index a.team_job::after {
             content: "チーム制作";
@@ -504,46 +545,55 @@
     </script>
 
 
-    <h1>魏文俊の作品集</h1>
+    <!-- <h1>魏文俊の作品集</h1> -->
     <div id="qrcode_container">
         <img id="qrcode" src="qrcode_ngaimanchun.github.io.png" />
     </div>
     <section id="profile">
-        <img id="profile_img" src="S__11755571.jpg">
         <h2>プロフィール</h2>
-        <p>
-            <b>氏名：</b>魏 文俊（ガイ マンチュン）<br />
-            <b>使用言語：</b><br />
-            C、C++、C#、Python、PHP、SQL、HTML、JavaScript、CSS、Objective-C<br />
-            <b>使用ツール：</b><br />
-            Visual Studio、Maya、Unity 6、Unreal Engine 5、Xcode
-        </p>
-        <b>受賞：</b><br />
-        <table style="border-spacing: 10px 0;">
-            <tr>
-                <td>Microsoft Summer Coding 2012</td>
-                <td>Best Design App</td>
-            </tr>
-            <tr>
-                <td>学内進級制作展(HAL EVENT WEEK)</td>
-                <td>銀賞</td>
-            </tr>
-            <tr>
-                <td>HAL3校合同学内コンテスト(Switch2Dゲーム)</td>
-                <td>銅賞</td>
-            </tr>
-            <tr>
-                <td>HAL3校合同学内コンテスト(Unity TPS)</td>
-                <td>技術賞</td>
-            </tr>
-            <tr>
-                <td>HAL3校合同学内コンテスト(DrectX)</td>
-                <td>技術力賞</td>
-            </tr>
-        </table>
-        <p>
-            香港出身です。現在は HAL東京に在学しています。
-        </p>
+        <div class="contents">
+            <div>
+                <dl>
+                    <dt>氏名：</dt>
+                    <dd>魏 文俊（ガイ マンチュン）</dd>
+                    <dt>使用言語：</dt>
+                    <dd>C、C++、C#、Python、PHP、SQL、HTML、JavaScript、CSS、Objective-C</dd>
+                    <dt>使用ツール：</dt>
+                    <dd>Visual Studio、Maya、Unity 6、Unreal Engine 5、Xcode</dd>
+                    <dt>使用受賞：</dt>
+                    <dd>
+                        <table>
+                            <tr>
+                                <td>Microsoft Summer Coding 2012</td>
+                                <td>Best Design App</td>
+                            </tr>
+                            <tr>
+                                <td>学内進級制作展(HAL EVENT WEEK)</td>
+                                <td>銀賞</td>
+                            </tr>
+                            <tr>
+                                <td>HAL3校合同学内コンテスト(Switch2Dゲーム)</td>
+                                <td>銅賞</td>
+                            </tr>
+                            <tr>
+                                <td>HAL3校合同学内コンテスト(Unity TPS)</td>
+                                <td>技術賞</td>
+                            </tr>
+                            <tr>
+                                <td>HAL3校合同学内コンテスト(DrectX)</td>
+                                <td>技術力賞</td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+                <p>
+                    香港出身です。現在は HAL東京に在学しています。
+                </p>
+            </div>
+            <div>
+                <img id="profile_img" src="S__11755571.jpg">
+            </div>
+        </div>
     </section>
     <section id="index">
         <h2>目次</h2>
