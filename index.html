@@ -37,7 +37,7 @@
         }
 
         h2 {
-            background-image: linear-gradient(135deg, #ABDCFF 10%, #ffffff 100%);
+            background-image: linear-gradient(135deg, #ABDCFF 10%, #ffffff 90%);
             padding: 20px;
             max-width: 500px;
         }
@@ -202,11 +202,13 @@
                 .works > ul .contents .float_left {
                     float: left;
                     margin-right: 10px;
+                    max-width: 60%;
                 }
 
                 .works > ul .contents .float_right {
                     float: right;
                     margin-left: 10px;
+                    max-width: 60%;
                 }
 
         .alt_images {
@@ -429,12 +431,17 @@
             }
         }
 
-        @media only screen and (max-width: 820px) {
-            #profile_img {
+        @media only screen and (max-width: 600px) {
+            .works > ul .contents .float_left, .works > ul .contents .float_right {
                 float: none;
                 margin: 0;
+                display: block;
+                max-width: 100%;
+                width: 100%;
             }
         }
+
+        
 
         @media only print {
             h2 {
@@ -752,8 +759,10 @@
                         <div class="float_area">
                             <p>
                                 <a class="gallery_image" href="mg2_rotate.gif" data-pswp-width="240" data-pswp-height="240">
-                                    <img src="mg2_rotate.gif" class="float_left" style="width: 200px;">
+                                    <img src="mg2_rotate.gif" class="float_left">
                                 </a>
+                            </p>
+                            <p>
                                 <b>移動慣性表現</b><br />
                                 反対方向への入力時に自然な回旋と加速が発生するよう調整し、機械的にならない動きを意識しています。
                             </p>
@@ -762,10 +771,13 @@
                                 プレイヤーの動きに対してわずかな遅れを持たせることで、視覚的な重量感と滑らかさを表現しています。
                             </p>
                         </div>
+                        
                         <p>
                             <a class="gallery_image" href="mg2_outline.png" data-pswp-width="364" data-pswp-height="347">
-                                <img src="mg2_outline.png" class="float_right" style="width: 200px;">
+                                <img src="mg2_outline.png" class="float_right">
                             </a>
+                        </p>
+                        <p>
                             <b>アウトライン表現</b><br />
                             キャラクターの視認性向上を目的としてアウトライン描画を実装しています。
                             アニメ的なルックを意識し、色味は映画『サマーウォーズ』を参考に赤系で調整してみました。
@@ -779,21 +791,21 @@
                             コンポーネント型単位で更新処理をまとめ、オーバーヘッドの削減とキャッシュ効率を意識した設計を採用しています。
                             データは連続メモリ上に集約し、大量オブジェクト更新時のスループット向上を図っています。
                         </p>
-                        <div class="float_area">
-                            <p>
-                                <a class="gallery_image" href="mg2_culling.gif" data-pswp-width="426" data-pswp-height="240">
-                                    <img src="mg2_culling.gif" class="float_right" style="width: 300px;">
-                                </a>
-                                <b>GPUを活用した描画最適化</b><br />
-                                GPUメッシュアニメーションやIndirectDraw、インスタンシングなど、並列処理を積極的に活用することで描画コストを抑えています。
-                                また、GPUカリング、LOD、デファードレンダリングを組み合わせ、大量描画時の処理負荷を軽減しています。
-                            </p>
-                            <p>
-                                <b>GPUカリング・LOD</b><br />
-                                視錐台カリングおよびLOD切り替えを組み合わせ、描画対象を必要最小限に制御しています。
-                                大量オブジェクト環境下でも安定したパフォーマンスを維持します。
-                            </p>
-                        </div>
+                        <p>
+                            <a class="gallery_image" href="mg2_culling.gif" data-pswp-width="426" data-pswp-height="240">
+                                <img src="mg2_culling.gif" class="float_right">
+                            </a>
+                        </p>
+                        <p>
+                            <b>GPUを活用した描画最適化</b><br />
+                            GPUメッシュアニメーションやIndirectDraw、インスタンシングなど、並列処理を積極的に活用することで描画コストを抑えています。
+                            また、GPUカリング、LOD、デファードレンダリングを組み合わせ、大量描画時の処理負荷を軽減しています。
+                        </p>
+                        <p>
+                            <b>GPUカリング・LOD</b><br />
+                            視錐台カリングおよびLOD切り替えを組み合わせ、描画対象を必要最小限に制御しています。
+                            大量オブジェクト環境下でも安定したパフォーマンスを維持します。
+                        </p>
                         <p>
                             <b>GPUデータ転送最適化</b><br />
                             描画に必要なデータを一箇所に集約し、キー（ハンドル）を通じて参照する構成としています。
@@ -895,8 +907,10 @@
                         <div class="float_area">
                             <p>
                                 <a class="gallery_image" href="milkywave_item.gif" data-pswp-width="320" data-pswp-height="240">
-                                    <img src="milkywave_item.gif" class="float_left" style="width: 200px;">
+                                    <img src="milkywave_item.gif" class="float_left">
                                 </a>
+                            </p>
+                            <p>
                                 <b>波打つコースを支える重力設計と当たり判定処理</b><br />
                                 コースに沿って重力の導線を設定し、位置によって重力方向が変化。
                                 表面法線を使って船を細かく傾けながら浮力でバウンドさせたり、
@@ -908,23 +922,28 @@
                                 3D空間上で取得したアイテムが2Dゲージへ吸収される演出を実装。<br />
                                 <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/player.cpp">source/player.cpp(line 94-105, line 321-341)</a>
                             </p>
-
                         </div>
-                        <p>
-                            <a class="gallery_image" href="milkywave_result.gif" data-pswp-width="426" data-pswp-height="240">
-                                <img src="milkywave_result.gif" class="float_right" style="width: 200px;">
-                            </a>
-                            <b>リザルト・タイトル演出の強化</b><br />
-                            ランク表示の光沢エフェクトや、
-                            背景宇宙の映り込み演出などを実装。
-                            プレイ前後も含めた体験設計を意識しました。<br />
-                            <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/resultScene.cpp">source/resultScene.cpp</a>
-                        </p>
+                        <div class="float_area">
+                            <p>
+                                <a class="gallery_image" href="milkywave_result.gif" data-pswp-width="426" data-pswp-height="240">
+                                    <img src="milkywave_result.gif" class="float_right">
+                                </a>
+                            </p>
+                            <p>
+                                <b>リザルト・タイトル演出の強化</b><br />
+                                ランク表示の光沢エフェクトや、
+                                背景宇宙の映り込み演出などを実装。
+                                プレイ前後も含めた体験設計を意識しました。<br />
+                                <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/resultScene.cpp">source/resultScene.cpp</a>
+                            </p>
+                        </div>
                         <div class="float_area">
                             <p>
                                 <a class="gallery_image" href="milkywave_boost.gif" data-pswp-width="426" data-pswp-height="240">
-                                    <img src="milkywave_boost.gif" class="float_left" style="width: 200px;">
+                                    <img src="milkywave_boost.gif" class="float_left">
                                 </a>
+                            </p>
+                            <p>
                                 <b>加速時の視覚効果</b><br />
                                 カメラを引きつつ多重レンダリングによるブラーを付加。
                                 視覚的変化でスピード感を伝えています。<br />
@@ -955,24 +974,32 @@
                             実行時負荷を抑えるため、オフライン前処理で不要情報を削減。
                             シンプルで再利用性の高いデータ構造とすることで、メモリ使用量を抑えながら高速な読み込みを試みました。
                         </p>
-                        <p>
-                            <a class="gallery_image" href="milkywave_making_clip.png" data-pswp-width="1312" data-pswp-height="677">
-                                <img src="milkywave_making_clip.png" class="float_left" style="width: 200px;">
-                            </a>
-                            <b>ワークフローの構築</b><br />
-                            デザイナーとプランナーは慣れ親しんだMaya上でモデルとコースを設計し、
-                            ツールでモデル・コリジョン設定・オブジェクトの配置情報などのゲームデータに変換しています。
-                            加えて、各種パラメータはCSVで管理しており、非エンジニアでも柔軟な調整が可能にしています。
-                        </p>
-                        <p>
-                            <a class="gallery_image" href="milkywave_select.gif" data-pswp-width="426" data-pswp-height="240">
-                                <img src="milkywave_select.gif" class="float_right" style="width: 200px;">
-                            </a>
-                            <b>非同期処理によるステージプレビュー</b><br />
-                            マルチスレッド処理を用いて、ステージ選択中のステージプレビューを非同期で読み込み。
-                            ユーザー体験を損なわない設計を意識しています。<br />
-                            <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/stageSelectScene.cpp">source/stageSelectScene.cpp(line 511-536)</a>
-                        </p>
+                        <div class="float_area">
+                            <p>
+                                <a class="gallery_image" href="milkywave_making_clip.png" data-pswp-width="1312" data-pswp-height="677">
+                                    <img src="milkywave_making_clip.png" class="float_left">
+                                </a>
+                            </p>
+                            <p>
+                                <b>ワークフローの構築</b><br />
+                                デザイナーとプランナーは慣れ親しんだMaya上でモデルとコースを設計し、
+                                ツールでモデル・コリジョン設定・オブジェクトの配置情報などのゲームデータに変換しています。
+                                加えて、各種パラメータはCSVで管理しており、非エンジニアでも柔軟な調整が可能にしています。
+                            </p>
+                        </div>
+                        <div class="float_area">
+                            <p>
+                                <a class="gallery_image" href="milkywave_select.gif" data-pswp-width="426" data-pswp-height="240">
+                                    <img src="milkywave_select.gif" class="float_right">
+                                </a>
+                            </p>
+                            <p>
+                                <b>非同期処理によるステージプレビュー</b><br />
+                                マルチスレッド処理を用いて、ステージ選択中のステージプレビューを非同期で読み込み。
+                                ユーザー体験を損なわない設計を意識しています。<br />
+                                <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/stageSelectScene.cpp">source/stageSelectScene.cpp(line 511-536)</a>
+                            </p>
+                        </div>
                         <p>
                             <b>入力管理の抽象化とジャイロ操作</b><br />
                             キーボード、XInput、DualSenseに対応。
@@ -1124,8 +1151,10 @@
                         <h4>🔸 こだわり・チャレンジ</h4>
                         <p>
                             <a class="gallery_image" href="satellite_guns.gif" data-pswp-width="240" data-pswp-height="240">
-                                <img src="satellite_guns.gif" class="float_left" style="width: 200px;">
+                                <img src="satellite_guns.gif" class="float_left">
                             </a>
+                        </p>
+                        <p>
                             <b>プレイヤーを中心に飛び回る<span style="white-space: nowrap;">「サテライトライフル」</span>の演出</b><br />
                             不規則に飛び交う複数の軌道を重ね、SFアニメに登場する精神感応兵器のような動きを再現しました。本作の象徴的なギミックです。
                         </p>
@@ -1194,8 +1223,10 @@
                         <h4>🔹 概要</h4>
                         <p>
                             <a class="gallery_image" href="finger_jump.gif" data-pswp-width="320" data-pswp-height="240">
-                                <img src="finger_jump.gif" class="float_right" style="width: 200px;">
+                                <img src="finger_jump.gif" class="float_right">
                             </a>
+                        </p>
+                        <p>
                             『爆走ランニングフィンガー』は、指人形を机の上で走らせるという身近な遊びを、Nintendo Switchで再現したミニゲームです。Joy-ConのIRカメラを使って、実際の指の動きでキャラクターを操作する仕組みになっています。
                         </p>
                         <p>
