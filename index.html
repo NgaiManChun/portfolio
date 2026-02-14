@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="mii.png" type="image/png">
     <title>魏文俊の作品集</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,21 +124,21 @@
                 padding-left: 20px;
             }
 
-        section#index ul ul li {
-            border-bottom: 1px dashed #5AA0D6;
-            margin-bottom: 0;
-            list-style-type: none;
-            line-height: 1.6;
-            padding: 6px 20px 6px 0;
-            margin: 5px 0px;
-        }
+                section#index ul ul li {
+                    border-bottom: 1px dashed #5AA0D6;
+                    margin-bottom: 0;
+                    list-style-type: none;
+                    line-height: 1.6;
+                    padding: 6px 20px 6px 0;
+                    margin: 5px 0px;
+                }
 
-            section#index ul ul li:before {
-                content: '◆';
-                padding: 10px;
-                font-weight: 900;
-                color: #5AA0D6;
-            }
+                    section#index ul ul li:before {
+                        content: '◆';
+                        padding: 10px;
+                        font-weight: 900;
+                        color: #5AA0D6;
+                    }
 
         section#index > ul > li {
             padding-bottom: 20px;
@@ -226,37 +227,37 @@
             page-break-before: always;
         }
 
-        .works .contents > :nth-child(2) > dl {
-            width: 100%;
-            border-style: dashed;
-            border-radius: 5px;
-            background-color: #e0f1feb3;
-        }
+            .works .contents > :nth-child(2) > dl {
+                width: 100%;
+                border-style: dashed;
+                border-radius: 5px;
+                background-color: #e0f1feb3;
+            }
 
         .contents dl {
             padding: 5px;
             box-sizing: border-box;
         }
 
-        .contents dl > dt {
-            font-weight: bold;
-            padding: 5px;
-        }
-
-        .contents dl > dd {
-            margin: 0;
-            padding: 5px 20px;
-        }
-
-            .contents dl > dd a {
-                display: inline-block;
-                max-width: 100%;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+            .contents dl > dt {
+                font-weight: bold;
+                padding: 5px;
             }
 
-        
+            .contents dl > dd {
+                margin: 0;
+                padding: 5px 20px;
+            }
+
+                .contents dl > dd a {
+                    display: inline-block;
+                    max-width: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+
 
         .team_job + h3::after, #index a.team_job::after {
             content: "チーム制作";
@@ -403,15 +404,15 @@
             user-select: none;
         }
 
-        .pop_logo.back {
-            animation-name: flip-back;
-            animation-duration: 700ms;
-        }
+            .pop_logo.back {
+                animation-name: flip-back;
+                animation-duration: 700ms;
+            }
 
-        .pop_logo.back.show {
-            animation-name: flip-easeOutElastic;
-            animation-duration: 1000ms;
-        }
+                .pop_logo.back.show {
+                    animation-name: flip-easeOutElastic;
+                    animation-duration: 1000ms;
+                }
 
         @media only screen and (max-width: 1190px) {
             .works > ul .contents > * {
@@ -421,6 +422,7 @@
             #qrcode_container {
                 display: none;
             }
+
             .pop_logo {
                 display: none;
             }
@@ -436,14 +438,14 @@
             }
         }
 
-        
+
 
         @media only print {
             h2 {
                 margin: 0;
             }
 
-            .print_short{
+            .print_short {
                 font-size: 0.9em;
             }
 
