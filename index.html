@@ -183,8 +183,14 @@
                 }
 
                 .works > ul .contents p {
-                    background-color: #ffffffe3;
+                    background-color: #ffffffa6;
+                    backdrop-filter: blur(4px);
                 }
+
+                    .works > ul .contents p:has(.float_left, .float_right) {
+                        position: relative;
+                        z-index: 1;
+                    }
 
                 .works > ul .contents b {
                     color: #0f67ab;
@@ -232,6 +238,7 @@
                 border-style: dashed;
                 border-radius: 5px;
                 background-color: #e0f1feb3;
+                backdrop-filter: blur(4px);
             }
 
         .contents dl {
