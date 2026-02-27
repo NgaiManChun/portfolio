@@ -132,6 +132,7 @@
 
             section#index ul ul {
                 padding-left: 20px;
+                margin-bottom: 18px;
             }
 
                 section#index ul ul li {
@@ -214,13 +215,18 @@
                 .works > ul .contents .float_left {
                     float: left;
                     margin-right: 10px;
-                    max-width: 60%;
                 }
 
                 .works > ul .contents .float_right {
                     float: right;
                     margin-left: 10px;
-                    max-width: 60%;
+                }
+
+                .works > ul .contents .float_left,
+                .works > ul .contents .float_right,
+                .works > ul .contents .paragraph_image,
+                .works > ul .contents .print_float_left {
+                    max-width: 52%;
                 }
 
         .alt_images {
@@ -364,7 +370,11 @@
                 content: none;
             }
 
-        .print_page_break {
+        span.print_page_break {
+            display: none;
+        }
+
+        .print_only {
             display: none;
         }
 
@@ -447,7 +457,7 @@
         }
 
         @media only screen and (max-width: 600px) {
-            .works > ul .contents .float_left, .works > ul .contents .float_right {
+            .works > ul .contents .float_left, .works > ul .contents .float_right, .works > ul .contents .paragraph_image {
                 float: none;
                 margin: 0;
                 display: block;
@@ -459,12 +469,27 @@
 
 
         @media only print {
-            h2 {
-                margin: 0;
+
+            .print_only {
+                display: inline-block;
+            }
+
+            .print_hide {
+                display: none;
             }
 
             .print_short {
                 font-size: 0.9em;
+            }
+
+            .works > ul .contents > .print_full {
+                width: 100%;
+            }
+
+            .works > ul .contents .print_float_left {
+                float: right;
+                margin-left: 10px;
+                max-width: 30%;
             }
 
             .works {
@@ -482,14 +507,6 @@
                 display: grid;
             }
 
-            .works > ul .contents > * {
-                width: 100%;
-            }
-
-            .trailer_qr {
-                display: block;
-            }
-
             #qrcode_container {
                 display: none;
             }
@@ -497,10 +514,6 @@
             .print_page_break {
                 display: inline-block;
                 page-break-after: always;
-            }
-
-            .works > ul .contents.short {
-                --gap: 10px;
             }
 
             .works > ul > li {
@@ -515,16 +528,18 @@
                 padding: 0 20px;
             }
 
-            .works > ul .contents.short h4 {
-                margin: 0;
-            }
-
             .works > ul .contents.short p {
                 margin: 10px 0;
             }
 
             .works > ul .contents.short::after {
                 margin-top: 0;
+            }
+
+
+            .works .contents > :nth-child(2) > dl,
+            .works > ul .contents p {
+                backdrop-filter: none;
             }
 
             .pop_logo {
@@ -577,7 +592,7 @@
     </div>
     <section id="profile">
         <h2>プロフィール</h2>
-        <div class="contents">
+        <div class="contents print_page_break">
             <div>
                 <dl>
                     <dt>氏名：</dt>
@@ -643,6 +658,11 @@
                                 <span class="maya_tag tag">Maya</span>
                             </li>
                             <li>
+                                <a href="#chirikuma" class="team_job">きゅい～ん　ちりくま</a>
+                                <span class="unity_tag tag">Unity</span>
+                                <span class="cShape_tag tag">C#</span>
+                            </li>
+                            <li>
                                 <a href="#karadaful">カラダ振る～お前もギタリストにしてやろうか～</a>
                                 <span class="console_tag tag">C言語</span>
                             </li>
@@ -650,11 +670,6 @@
                                 <a href="#running_finger">爆走ランニングフィンガー</a>
                                 <span class="openGL_tag tag">OpenGL</span>
                                 <span class="cpp_tag tag">C++</span>
-                            </li>
-                            <li>
-                                <a href="#chirikuma" class="team_job">きゅい～ん　ちりくま</a>
-                                <span class="unity_tag tag">Unity</span>
-                                <span class="cShape_tag tag">C#</span>
                             </li>
                             <li>
                                 <a href="#satellite_mission">SATELLITE MISSION</a>
@@ -673,6 +688,17 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <b>技術検証</b>
+                        <ul>
+                            <li>
+                                <a href="#animation_transition">3Dアニメーション遷移テスト</a>
+                                <span class="directx_tag tag">DirectX</span>
+                                <span class="cpp_tag tag">C++</span>
+                                <span class="maya_tag tag">Maya</span>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div>
@@ -680,6 +706,12 @@
                     <li>
                         <b>短期制作</b>
                         <ul>
+                            <li>
+                                <a href="#golf">ボールをとりもどせ!!</a>
+                                <span class="directx_tag tag">DirectX</span>
+                                <span class="cpp_tag tag">C++</span>
+                                <span class="maya_tag tag">Maya</span>
+                            </li>
                             <li>
                                 <a href="#landmine">地雷ゲーム</a>
                                 <span class="console_tag tag">C言語</span>
@@ -690,26 +722,9 @@
                                 <span class="cpp_tag tag">C++</span>
                             </li>
                             <li>
-                                <a href="#golf">ボールをとりもどせ!!</a>
-                                <span class="directx_tag tag">DirectX</span>
-                                <span class="cpp_tag tag">C++</span>
-                                <span class="maya_tag tag">Maya</span>
-                            </li>
-                            <li>
                                 <a href="#soumen_slider" class="team_job">SOUMEN SLIDER</a>
                                 <span class="directx_tag tag">DirectX</span>
                                 <span class="cpp_tag tag">C++</span>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <b>技術検証</b>
-                        <ul>
-                            <li>
-                                <a href="#animation_transition">3Dアニメーション遷移テスト</a>
-                                <span class="directx_tag tag">DirectX</span>
-                                <span class="cpp_tag tag">C++</span>
-                                <span class="maya_tag tag">Maya</span>
                             </li>
                         </ul>
                     </li>
@@ -769,7 +784,7 @@
                     <div>
                         <dl>
                             <dt>開発環境／プラットフォーム</dt>
-                            <dd>Windows、DirectX 11、C++、Visual Studio 2022</dd>
+                            <dd>Windows、DirectX 11、C++、HLSL、Visual Studio 2022</dd>
                             <dt>制作期間</dt>
                             <dd>2025年12月1日～開発中</dd>
                             <dt>ソース／実行ファイル／ライセンス情報</dt>
@@ -781,56 +796,32 @@
                             <a target="_blank" href="https://youtu.be/ZyIKfmWsqh0"><img src="mg2_qr.png" /></a>
                         </div>
                     </div>
-                    <div>
+                    <div class="print_page_break" style="width: 100%;">
                         <h4>🔹 概要</h4>
                         <p>
                             本作品は、大量のキャラクターを同時に扱うことを目的として制作しているゲームフレームワークです。
                             連続メモリによる高速処理設計、GPUメッシュアニメーション、GPUカリングなどを用い、パフォーマンス向上を重視した作品になってます。
                         </p>
-                        <h4>🔸 こだわり（ゲーム表現の工夫）</h4>
-                        <div class="float_area">
-                            <p>
-                                <a class="gallery_image" href="mg2_rotate.gif" data-pswp-width="480" data-pswp-height="480">
-                                    <img src="mg2_rotate.gif" class="float_left">
-                                </a>
-                            </p>
-                            <p>
-                                <b>移動慣性表現</b><br />
-                                反対方向への入力時に自然な回旋と加速が発生するよう調整し、機械的にならない動きを意識しています。
-                            </p>
-                            <p>
-                                <b>遅延追従カメラ</b><br />
-                                プレイヤーの動きに対してわずかな遅れを持たせることで、視覚的な重量感と滑らかさを表現しています。
-                            </p>
-                        </div>
-
-                        <p>
-                            <a class="gallery_image" href="mg2_outline.png" data-pswp-width="364" data-pswp-height="347">
-                                <img src="mg2_outline.png" class="float_right">
-                            </a>
-                        </p>
-                        <p>
-                            <b>アウトライン表現</b><br />
-                            キャラクターの視認性向上を目的としてアウトライン描画を実装しています。
-                            アニメ的なルックを意識し、色味は映画『サマーウォーズ』を参考に赤系で調整してみました。
-                        </p>
                     </div>
                     <div>
                         <h4>🔸 技術的工夫</h4>
-                        <p>
-                            <b>大量処理に適したデータ構造設計</b><br />
-                            コンポーネント型単位で更新処理をまとめ、オーバーヘッドの削減とキャッシュ効率を意識した設計を採用しています。
-                            データは連続メモリ上に集約し、大量オブジェクト更新時のパフォーマンス向上を図っています。
-                        </p>
-                        <p>
-                            <b>GPUデータ転送最適化</b><br />
-                            描画に必要なデータを一箇所に集約し、一括でGPUへ転送することによって転送回数の削減を実現しています。
-                            それと同時に、データへのアクセスはハンドルを通じて参照する構成を採用していて、
-                            大量に描画されつつも、キャラクターを一体一体個別管理可能な設計になります。
-                        </p>
+                        <div class="float_area">
+                            <p>
+                                <b>大量処理に適したデータ構造設計</b><br />
+                                コンポーネント型単位で更新処理をまとめ、オーバーヘッドの削減とキャッシュ効率を意識した設計を採用しています。
+                                データは連続メモリ上に集約し、大量オブジェクト更新時のパフォーマンス向上を図っています。
+                            </p>
+                            <p>
+                                <b>GPUデータ転送最適化</b><br />
+                                描画に必要なデータを一箇所に集約し、一括でGPUへ転送することによって転送回数の削減を実現しています。
+                                それと同時に、データへのアクセスはハンドルを通じて参照する構成を採用していて、
+                                大量に描画されつつも、キャラクターを一体一体個別管理可能な設計になります。
+                            </p>
+                        </div>
                         <p>
                             <a class="gallery_image" href="mg2_culling.gif" data-pswp-width="852" data-pswp-height="480">
-                                <img src="mg2_culling.gif" class="float_right">
+                                <img src="mg2_culling.gif" class="float_left print_hide">
+                                <img src="mg2_culling_alt.png" class="float_left print_only">
                             </a>
                         </p>
                         <p>
@@ -842,7 +833,7 @@
                             <b>データの前処理</b><br />
                             モデルやアニメーションデータは、実行時の読み込み処理や変換コストをを抑えるため、独自フォーマットへ事前変換しています。
                         </p>
-                        <p>
+                        <p class="print_page_break">
                             <b>OBB当たり判定</b><br />
                             当たり判定はGameObjectに付与するコンポーネントとして実装しており、Transform情報に基づいて形状が決定されます。
                             これにより、スケールや回転の変更がそのまま当たり判定へ反映されます。
@@ -854,6 +845,34 @@
                         <p>
                             <b>アタッチメント構造</b><br />
                             ボーンアニメーションに加え、武器を柔軟に装着できる構造としています。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり（ゲーム表現の工夫）</h4>
+                        <div class="float_area">
+                            <p>
+                                <a class="gallery_image" href="mg2_rotate.gif" data-pswp-width="480" data-pswp-height="480">
+                                    <img src="mg2_rotate.gif" class="float_right">
+                                </a>
+                            </p>
+                            <p>
+                                <b>移動慣性表現</b><br />
+                                反対方向への入力時に自然な回旋と加速が発生するよう調整し、機械的にならない動きを意識しています。
+                            </p>
+                            <p>
+                                <b>遅延追従カメラ</b><br />
+                                プレイヤーの動きに対してわずかな遅れを持たせることで、視覚的な重量感と滑らかさを表現しています。
+                            </p>
+                        </div>
+                        <p>
+                            <a class="gallery_image" href="mg2_outline.png" data-pswp-width="364" data-pswp-height="347">
+                                <img src="mg2_outline.png" class="float_left">
+                            </a>
+                        </p>
+                        <p>
+                            <b>アウトライン表現</b><br />
+                            キャラクターの視認性向上を目的としてアウトライン描画を実装しています。
+                            アニメ的なルックを意識し、色味は映画『サマーウォーズ』を参考に赤系で調整してみました。
                         </p>
                     </div>
                 </div>
@@ -891,7 +910,7 @@
                     <div>
                         <dl>
                             <dt>開発環境／プラットフォーム</dt>
-                            <dd>Windows、DirectX 11、C++、Visual Studio 2022、Maya、Clip Studio</dd>
+                            <dd>Windows、DirectX 11、C++、HLSL、Visual Studio 2022、Maya 2023</dd>
                             <dt>制作期間</dt>
                             <dd>2024年11月1日～2025年2月28日（約410時間）</dd>
                             <dt>チーム構成</dt>
@@ -907,7 +926,7 @@
                             <a target="_blank" href="https://youtu.be/_FClnpZHCsM"><img src="milkywave_qr.png" /></a>
                         </div>
                     </div>
-                    <div>
+                    <div class="print_page_break" style="width: 100%">
                         <h4>🔹 概要</h4>
                         <p>
                             「天の川の川下り」をコンセプトとしたタイムアタック型3Dレースゲームです。
@@ -916,25 +935,72 @@
                             波打つコースに合わせた船体の傾きや浮き沈みも取り入れ、スピード感と臨場感を表現しています。
                         </p>
                         <p>
-                            以下、チーム内の説明用資料
-                        </p>
-                        <p>
                             プランナー向けのコースの仕組みと作り方の説明：<br />
                             <a target="_blank" href="https://docs.google.com/presentation/d/1FDspmDovDWTyDWHrZSDHzWWC2dq8yXcM3by3zSOZSyE/edit?usp=sharing">Google Driveスライド</a>
                         </p>
+                    </div>
+                    <div>
+                        <h4>🔸 技術的工夫</h4>
+                        <div class="float_area">
+                            <p>
+                                <b>3D向けに拡張した自作フレームワーク</b><br />
+                                これまでのプロトタイプ開発で構築した自作フレームワークを3Dゲーム向けに再設計。
+                                描画・入力・リソース管理を整理し、デモシーンやサンプルを用意することでチーム全体で利用可能な基盤として提供しました。<br />
+                                <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/tree/main/source/hew_year2_base">source/hew_year2_base</a>
+                            </p>
+                            <p>
+                                <b>ゲームデータ前処理CLIツール</b><br />
+                                FBXから以下3種類の独自データへ分離変換：<br />
+                                .mgm（モデル）<br />
+                                .mga（アニメーション）<br />
+                                .mgi（インスタンス配置・コリジョン）<br />
+                                実行時負荷を抑えるため、オフライン前処理で不要情報を削減。
+                                シンプルで再利用性の高いデータ構造とすることで、メモリ使用量を抑えながら高速な読み込みを試みました。
+                                <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/fbx/main.cpp">source/fbx/main.cpp</a>
+                            </p>
+                        </div>
+                        <div class="float_area print_page_break">
+                            <p>
+                                <a class="gallery_image" href="milkywave_making_clip.png" data-pswp-width="1312" data-pswp-height="677">
+                                    <img src="milkywave_making_clip.png" class="paragraph_image">
+                                </a>
+                            </p>
+                            <p>
+                                <b>ワークフローの構築</b><br />
+                                デザイナーとプランナーは慣れ親しんだMaya上でモデルとコースを設計し、
+                                ツールでモデル・コリジョン設定・オブジェクトの配置情報などのゲームデータに変換しています。
+                                加えて、各種パラメータはCSVで管理しており、非エンジニアでも柔軟な調整が可能にしています。
+                            </p>
+                        </div>
+                        <div class="float_area">
+                            <p>
+                                <a class="gallery_image" href="milkywave_select.gif" data-pswp-width="852" data-pswp-height="480">
+                                    <img src="milkywave_select.gif" class="float_left">
+                                </a>
+                            </p>
+                            <p>
+                                <b>非同期処理によるステージプレビュー</b><br />
+                                マルチスレッド処理を用いて、ステージ選択中のステージプレビューを非同期で読み込み。
+                                ユーザー体験を損なわない設計を意識しています。<br />
+                                <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/stageSelectScene.cpp">source/stageSelectScene.cpp(line 511-536)</a>
+                            </p>
+                        </div>
                         <p>
-                            アセット変換ツールReadme：<br />
-                            <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/MGFBX_readme.txt">GitHub</a>
+                            <b>入力管理の抽象化とジャイロ操作</b><br />
+                            キーボード、XInput、DualSenseに対応。
+                            ゲーム実行中いつでもデバイスを差し抜きし、自動切替できる設計を実装。
+                            操作ガイド表示も動的に変更されます。
+                            さらに、DualSenseではHIDレポートに解析によるジャイロ操作の対応を実装しています。<br />
+                            <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/input.cpp">source/input.cpp</a>
                         </p>
-                        <p>
-                            担当したアセットの制作：<br />
-                            <a href="#milky_wave_cg">『銀河激流ミルキーウェーブ』アセット</a>
-                        </p>
+                    </div>
+                    <div>
                         <h4>🔸 こだわり（ゲーム表現の工夫）</h4>
                         <div class="float_area">
                             <p>
                                 <a class="gallery_image" href="milkywave_item.gif" data-pswp-width="640" data-pswp-height="480">
-                                    <img src="milkywave_item.gif" class="float_left">
+                                    <img src="milkywave_item.gif" class="float_right print_hide">
+                                    <img src="milkywave_item_alt.png" class="float_right print_only">
                                 </a>
                             </p>
                             <p>
@@ -953,8 +1019,29 @@
                         </div>
                         <div class="float_area">
                             <p>
+                                <a class="gallery_image" href="milkywave_boost.gif" data-pswp-width="852" data-pswp-height="480">
+                                    <img src="milkywave_boost.gif" class="float_left print_hide">
+                                    <img src="milkywave_boost_alt.png" class="float_left print_only">
+                                </a>
+                            </p>
+                            <p>
+                                <b>加速時の視覚効果</b><br />
+                                カメラを引きつつ多重レンダリングによるブラーを付加。
+                                視覚的変化でスピード感を伝えています。<br />
+                                <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/mainGameScene.cpp">source/mainGameScene.cpp(line 841-879)</a>
+                            </p>
+                        </div>
+                        <p class="print_page_break">
+                            <b>細部のリアクション設計</b><br />
+                            隕石衝突時の速度・角度に応じた吹き飛び挙動
+                            水面接触時の星型エフェクト
+                            加速時のキャラカットイン
+                        </p>
+                        <div class="float_area">
+                            <p>
                                 <a class="gallery_image" href="milkywave_result.gif" data-pswp-width="852" data-pswp-height="480">
-                                    <img src="milkywave_result.gif" class="float_right">
+                                    <img src="milkywave_result.gif" class="paragraph_image print_hide">
+                                    <img src="milkywave_result_alt.png" class="paragraph_image print_only">
                                 </a>
                             </p>
                             <p>
@@ -965,77 +1052,137 @@
                                 <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/resultScene.cpp">source/resultScene.cpp</a>
                             </p>
                         </div>
+                    </div>
+
+                </div>
+            </li>
+            <li>
+                <img class="pop_logo pop_logo_chirikuma" src="chirikuma_logo.png" />
+                <a id="chirikuma" class="team_job" pop-logo=".pop_logo_chirikuma"></a>
+                <h3>
+                    きゅい～ん　ちりくま<span class="unity_tag tag">Unity</span><span class="cShape_tag tag">C#</span>
+                </h3>
+                <div class="contents">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/ut-ACU0Dlw8?si=y2_WIdEOeaSOqcYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <ul class="alt_images gallery">
+                            <li style="grid-column: 1 / span 3;">
+                                <a class="gallery_image" href="chirikuma_1.png" data-pswp-width="1920" data-pswp-height="1080">
+                                    <img src="chirikuma_1.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a class="gallery_image" href="chirikuma_2.png" data-pswp-width="1920" data-pswp-height="1080">
+                                    <img src="chirikuma_2.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a class="gallery_image" href="chirikuma_3.png" data-pswp-width="1920" data-pswp-height="1080">
+                                    <img src="chirikuma_3.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a class="gallery_image" href="chirikuma_4.png" data-pswp-width="1920" data-pswp-height="1080">
+                                    <img src="chirikuma_4.png" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>開発環境／プラットフォーム</dt>
+                            <dd>Windows、Unity、C#、Visual Studio 2022</dd>
+                            <dt>制作期間</dt>
+                            <dd>2025年6月4日～2025年7月18日（約130時間）</dd>
+                            <dt>チーム構成</dt>
+                            <dd>プランナー2名、プログラマ4名、デザイナー3名</dd>
+                            <dt>担当</dt>
+                            <dd>企画、掃除ロボットの制御、ロープギミック、UIプログラム、リザルト</dd>
+                            <dt>ソース／実行ファイル／ライセンス情報</dt>
+                            <dd><a target="_blank" href="https://github.com/NgaiManChun/Chirikuma">https://github.com/NgaiManChun/Chirikuma</a></dd>
+                            <dt>デモ動画</dt>
+                            <dd><a target="_blank" href="https://youtu.be/ut-ACU0Dlw8">https://youtu.be/ut-ACU0Dlw8</a></dd>
+                        </dl>
+                    </div>
+                    <div class="print_page_break" style="width: 100%;">
+                        <h4>🔹 概要</h4>
+                        <p>
+                            ぬいぐるみのクマを操作し、自律行動する掃除ロボットを誘導しながらステージ上のほこりを回収していくアクションパズルゲームです。
+                            プレイヤーは汚れを叩いてほこりを落とし、掃除ロボットが回収できる環境を整えながら、制限時間内にチャージスポットへ導くことを目指します。
+                            チーム制作の途中で企画の見直しを経て完成に至り、仕様の再調整を行いながら開発を進めました。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 立案・こだわり</h4>
+                        <p>
+                            <a class="gallery_image" href="chirikuma_plan.png" data-pswp-width="1002" data-pswp-height="635">
+                                <img src="chirikuma_plan.png" class="paragraph_image">
+                            </a>
+                        </p>
+                        <p>
+                            <b>自律行動する掃除ロボットとプレイヤーの協調設計</b><br />
+                            掃除ロボットは自律的に移動してほこりを回収し、プレイヤーは先回りして道を開き、汚れを叩いてほこりを落とす役割を担います。
+                            両者の役割分担によって進行する、間接的な操作を軸としたゲーム構造を設計しました。
+                        </p>
                         <div class="float_area">
                             <p>
-                                <a class="gallery_image" href="milkywave_boost.gif" data-pswp-width="852" data-pswp-height="480">
-                                    <img src="milkywave_boost.gif" class="float_left">
+                                <a class="gallery_image" href="chirikuma_camera.gif" data-pswp-width="852" data-pswp-height="480">
+                                    <img src="chirikuma_camera.gif" class="paragraph_image">
                                 </a>
                             </p>
                             <p>
-                                <b>加速時の視覚効果</b><br />
-                                カメラを引きつつ多重レンダリングによるブラーを付加。
-                                視覚的変化でスピード感を伝えています。<br />
-                                <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/mainGameScene.cpp">source/mainGameScene.cpp(line 841-879)</a>
-                            </p>
-                            <p>
-                                <b>細部のリアクション設計</b><br />
-                                隕石衝突時の速度・角度に応じた吹き飛び挙動
-                                水面接触時の星型エフェクト
-                                加速時のキャラカットイン
+                                <b>エリア単位の固定カメラによる空間設計と視認性の両立</b><br />
+                                横スクロールを基調としつつ、エリアによって奥行方向（Z軸）に進行するステージ構造を採用しています。
+                                進行方向の変化に対応するためエリアごとの固定カメラを導入し、さらにプレイヤーと掃除ロボットの両方を適切なサイズで視認できるよう、エリア単位でカメラ位置とズーム倍率を調整しました。
                             </p>
                         </div>
                     </div>
                     <div>
-                        <h4>🔸 技術的工夫</h4>
+                        <h4>🔸 プログラム担当箇所</h4>
                         <p>
-                            <b>3D向けに拡張した自作フレームワーク</b><br />
-                            これまでのプロトタイプ開発で構築した自作フレームワークを3Dゲーム向けに再設計。
-                            描画・入力・リソース管理を整理し、デモシーンやサンプルを用意することでチーム全体で利用可能な基盤として提供しました。<br />
-                            <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/tree/main/source/hew_year2_base">source/hew_year2_base</a>
+                            <a class="gallery_image" href="chirikuma_rumba.gif" data-pswp-width="640" data-pswp-height="480">
+                                <img src="chirikuma_rumba.gif" class="paragraph_image">
+                            </a>
                         </p>
                         <p>
-                            <b>ゲームデータ前処理CLIツール</b><br />
-                            FBXから以下3種類の独自データへ分離変換：<br />
-                            .mgm（モデル）<br />
-                            .mga（アニメーション）<br />
-                            .mgi（インスタンス配置・コリジョン）<br />
-                            実行時負荷を抑えるため、オフライン前処理で不要情報を削減。
-                            シンプルで再利用性の高いデータ構造とすることで、メモリ使用量を抑えながら高速な読み込みを試みました。
-                            <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/fbx/main.cpp">source/fbx/main.cpp</a>
+                            <b>掃除ロボット制御</b><br />
+                            自動移動、方向転換、ほこり回収、状態管理など、掃除ロボットの挙動全般を実装しました。
+                            <a target="_blank" href="https://github.com/NgaiManChun/Chirikuma/blob/main/source/Assets/010_Scripts/Rumba.cs">source/Assets/010_Scripts/Rumba.cs</a>
                         </p>
                         <div class="float_area">
                             <p>
-                                <a class="gallery_image" href="milkywave_making_clip.png" data-pswp-width="1312" data-pswp-height="677">
-                                    <img src="milkywave_making_clip.png" class="float_left">
+                                <a class="gallery_image" href="chirikuma_rope.gif" data-pswp-width="852" data-pswp-height="480">
+                                    <img src="chirikuma_rope.gif" class="paragraph_image">
                                 </a>
                             </p>
                             <p>
-                                <b>ワークフローの構築</b><br />
-                                デザイナーとプランナーは慣れ親しんだMaya上でモデルとコースを設計し、
-                                ツールでモデル・コリジョン設定・オブジェクトの配置情報などのゲームデータに変換しています。
-                                加えて、各種パラメータはCSVで管理しており、非エンジニアでも柔軟な調整が可能にしています。
+                                <b>ロープギミック</b><br />
+                                ステージ内のロープオブジェクトの挙動とインタラクション処理を実装しました。
+                                <a target="_blank" href="https://github.com/NgaiManChun/Chirikuma/blob/main/source/Assets/010_Scripts/Rope.cs">source/Assets/010_Scripts/Rope.cs</a>
                             </p>
                         </div>
                         <div class="float_area">
                             <p>
-                                <a class="gallery_image" href="milkywave_select.gif" data-pswp-width="852" data-pswp-height="480">
-                                    <img src="milkywave_select.gif" class="float_right">
+                                <a class="gallery_image" href="chirikuma_ui.gif" data-pswp-width="640" data-pswp-height="480">
+                                    <img src="chirikuma_ui.gif" class="paragraph_image">
                                 </a>
                             </p>
                             <p>
-                                <b>非同期処理によるステージプレビュー</b><br />
-                                マルチスレッド処理を用いて、ステージ選択中のステージプレビューを非同期で読み込み。
-                                ユーザー体験を損なわない設計を意識しています。<br />
-                                <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/stageSelectScene.cpp">source/stageSelectScene.cpp(line 511-536)</a>
+                                <b>UIプログラム</b><br />
+                                ゲーム中のUI表示および状態に応じた更新処理を実装しました。
+                                <a target="_blank" href="https://github.com/NgaiManChun/Chirikuma/blob/main/source/Assets/010_Scripts/PlayerCanvas.cs">source/Assets/010_Scripts/PlayerCanvas.cs</a>
                             </p>
                         </div>
                         <p>
-                            <b>入力管理の抽象化とジャイロ操作</b><br />
-                            キーボード、XInput、DualSenseに対応。
-                            ゲーム実行中いつでもデバイスを差し抜きし、自動切替できる設計を実装。
-                            操作ガイド表示も動的に変更されます。
-                            さらに、DualSenseではHIDレポートに解析によるジャイロ操作の対応を実装しています。<br />
-                            <a target="_blank" href="https://github.com/NgaiManChun/MilkyWave/blob/main/source/input.cpp">source/input.cpp</a>
+                            <a class="gallery_image" href="chirikuma_result.gif" data-pswp-width="852" data-pswp-height="480">
+                                <img src="chirikuma_result.gif" class="paragraph_image print_hide">
+                                <img src="chirikuma_4.png" class="paragraph_image print_only">
+                            </a>
+                        </p>
+                        <p>
+                            <b>リザルト画面</b><br />
+                            回収率やクリア時間に応じた評価表示など、リザルト画面の表示処理を実装しました。
+                            <a target="_blank" href="https://github.com/NgaiManChun/Chirikuma/blob/main/source/Assets/010_Scripts/Goal.cs">source/Assets/010_Scripts/Goal.cs</a>
                         </p>
                     </div>
                 </div>
@@ -1091,10 +1238,9 @@
                             <a target="_blank" href="https://youtu.be/VMUpB2KFo5g"><img src="karada_qr.png" /></a>
                         </div>
                     </div>
-                    <span class="print_page_break"></span>
-                    <div>
+                    <div class="print_full">
                         <h4>🔹 概要</h4>
-                        <p>
+                        <p class="print_hide">
                             <a class="gallery_image" href="karada_play.gif" data-pswp-width="852" data-pswp-height="480">
                                 <img src="karada_play.gif">
                             </a>
@@ -1122,6 +1268,15 @@
                             <b>ちらつきを抑えるバッファ描画処理</b><br />
                             全画面分の文字情報を事前にバッファで構築し、一括描画することで、コンソール環境でもスムーズな画面更新を実現しています。
                         </p>
+                    </div>
+                    <div class="print_only">
+                        <div class="float_area">
+                            <p>
+                                <a href="karada_play.gif" target="_blank">
+                                    <img src="karada_play.gif" style="width: 100%;">
+                                </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </li>
@@ -1174,10 +1329,9 @@
                             <a target="_blank" href="https://youtu.be/usSkmJEs9w4"><img src="finger_qr.png" /></a>
                         </div>
                     </div>
-                    <span class="print_page_break"></span>
-                    <div>
+                    <div class="print_full">
                         <h4>🔹 概要</h4>
-                        <p>
+                        <p class="print_hide">
                             <a class="gallery_image" href="finger_jump.gif" data-pswp-width="640" data-pswp-height="480">
                                 <img src="finger_jump.gif" class="float_right">
                             </a>
@@ -1205,134 +1359,12 @@
                             レギュレーション上は2Dゲームに限られており、当時の授業でも3Dゲーム制作はまだ扱われていなかったため、擬似3Dの表現を試みました。
                         </p>
                     </div>
-                </div>
-            </li>
-            <li>
-                <img class="pop_logo pop_logo_chirikuma" src="chirikuma_logo.png" />
-                <a id="chirikuma" class="team_job" pop-logo=".pop_logo_chirikuma"></a>
-                <h3>
-                    きゅい～ん　ちりくま<span class="unity_tag tag">Unity</span><span class="cShape_tag tag">C#</span>
-                </h3>
-                <div class="contents">
-                    <div>
-                        <iframe src="https://www.youtube.com/embed/ut-ACU0Dlw8?si=y2_WIdEOeaSOqcYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <ul class="alt_images gallery">
-                            <li style="grid-column: 1 / span 3;">
-                                <a class="gallery_image" href="chirikuma_1.png" data-pswp-width="1920" data-pswp-height="1080">
-                                    <img src="chirikuma_1.png" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="gallery_image" href="chirikuma_2.png" data-pswp-width="1920" data-pswp-height="1080">
-                                    <img src="chirikuma_2.png" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="gallery_image" href="chirikuma_3.png" data-pswp-width="1920" data-pswp-height="1080">
-                                    <img src="chirikuma_3.png" />
-                                </a>
-                            </li>
-                            <li>
-                                <a class="gallery_image" href="chirikuma_4.png" data-pswp-width="1920" data-pswp-height="1080">
-                                    <img src="chirikuma_4.png" />
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <dl>
-                            <dt>開発環境／プラットフォーム</dt>
-                            <dd>Windows、Unity、C#、Visual Studio 2022</dd>
-                            <dt>制作期間</dt>
-                            <dd>2025年6月4日～2025年7月18日（約130時間）</dd>
-                            <dt>チーム構成</dt>
-                            <dd>プランナー2名、プログラマ4名、デザイナー3名</dd>
-                            <dt>担当</dt>
-                            <dd>企画、掃除ロボットの制御、ロープギミック、UIプログラム、リザルト</dd>
-                            <dt>ソース／実行ファイル／ライセンス情報</dt>
-                            <dd><a target="_blank" href="https://github.com/NgaiManChun/Chirikuma">https://github.com/NgaiManChun/Chirikuma</a></dd>
-                            <dt>デモ動画</dt>
-                            <dd><a target="_blank" href="https://youtu.be/ut-ACU0Dlw8">https://youtu.be/ut-ACU0Dlw8</a></dd>
-                        </dl>
-                    </div>
-                    <span class="print_page_break"></span>
-                    <div>
-                        <h4>🔹 概要</h4>
-                        <p>
-                            ぬいぐるみのクマを操作し、自律行動する掃除ロボットを誘導しながらステージ上のほこりを回収していくアクションパズルゲームです。
-                            プレイヤーは汚れを叩いてほこりを落とし、掃除ロボットが回収できる環境を整えながら、制限時間内にチャージスポットへ導くことを目指します。
-                            チーム制作の途中で企画の見直しを経て完成に至り、仕様の再調整を行いながら開発を進めました。
-                        </p>
-                        <h4>🔸 立案・こだわり</h4>
-                        <p>
-                            <a class="gallery_image" href="chirikuma_plan.png" data-pswp-width="1002" data-pswp-height="635">
-                                <img src="chirikuma_plan.png">
-                            </a>
-                        </p>
-                        <p>
-                            <b>自律行動する掃除ロボットとプレイヤーの協調設計</b><br />
-                            掃除ロボットは自律的に移動してほこりを回収し、プレイヤーは先回りして道を開き、汚れを叩いてほこりを落とす役割を担います。
-                            両者の役割分担によって進行する、間接的な操作を軸としたゲーム構造を設計しました。
-                        </p>
-                        <p>
-                            <a class="gallery_image" href="chirikuma_camera.gif" data-pswp-width="852" data-pswp-height="480">
-                                <img src="chirikuma_camera.gif">
-                            </a>
-                        </p>
-                        <p>
-                            <b>エリア単位の固定カメラによる空間設計と視認性の両立</b><br />
-                            横スクロールを基調としつつ、エリアによって奥行方向（Z軸）に進行するステージ構造を採用しています。
-                            進行方向の変化に対応するためエリアごとの固定カメラを導入し、さらにプレイヤーと掃除ロボットの両方を適切なサイズで視認できるよう、エリア単位でカメラ位置とズーム倍率を調整しました。
-                        </p>
-                    </div>
-                    <div>
-                        <h4>🔸 プログラム担当箇所</h4>
+                    <div class="print_only">
                         <div class="float_area">
                             <p>
-                                <a class="gallery_image" href="chirikuma_rumba.gif" data-pswp-width="640" data-pswp-height="480">
-                                    <img src="chirikuma_rumba.gif">
+                                <a href="finger_3.png" target="_blank">
+                                    <img src="finger_3.png" style="width: 100%;" />
                                 </a>
-                            </p>
-                            <p>
-                                <b>掃除ロボット制御</b><br />
-                                自動移動、方向転換、ほこり回収、状態管理など、掃除ロボットの挙動全般を実装しました。
-                                <a target="_blank" href="https://github.com/NgaiManChun/Chirikuma/blob/main/source/Assets/010_Scripts/Rumba.cs">source/Assets/010_Scripts/Rumba.cs</a>
-                            </p>
-                        </div>
-                        <div class="float_area">
-                            <p>
-                                <a class="gallery_image" href="chirikuma_rope.gif" data-pswp-width="852" data-pswp-height="480">
-                                    <img src="chirikuma_rope.gif">
-                                </a>
-                            </p>
-                            <p>
-                                <b>ロープギミック</b><br />
-                                ステージ内のロープオブジェクトの挙動とインタラクション処理を実装しました。
-                                <a target="_blank" href="https://github.com/NgaiManChun/Chirikuma/blob/main/source/Assets/010_Scripts/Rope.cs">source/Assets/010_Scripts/Rope.cs</a>
-                            </p>
-                        </div>
-                        <div class="float_area">
-                            <p>
-                                <a class="gallery_image" href="chirikuma_ui.gif" data-pswp-width="640" data-pswp-height="480">
-                                    <img src="chirikuma_ui.gif">
-                                </a>
-                            </p>
-                            <p>
-                                <b>UIプログラム</b><br />
-                                ゲーム中のUI表示および状態に応じた更新処理を実装しました。
-                                <a target="_blank" href="https://github.com/NgaiManChun/Chirikuma/blob/main/source/Assets/010_Scripts/PlayerCanvas.cs">source/Assets/010_Scripts/PlayerCanvas.cs</a>
-                            </p>
-                        </div>
-                        <div class="float_area">
-                            <p>
-                                <a class="gallery_image" href="chirikuma_result.gif" data-pswp-width="852" data-pswp-height="480">
-                                    <img src="chirikuma_result.gif">
-                                </a>
-                            </p>
-                            <p>
-                                <b>リザルト画面</b><br />
-                                回収率やクリア時間に応じた評価表示など、リザルト画面の表示処理を実装しました。
-                                <a target="_blank" href="https://github.com/NgaiManChun/Chirikuma/blob/main/source/Assets/010_Scripts/Goal.cs">source/Assets/010_Scripts/Goal.cs</a>
                             </p>
                         </div>
                     </div>
@@ -1387,8 +1419,7 @@
                             <a target="_blank" href="https://youtu.be/kQ2IMom_x7c"><img src="satellite_qr.png" /></a>
                         </div>
                     </div>
-                    <span class="print_page_break"></span>
-                    <div>
+                    <div class="print_full print_page_break">
                         <h4>🔹 概要</h4>
                         <p>
                             入学から3か月目に制作した、はじめてのUnity製3Dアクションシューティングゲームです。プレイヤーは空を飛べるキャラクターを操作し、味方拠点を守りながら、敵ユニットと敵拠点を殲滅することが目的としたゲームです。ミサイルとマシンガンを使い分けて戦うTPSスタイルで、拠点防衛と撃破を両立させる戦術性が特徴です。
@@ -1396,7 +1427,7 @@
                     </div>
                     <div>
                         <h4>🔸 こだわり・チャレンジ</h4>
-                        <p>
+                        <p class="print_hide">
                             <a class="gallery_image" href="satellite_guns.gif" data-pswp-width="480" data-pswp-height="480">
                                 <img src="satellite_guns.gif" class="float_left">
                             </a>
@@ -1414,6 +1445,15 @@
                             ホログラム風パネルUIを採用し、SFらしいビジュアルを表現。撃破時の連続爆発、ダメージ時のUI振動・点滅、敵との距離表示、画面外の敵を示すインジケーターなど、既存のゲームを参考に細かい演出を多数実装しました。
                         </p>
                     </div>
+                    <div class="print_only">
+                        <div class="float_area">
+                            <p>
+                                <a href="satellite_3.png" target="_blank">
+                                    <img src="satellite_3.png" style="width: 100%;" />
+                                </a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </li>
         </ul>
@@ -1427,50 +1467,151 @@
                 <h3>CSV・FBX出力 Mayaプラグイン<span class="python_tag tag">Python</span><span class="maya_tag tag">Maya</span></h3>
                 <div class="contents">
                     <div>
-                        <p>
-                            <a class="gallery_image" href="csvexport1.png" data-pswp-width="1257" data-pswp-height="733">
-                                <img src="csvexport1.png" />
-                            </a>
-                        </p>
-                        <p>
-                            <a class="gallery_image" href="csvexport2.png" data-pswp-width="1083" data-pswp-height="777">
-                                <img src="csvexport2.png" />
-                            </a>
-                        </p>
+                        <a class="gallery_image" href="csvexport1.png" data-pswp-width="1257" data-pswp-height="733">
+                            <img src="csvexport1.png" />
+                        </a>
                     </div>
                     <div>
                         <dl>
                             <dt>開発環境／プラットフォーム</dt>
                             <dd>Python、VSCode、Maya 2023</dd>
                             <dt>制作期間</dt>
-                            <dd>2025年10月20日～2025年10月24日（約一週間）</dd>
+                            <dd>2025年10月20日～2025年10月24日（約30時間）</dd>
                             <dt>ソース／実行ファイル</dt>
                             <dd><a target="_blank" href="https://github.com/NgaiManChun/MayaCSVExport">https://github.com/NgaiManChun/MayaCSVExport</a></dd>
                         </dl>
-                        <div>
-                            <h4>🔹 概要</h4>
-                            <p>
-                                Mayaシーンに配置されたリファレンス情報を読み取り、CSV形式で書き出すためのプラグインです。
-                                必要に応じて、同じフォルダへFBXも同時にエクスポートできます。
-                                大量の参照データを扱う場面で、外部ツールとの連携をスムーズにすることを目的に制作しました。
-                            </p>
-                        </div>
-                        <div>
-                            <h4>🔸 こだわり・チャレンジ</h4>
-                            <p>
-                                同じリファレンスを複製しただけのものやインスタンスは、重複出力を避けて効率的にエクスポートできるようにしました。
-                                座標系変換やスケール指定、選択項目だけの書き出し、シーン全体の一括出力など、運用でよく使われるオプションにも対応しています。
-                                また、設定したオプション内容をコンフィグとして保存し、次回以降は同じ条件で素早く出力できる仕組みも整えています。
-                            </p>
-                        </div>
+
+                    </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+                            Mayaシーンに配置されたリファレンス情報を読み取り、CSV形式で書き出すためのプラグインです。
+                            必要に応じて、同じフォルダへFBXも同時にエクスポートできます。
+                            大量の参照データを扱う場面で、外部ツールとの連携をスムーズにすることを目的に制作しました。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり・チャレンジ</h4>
+                        <p>
+                            同じリファレンスを複製しただけのものやインスタンスは、重複出力を避けて効率的にエクスポートできるようにしました。
+                            座標系変換やスケール指定、選択項目だけの書き出し、シーン全体の一括出力など、運用でよく使われるオプションにも対応しています。
+                            また、設定したオプション内容をコンフィグとして保存し、次回以降は同じ条件で素早く出力できる仕組みも整えています。
+                        </p>
                     </div>
                 </div>
             </li>
         </ul>
     </section>
     <section class="works">
+        <h2>技術検証</h2>
+        <ul>
+            <li>
+                <a id="animation_transition"></a>
+                <h3>3Dアニメーション遷移テスト<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
+                <div class="contents short">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/O4Xq-fOzjE4?si=RdnhBEdkguOvI6op" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <ul class="alt_images">
+                            <li><img src="animation_1.png" /></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>開発環境／プラットフォーム</dt>
+                            <dd>Windows、DirectX 11、C++、Visual Studio 2022、Maya 2023</dd>
+                            <dt>制作期間</dt>
+                            <dd>2025年3月26日</dd>
+                            <dt>ソース／実行ファイル</dt>
+                            <dd><a target="_blank" href="https://github.com/NgaiManChun/AnimationTransition">https://github.com/NgaiManChun/AnimationTransition</a></dd>
+                            <dt>デモ動画</dt>
+                            <dd><a target="_blank" href="https://youtu.be/O4Xq-fOzjE4">https://youtu.be/O4Xq-fOzjE4</a></dd>
+                        </dl>
+                        <div class="trailer_qr">
+                            <a target="_blank" href="https://youtu.be/O4Xq-fOzjE4"><img src="animation_qr.png" /></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>🔹 概要</h4>
+                        <p>
+                            複数の3Dアニメーションを、状態に応じて自然に遷移させるためのテスト。停止、歩行、攻撃の3状態間をスムーズに補間させる挙動を検証した。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり・チャレンジ</h4>
+                        <p>
+                            アニメーション同士を自然につなげるため、線形補間によるスムーズな遷移制御を行い、状態の切り替え時に違和感が出ないよう調整しています。
+                            また、どの状態でも独立して進行し続けるまばたきアニメーションも組み込んでいます。
+                            加えて、キャラクターの手に持ったアイテムを追従させ、スラッシュ軌道のエフェクトを連動させる処理も実装しています。
+                        </p>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </section>
+    <section class="works">
         <h2>短期制作</h2>
         <ul>
+            <li>
+                <a id="golf"></a>
+                <h3>ボールをとりもどせ!!<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
+                <div class="contents">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/EHuAcm5lv1Y?si=CwFGkMesKC1brE6B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <ul class="alt_images">
+                            <li style="grid-column: 1 / span 3;"><img src="golf_3.png" /></li>
+                            <li><img src="golf_1.png" /></li>
+                            <li><img src="golf_2.png" /></li>
+                            <li><img src="golf_4.png" /></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>開発環境／プラットフォーム</dt>
+                            <dd>Windows、DirectX 11、C++、Visual Studio 2022、Maya 2023</dd>
+                            <dt>制作期間</dt>
+                            <dd>2025年1月10日～2025年1月13日（約32時間）</dd>
+                            <dt>受賞</dt>
+                            <dd>ＤＸオリジナルゲーム学内コンペ　技術力賞（校内コンテスト）</dd>
+                            <dt>ソース／実行ファイル</dt>
+                            <dd><a target="_blank" href="https://github.com/NgaiManChun/Golf">https://github.com/NgaiManChun/Golf</a></dd>
+                            <dt>デモ動画</dt>
+                            <dd><a target="_blank" href="https://youtu.be/EHuAcm5lv1Y">https://youtu.be/EHuAcm5lv1Y</a></dd>
+                        </dl>
+                        <div class="trailer_qr">
+                            <a target="_blank" href="https://youtu.be/EHuAcm5lv1Y"><img src="golf_qr.png" /></a>
+                        </div>
+                    </div>
+                    <div class="print_full">
+                        <h4>🔹 概要</h4>
+                        <p>
+                            本作は、フィールド上に配置されたアイテムを集め、最終的に中央の巨大なボタンを押すことでクリアとなるミニゲームです。もともとは複数ステージ構成のゴルフゲームを目指していましたが、制作時間の見積もりが甘く、開発途中で方向転換を決断。結果的に、1ステージ完結型かつ派手な演出で締めくくる構成に落ち着きました。
+                        </p>
+                        <p>
+                            制作時間の制約から仕様を絞った分、印象に残る演出や操作感を重視して設計しました。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり・チャレンジ</h4>
+                        <p>
+                            <b>短期間でも印象に残る演出設計</b><br />
+                            当初の計画から方向転換したミニゲーム形式において、1ステージでも遊びごたえと達成感が得られるよう、ゲーム終盤には必殺技演出を導入。短期間でも「記憶に残る体験」を目指しました。
+                        </p>
+                        <p>
+                            <b>視認性への配慮：半透明化と軌道予測</b><br />
+                            カメラとプレイヤーの間にオブジェクトが入った際、それらを半透明化する処理を実装。加えて、弾道の予測線を描画することで、操作性を向上させています。
+                        </p>
+                        <p>
+                            <b>物理表現の自力実装</b><br />
+                            ステージにはわずかですが斜面を含む構造があり、当たり判定には変形や回転を考慮した処理が必要でした。当時授業ではAABBまでしか扱われていませんでしたが、必要性を感じ、自力で拡張しました。
+                        </p>
+                        <p>
+                            <b>技術検証のプロトタイプとしての位置づけ</b><br />
+                            『銀河激流ミルキーウェーブ』で本格的に使用した自作フレームワークのプロトタイプにあたる作品であり、「オリジナル3Dアセット変換CLIツール」や「開発と運用の効率化」といった機能をこの時点で試行していました。
+                        </p>
+                    </div>
+                </div>
+            </li>
             <li>
                 <a id="landmine"></a>
                 <h3>地雷ゲーム<span class="console_tag tag">C言語</span></h3>
@@ -1486,7 +1627,7 @@
                             <dt>開発環境／プラットフォーム</dt>
                             <dd>Windows（コンソール）、C++、Visual Studio 2022</dd>
                             <dt>制作期間</dt>
-                            <dd>2023年11月24日～2023年11月26日（3日）</dd>
+                            <dd>2023年11月24日～2023年11月26日（約18時間）</dd>
                             <dt>ソース／実行ファイル</dt>
                             <dd><a target="_blank" href="https://github.com/NgaiManChun/Landmine">https://github.com/NgaiManChun/Landmine</a></dd>
                             <dt>デモ動画</dt>
@@ -1526,7 +1667,7 @@
                             <dt>開発環境／プラットフォーム</dt>
                             <dd>Windows、DirectX 11、C++、Visual Studio 2022</dd>
                             <dt>制作期間</dt>
-                            <dd>2024年9月4日～2024年9月13日（9日）</dd>
+                            <dd>2024年9月4日～2024年9月13日（約54時間）</dd>
                             <dt>ソース／実行ファイル</dt>
                             <dd><a target="_blank" href="https://github.com/NgaiManChun/PuzzleGame">https://github.com/NgaiManChun/PuzzleGame</a></dd>
                             <dt>デモ動画</dt>
@@ -1551,66 +1692,6 @@
                 </div>
             </li>
             <li>
-                <a id="golf"></a>
-                <h3>ボールをとりもどせ!!<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
-                <div class="contents">
-                    <div>
-                        <iframe src="https://www.youtube.com/embed/EHuAcm5lv1Y?si=CwFGkMesKC1brE6B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <ul class="alt_images">
-                            <li style="grid-column: 1 / span 3;"><img src="golf_3.png" /></li>
-                            <li><img src="golf_1.png" /></li>
-                            <li><img src="golf_2.png" /></li>
-                            <li><img src="golf_4.png" /></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <dl>
-                            <dt>開発環境／プラットフォーム</dt>
-                            <dd>Windows、DirectX 11、C++、Visual Studio 2022、Maya</dd>
-                            <dt>制作期間</dt>
-                            <dd>2025年1月10日～2025年1月13日（4日）</dd>
-                            <dt>受賞</dt>
-                            <dd>ＤＸオリジナルゲーム学内コンペ　技術力賞（校内コンテスト）</dd>
-                            <dt>ソース／実行ファイル</dt>
-                            <dd><a target="_blank" href="https://github.com/NgaiManChun/Golf">https://github.com/NgaiManChun/Golf</a></dd>
-                            <dt>デモ動画</dt>
-                            <dd><a target="_blank" href="https://youtu.be/EHuAcm5lv1Y">https://youtu.be/EHuAcm5lv1Y</a></dd>
-                        </dl>
-                        <div class="trailer_qr">
-                            <a target="_blank" href="https://youtu.be/EHuAcm5lv1Y"><img src="golf_qr.png" /></a>
-                        </div>
-                    </div>
-                    <div>
-                        <h4>🔹 概要</h4>
-                        <p>
-                            本作は、フィールド上に配置されたアイテムを集め、最終的に中央の巨大なボタンを押すことでクリアとなるミニゲームです。もともとは複数ステージ構成のゴルフゲームを目指していましたが、制作時間の見積もりが甘く、開発途中で方向転換を決断。結果的に、1ステージ完結型かつ派手な演出で締めくくる構成に落ち着きました。
-                        </p>
-                        <p>
-                            制作時間の制約から仕様を絞った分、印象に残る演出や操作感を重視して設計しました。
-                        </p>
-                    </div>
-                    <div>
-                        <h4>🔸 こだわり・チャレンジ</h4>
-                        <p>
-                            <b>短期間でも印象に残る演出設計</b><br />
-                            当初の計画から方向転換したミニゲーム形式において、1ステージでも遊びごたえと達成感が得られるよう、ゲーム終盤には必殺技演出を導入。短期間でも「記憶に残る体験」を目指しました。
-                        </p>
-                        <p>
-                            <b>視認性への配慮：半透明化と軌道予測</b><br />
-                            カメラとプレイヤーの間にオブジェクトが入った際、それらを半透明化する処理を実装。加えて、弾道の予測線を描画することで、操作性を向上させています。
-                        </p>
-                        <p>
-                            <b>物理表現の自力実装</b><br />
-                            ステージにはわずかですが斜面を含む構造があり、当たり判定には変形や回転を考慮した処理が必要でした。当時授業ではAABBまでしか扱われていませんでしたが、必要性を感じ、自力で拡張しました。
-                        </p>
-                        <p>
-                            <b>技術検証のプロトタイプとしての位置づけ</b><br />
-                            『銀河激流ミルキーウェーブ』で本格的に使用した自作フレームワークのプロトタイプにあたる作品であり、「オリジナル3Dアセット変換CLIツール」や「開発と運用の効率化」といった機能をこの時点で試行していました。
-                        </p>
-                    </div>
-                </div>
-            </li>
-            <li>
                 <a id="soumen_slider" class="team_job"></a>
                 <h3>SOUMEN SLIDER<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span></h3>
                 <div class="contents short">
@@ -1625,7 +1706,7 @@
                             <dt>開発環境／プラットフォーム</dt>
                             <dd>Windows、DirectX 11、C++、Visual Studio 2022</dd>
                             <dt>制作期間</dt>
-                            <dd>2024年8月30日（1日）</dd>
+                            <dd>2024年8月30日</dd>
                             <dt>チーム構成</dt>
                             <dd>プログラマ2名</dd>
                             <dt>ソース／実行ファイル</dt>
@@ -1654,53 +1735,6 @@
         </ul>
     </section>
     <section class="works">
-        <h2>技術検証</h2>
-        <ul>
-            <li>
-                <a id="animation_transition"></a>
-                <h3>3Dアニメーション遷移テスト<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
-                <div class="contents short">
-                    <div>
-                        <iframe src="https://www.youtube.com/embed/O4Xq-fOzjE4?si=RdnhBEdkguOvI6op" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <ul class="alt_images">
-                            <li><img src="animation_1.png" /></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <dl>
-                            <dt>開発環境／プラットフォーム</dt>
-                            <dd>Windows、DirectX 11、C++、Visual Studio 2022、Maya</dd>
-                            <dt>制作期間</dt>
-                            <dd>2025年3月26日</dd>
-                            <dt>ソース／実行ファイル</dt>
-                            <dd><a target="_blank" href="https://github.com/NgaiManChun/AnimationTransition">https://github.com/NgaiManChun/AnimationTransition</a></dd>
-                            <dt>デモ動画</dt>
-                            <dd><a target="_blank" href="https://youtu.be/O4Xq-fOzjE4">https://youtu.be/O4Xq-fOzjE4</a></dd>
-                        </dl>
-                        <div class="trailer_qr">
-                            <a target="_blank" href="https://youtu.be/O4Xq-fOzjE4"><img src="animation_qr.png" /></a>
-                        </div>
-                    </div>
-                    <div>
-                        <h4>🔹 概要</h4>
-                        <p>
-                            複数の3Dアニメーションを、状態に応じて自然に遷移させるためのテスト。停止、歩行、攻撃の3状態間をスムーズに補間させる挙動を検証した。
-                        </p>
-                    </div>
-                    <div>
-                        <h4>🔸 こだわり・チャレンジ</h4>
-                        <p>
-                            アニメーション同士を自然につなげるため、線形補間によるスムーズな遷移制御を行い、状態の切り替え時に違和感が出ないよう調整しています。
-                            また、どの状態でも独立して進行し続けるまばたきアニメーションも組み込んでいます。
-                            加えて、キャラクターの手に持ったアイテムを追従させ、スラッシュ軌道のエフェクトを連動させる処理も実装しています。
-                        </p>
-                    </div>
-                </div>
-            </li>
-
-        </ul>
-    </section>
-    <section class="works">
         <h2>CG・アセット</h2>
         <ul>
             <li>
@@ -1709,14 +1743,16 @@
                 <div class="contents">
                     <div>
                         <a class="gallery_image" href="milkywave_boat.gif" data-pswp-width="852" data-pswp-height="480">
-                            <img src="milkywave_boat.gif" style="width: 100%;" />
+                            <img src="milkywave_boat.gif" class="print_hide" style="width: 100%;" />
+                            <img src="milkywave_boat_alt.png" class="print_only" style="width: 100%;" />
                         </a>
                         <br />
                         <a href="#milky_wave">『銀河激流ミルキーウェーブ』</a>で使われているブースターのエフェクト
                     </div>
                     <div>
                         <a class="gallery_image" href="milkywave_stone.gif" data-pswp-width="852" data-pswp-height="480">
-                            <img src="milkywave_stone.gif" style="width: 100%;" />
+                            <img src="milkywave_stone.gif" class="print_hide" style="width: 100%;" />
+                            <img src="milkywave_stone_alt.png" class="print_only" style="width: 100%;" />
                         </a>
                         <br />
                         障害物が破壊される時のアニメーション
@@ -1747,64 +1783,67 @@
         <h2>職務経歴</h2>
         <ul>
             <li>
-                <h4>Wai On Services Limited (Junior Programmer)</h4>
-                <table>
-                    <tr>
-                        <th>期間：</th>
-                        <td>2013年6月 ～ 2014年8月</td>
-                    </tr>
-                    <tr>
-                        <th>業務内容：</th>
-                        <td>Webアプリケーションの開発・改修を担当</td>
-                    </tr>
-                    <tr>
-                        <th>担当プロジェクト：</th>
-                        <td>
-                            中国工商銀行（香港）
-                            <ul>
-                                <li>ポータルサイトリニューアル</li>
-                                <li>文書ファイルのリアルタイム合成機能の開発</li>
-                            </ul>
-                            香港鉄道（MTR）
-                            <ul>
-                                <li>ポータルサイトリニューアル</li>
-                                <li>社内コミュニティフォーラムの改修</li>
-                            </ul>
-                            など
-                        </td>
-                    </tr>
-                </table>
+                <div class="contents">
+                    <div>
+                        <h4>Wai On Services Limited (Junior Programmer)</h4>
+                        <table>
+                            <tr>
+                                <th>期間：</th>
+                                <td>2013年6月 ～ 2014年8月</td>
+                            </tr>
+                            <tr>
+                                <th>業務内容：</th>
+                                <td>Webアプリケーションの開発・改修を担当</td>
+                            </tr>
+                            <tr>
+                                <th>担当プロジェクト：</th>
+                                <td>
+                                    中国工商銀行（香港）
+                                    <ul>
+                                        <li>ポータルサイトリニューアル</li>
+                                        <li>文書ファイルのリアルタイム合成機能の開発</li>
+                                    </ul>
+                                    香港鉄道（MTR）
+                                    <ul>
+                                        <li>ポータルサイトリニューアル</li>
+                                        <li>社内コミュニティフォーラムの改修</li>
+                                    </ul>
+                                    など
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <h4>Re. Group Limited (Web Developer)</h4>
+                        <table>
+                            <tr>
+                                <th>期間：</th>
+                                <td>2015年3月 ～ 2023年9月</td>
+                            </tr>
+                            <tr>
+                                <th>業務内容：</th>
+                                <td>Webアプリケーションの設計および開発を担当</td>
+                            </tr>
+                            <tr>
+                                <th>担当プロジェクト：</th>
+                                <td>
+                                    Universal Music Hong Kong
+                                    <ul>
+                                        <li>公式サイトリニューアル</li>
+                                        <li>公式通販サイトの開発</li>
+                                    </ul>
+                                    The Hood Production
+                                    <ul>
+                                        <li>公式通販サイト開発</li>
+                                        <li>スマートフォンアクセサリーのカスタム注文機能の開発</li>
+                                    </ul>
+                                    など
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </li>
-            <li>
-                <h4>Re. Group Limited (Web Developer)</h4>
-                <table>
-                    <tr>
-                        <th>期間：</th>
-                        <td>2015年3月 ～ 2023年9月</td>
-                    </tr>
-                    <tr>
-                        <th>業務内容：</th>
-                        <td>Webアプリケーションの設計および開発を担当</td>
-                    </tr>
-                    <tr>
-                        <th>担当プロジェクト：</th>
-                        <td>
-                            Universal Music Hong Kong
-                            <ul>
-                                <li>公式サイトリニューアル</li>
-                                <li>公式通販サイトの開発</li>
-                            </ul>
-                            The Hood Production
-                            <ul>
-                                <li>公式通販サイト開発</li>
-                                <li>スマートフォンアクセサリーのカスタム注文機能の開発</li>
-                            </ul>
-                            など
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
         </ul>
     </section>
 
