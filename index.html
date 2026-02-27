@@ -281,15 +281,23 @@
                 }
 
 
+        .team_job + h3::after, #index a.team_job::after,
+        .personal_job + h3::after, #index a.personal_job::after {
+            font-size: 0.7em;
+            font-style: italic;
+            font-weight: bold;
+            display: inline-block;
+            margin-left: 5px;
+        }
 
         .team_job + h3::after, #index a.team_job::after {
             content: "チーム制作";
-            font-size: 0.5em;
-            font-style: italic;
-            font-weight: bold;
             color: #4750a1;
-            display: inline-block;
-            margin-left: 5px;
+        }
+
+        .personal_job + h3::after, #index a.personal_job::after {
+            content: "個人制作";
+            color: #a14747;
         }
 
         .directx_tag {
@@ -647,7 +655,7 @@
                         <b>主要作品</b>
                         <ul>
                             <li>
-                                <a href="#mg2">MG2</a>
+                                <a href="#mg2" class="personal_job">MG2</a>
                                 <span class="directx_tag tag">DirectX</span>
                                 <span class="cpp_tag tag">C++</span>
                             </li>
@@ -663,16 +671,16 @@
                                 <span class="cShape_tag tag">C#</span>
                             </li>
                             <li>
-                                <a href="#karadaful">カラダ振る～お前もギタリストにしてやろうか～</a>
+                                <a href="#karadaful" class="personal_job">カラダ振る～お前もギタリストにしてやろうか～</a>
                                 <span class="console_tag tag">C言語</span>
                             </li>
                             <li>
-                                <a href="#running_finger">爆走ランニングフィンガー</a>
+                                <a href="#running_finger" class="personal_job">爆走ランニングフィンガー</a>
                                 <span class="openGL_tag tag">OpenGL</span>
                                 <span class="cpp_tag tag">C++</span>
                             </li>
                             <li>
-                                <a href="#satellite_mission">SATELLITE MISSION</a>
+                                <a href="#satellite_mission" class="personal_job">SATELLITE MISSION</a>
                                 <span class="unity_tag tag">Unity</span>
                                 <span class="cShape_tag tag">C#</span>
                             </li>
@@ -682,7 +690,7 @@
                         <b>DCCツール プラグイン</b>
                         <ul>
                             <li>
-                                <a href="#csv_export">CSV・FBX出力 Mayaプラグイン</a>
+                                <a href="#csv_export" class="personal_job">CSV・FBX出力 Mayaプラグイン</a>
                                 <span class="python_tag tag">Python</span>
                                 <span class="maya_tag tag">Maya</span>
                             </li>
@@ -692,7 +700,7 @@
                         <b>技術検証</b>
                         <ul>
                             <li>
-                                <a href="#animation_transition">3Dアニメーション遷移テスト</a>
+                                <a href="#animation_transition" class="personal_job">3Dアニメーション遷移テスト</a>
                                 <span class="directx_tag tag">DirectX</span>
                                 <span class="cpp_tag tag">C++</span>
                                 <span class="maya_tag tag">Maya</span>
@@ -707,17 +715,17 @@
                         <b>短期制作</b>
                         <ul>
                             <li>
-                                <a href="#golf">ボールをとりもどせ!!</a>
+                                <a href="#golf" class="personal_job">ボールをとりもどせ!!</a>
                                 <span class="directx_tag tag">DirectX</span>
                                 <span class="cpp_tag tag">C++</span>
                                 <span class="maya_tag tag">Maya</span>
                             </li>
                             <li>
-                                <a href="#landmine">地雷ゲーム</a>
+                                <a href="#landmine" class="personal_job">地雷ゲーム</a>
                                 <span class="console_tag tag">C言語</span>
                             </li>
                             <li>
-                                <a href="#puzzle_game">パズルゲーム</a>
+                                <a href="#puzzle_game" class="personal_job">パズルゲーム</a>
                                 <span class="directx_tag tag">DirectX</span>
                                 <span class="cpp_tag tag">C++</span>
                             </li>
@@ -732,11 +740,11 @@
                         <b>CG演習・アセット制作</b>
                         <ul>
                             <li>
-                                <a href="#milky_wave_cg">『銀河激流ミルキーウェーブ』アセット</a>
+                                <a href="#milky_wave_cg" class="team_job">『銀河激流ミルキーウェーブ』アセット</a>
                                 <span class="maya_tag tag">Maya</span>
                             </li>
                             <li>
-                                <a href="#kumacchi">くまっちの部屋</a>
+                                <a href="#kumacchi" class="personal_job">くまっちの部屋</a>
                                 <span class="maya_tag tag">Maya</span>
                             </li>
                         </ul>
@@ -752,8 +760,8 @@
         <h2>主要作品</h2>
         <ul>
             <li>
-                <a id="mg2" pop-logo=".pop_logo_mg2"></a>
                 <img class="pop_logo pop_logo_mg2" src="mg2_logo.png" />
+                <a id="mg2" class="personal_job" pop-logo=".pop_logo_mg2"></a>
                 <h3>MG2（開発中）<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span></h3>
                 <div class="contents">
                     <div>
@@ -799,8 +807,8 @@
                     <div class="print_page_break" style="width: 100%;">
                         <h4>🔹 概要</h4>
                         <p>
-                            本作品は、大量のキャラクターを同時に扱うことを目的として制作しているゲームフレームワークです。
-                            連続メモリによる高速処理設計、GPUメッシュアニメーション、GPUカリングなどを用い、パフォーマンス向上を重視した作品になってます。
+                            【1000体以上のスキニングキャラクターが個別行動！？】本作品は、大量のキャラクターを同時に扱うことを目的として制作しているゲームフレームワークです。
+                            連続メモリによる高速処理設計、GPUメッシュアニメーション、GPUカリングなどを用い、「大量表示」と「個別制御」の両立とパフォーマンス向上を重視した作品になってます。
                         </p>
                     </div>
                     <div>
@@ -1188,8 +1196,8 @@
                 </div>
             </li>
             <li>
-                <a id="karadaful" pop-logo=".pop_logo_karadaful"></a>
                 <img class="pop_logo pop_logo_karadaful" src="karada_2.png" />
+                <a id="karadaful" class="personal_job" pop-logo=".pop_logo_karadaful"></a>
                 <h3>カラダ振る～お前もギタリストにしてやろうか～<span class="console_tag tag">C言語</span></h3>
                 <div class="contents">
                     <div>
@@ -1281,8 +1289,8 @@
                 </div>
             </li>
             <li>
-                <a id="running_finger" pop-logo=".pop_logo_running_finger"></a>
                 <img class="pop_logo pop_logo_running_finger" src="running_finger_logo.png" />
+                <a id="running_finger" class="personal_job" pop-logo=".pop_logo_running_finger"></a>
                 <h3>
                     爆走ランニングフィンガー<span class="openGL_tag tag">OpenGL</span><span class="cpp_tag tag">C++</span>
                 </h3>
@@ -1371,8 +1379,8 @@
                 </div>
             </li>
             <li>
-                <a id="satellite_mission" pop-logo=".pop_logo_satellite_mission"></a>
                 <img class="pop_logo pop_logo_satellite_mission" src="satellite_mission_logo.png" />
+                <a id="satellite_mission" class="personal_job" pop-logo=".pop_logo_satellite_mission"></a>
                 <h3>
                     SATELLITE MISSION<span class="unity_tag tag">Unity</span><span class="cShape_tag tag">C#</span>
                 </h3>
@@ -1463,7 +1471,7 @@
         <h2>DCCツール プラグイン</h2>
         <ul>
             <li>
-                <a id="csv_export"></a>
+                <a id="csv_export" class="personal_job"></a>
                 <h3>CSV・FBX出力 Mayaプラグイン<span class="python_tag tag">Python</span><span class="maya_tag tag">Maya</span></h3>
                 <div class="contents">
                     <div>
@@ -1506,7 +1514,7 @@
         <h2>技術検証</h2>
         <ul>
             <li>
-                <a id="animation_transition"></a>
+                <a id="animation_transition" class="personal_job"></a>
                 <h3>3Dアニメーション遷移テスト<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
                 <div class="contents short">
                     <div>
@@ -1553,7 +1561,7 @@
         <h2>短期制作</h2>
         <ul>
             <li>
-                <a id="golf"></a>
+                <a id="golf" class="personal_job"></a>
                 <h3>ボールをとりもどせ!!<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
                 <div class="contents">
                     <div>
@@ -1613,7 +1621,7 @@
                 </div>
             </li>
             <li>
-                <a id="landmine"></a>
+                <a id="landmine" class="personal_job"></a>
                 <h3>地雷ゲーム<span class="console_tag tag">C言語</span></h3>
                 <div class="contents short">
                     <div>
@@ -1653,7 +1661,7 @@
                 </div>
             </li>
             <li>
-                <a id="puzzle_game"></a>
+                <a id="puzzle_game" class="personal_job"></a>
                 <h3>パズルゲーム<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span></h3>
                 <div class="contents short">
                     <div>
@@ -1738,7 +1746,7 @@
         <h2>CG・アセット</h2>
         <ul>
             <li>
-                <a id="milky_wave_cg"></a>
+                <a id="milky_wave_cg" class="team_job"></a>
                 <h3>『銀河激流ミルキーウェーブ』アセット</h3>
                 <div class="contents">
                     <div>
@@ -1760,7 +1768,7 @@
                 </div>
             </li>
             <li>
-                <a id="kumacchi"></a>
+                <a id="kumacchi" class="personal_job"></a>
                 <h3>くまっちの部屋</h3>
                 <div class="contents">
                     <div>
