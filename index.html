@@ -467,7 +467,7 @@
         }
 
         @media only screen and (max-width: 600px) {
-            .works > ul .contents .float_left, .works > ul .contents .float_right, .works > ul .contents .paragraph_image {
+            .works > ul .contents .float_left:not(.print_only), .works > ul .contents .float_right:not(.print_only), .works > ul .contents .paragraph_image {
                 float: none;
                 margin: 0;
                 display: block;
