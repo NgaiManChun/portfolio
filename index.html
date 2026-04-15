@@ -724,12 +724,6 @@
                         <b>短期制作</b>
                         <ul>
                             <li>
-                                <a href="#golf" class="personal_job">ボールをとりもどせ!!</a>
-                                <span class="directx_tag tag">DirectX</span>
-                                <span class="cpp_tag tag">C++</span>
-                                <span class="maya_tag tag">Maya</span>
-                            </li>
-                            <li>
                                 <a href="#landmine" class="personal_job">地雷ゲーム</a>
                                 <span class="console_tag tag">C言語</span>
                             </li>
@@ -737,6 +731,12 @@
                                 <a href="#puzzle_game" class="personal_job">パズルゲーム</a>
                                 <span class="directx_tag tag">DirectX</span>
                                 <span class="cpp_tag tag">C++</span>
+                            </li>
+                            <li>
+                                <a href="#golf" class="personal_job">ボールをとりもどせ!!</a>
+                                <span class="directx_tag tag">DirectX</span>
+                                <span class="cpp_tag tag">C++</span>
+                                <span class="maya_tag tag">Maya</span>
                             </li>
                             <li>
                                 <a href="#soumen_slider" class="team_job">SOUMEN SLIDER</a>
@@ -1572,66 +1572,6 @@
         <h2>短期制作</h2>
         <ul>
             <li>
-                <a id="golf" class="personal_job"></a>
-                <h3>ボールをとりもどせ!!<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
-                <div class="contents">
-                    <div>
-                        <iframe src="https://www.youtube.com/embed/EHuAcm5lv1Y?si=CwFGkMesKC1brE6B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <ul class="alt_images">
-                            <li style="grid-column: 1 / span 3;"><img src="golf_3.png" /></li>
-                            <li><img src="golf_1.png" /></li>
-                            <li><img src="golf_2.png" /></li>
-                            <li><img src="golf_4.png" /></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <dl>
-                            <dt>開発環境／プラットフォーム</dt>
-                            <dd>Windows、DirectX 11、C++、Visual Studio 2022、Maya 2023</dd>
-                            <dt>制作期間</dt>
-                            <dd>2025年1月10日～2025年1月13日（約30時間）</dd>
-                            <dt>受賞</dt>
-                            <dd>ＤＸオリジナルゲーム学内コンペ　技術力賞（校内コンテスト）</dd>
-                            <dt>ソース／実行ファイル</dt>
-                            <dd><a target="_blank" href="https://github.com/NgaiManChun/Golf">https://github.com/NgaiManChun/Golf</a></dd>
-                            <dt>デモ動画</dt>
-                            <dd><a target="_blank" href="https://youtu.be/EHuAcm5lv1Y">https://youtu.be/EHuAcm5lv1Y</a></dd>
-                        </dl>
-                        <div class="trailer_qr">
-                            <a target="_blank" href="https://youtu.be/EHuAcm5lv1Y"><img src="golf_qr.png" /></a>
-                        </div>
-                    </div>
-                    <div class="print_full">
-                        <h4>🔹 概要</h4>
-                        <p>
-                            本作は、フィールド上に配置されたアイテムを集め、最終的に中央の巨大なボタンを押すことでクリアとなるミニゲームです。もともとは複数ステージ構成のゴルフゲームを目指していましたが、制作時間の見積もりが甘く、開発途中で方向転換を決断。結果的に、1ステージ完結型かつ派手な演出で締めくくる構成に落ち着きました。
-                        </p>
-                        <p>
-                            制作時間の制約から仕様を絞った分、印象に残る演出や操作感を重視して設計しました。
-                        </p>
-                    </div>
-                    <div>
-                        <h4>🔸 こだわり・チャレンジ</h4>
-                        <p>
-                            <b>短期間でも印象に残る演出設計</b><br />
-                            当初の計画から方向転換したミニゲーム形式において、1ステージでも遊びごたえと達成感が得られるよう、ゲーム終盤には必殺技演出を導入。短期間でも「記憶に残る体験」を目指しました。
-                        </p>
-                        <p>
-                            <b>視認性への配慮：半透明化と軌道予測</b><br />
-                            カメラとプレイヤーの間にオブジェクトが入った際、それらを半透明化する処理を実装。加えて、弾道の予測線を描画することで、操作性を向上させています。
-                        </p>
-                        <p>
-                            <b>物理表現の自力実装</b><br />
-                            ステージにはわずかですが斜面を含む構造があり、当たり判定には変形や回転を考慮した処理が必要でした。当時授業ではAABBまでしか扱われていませんでしたが、必要性を感じ、自力で拡張しました。
-                        </p>
-                        <p>
-                            <b>技術検証のプロトタイプとしての位置づけ</b><br />
-                            『銀河激流ミルキーウェーブ』で本格的に使用した自作フレームワークのプロトタイプにあたる作品であり、「オリジナル3Dアセット変換CLIツール」や「開発と運用の効率化」といった機能をこの時点で試行していました。
-                        </p>
-                    </div>
-                </div>
-            </li>
-            <li>
                 <a id="landmine" class="personal_job"></a>
                 <h3>地雷ゲーム<span class="console_tag tag">C言語</span></h3>
                 <div class="contents short">
@@ -1706,6 +1646,66 @@
                         <h4>🔸 こだわり・チャレンジ</h4>
                         <p>
                             スコア加算時の演出や背景の変化など、プレイ中の視覚的な気持ちよさを意識して作りました。特に、シーン遷移時には暗転を使わずにフェードイン・フェードアウトを同時に行う処理を実装し、自然な切り替えにこだわっています。
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a id="golf" class="personal_job"></a>
+                <h3>ボールをとりもどせ!!<span class="directx_tag tag">DirectX</span><span class="cpp_tag tag">C++</span><span class="maya_tag tag">Maya</span></h3>
+                <div class="contents">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/EHuAcm5lv1Y?si=CwFGkMesKC1brE6B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <ul class="alt_images">
+                            <li style="grid-column: 1 / span 3;"><img src="golf_3.png" /></li>
+                            <li><img src="golf_1.png" /></li>
+                            <li><img src="golf_2.png" /></li>
+                            <li><img src="golf_4.png" /></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <dl>
+                            <dt>開発環境／プラットフォーム</dt>
+                            <dd>Windows、DirectX 11、C++、Visual Studio 2022、Maya 2023</dd>
+                            <dt>制作期間</dt>
+                            <dd>2025年1月10日～2025年1月13日（約30時間）</dd>
+                            <dt>受賞</dt>
+                            <dd>ＤＸオリジナルゲーム学内コンペ　技術力賞（校内コンテスト）</dd>
+                            <dt>ソース／実行ファイル</dt>
+                            <dd><a target="_blank" href="https://github.com/NgaiManChun/Golf">https://github.com/NgaiManChun/Golf</a></dd>
+                            <dt>デモ動画</dt>
+                            <dd><a target="_blank" href="https://youtu.be/EHuAcm5lv1Y">https://youtu.be/EHuAcm5lv1Y</a></dd>
+                        </dl>
+                        <div class="trailer_qr">
+                            <a target="_blank" href="https://youtu.be/EHuAcm5lv1Y"><img src="golf_qr.png" /></a>
+                        </div>
+                    </div>
+                    <div class="print_full">
+                        <h4>🔹 概要</h4>
+                        <p>
+                            本作は、フィールド上に配置されたアイテムを集め、最終的に中央の巨大なボタンを押すことでクリアとなるミニゲームです。もともとは複数ステージ構成のゴルフゲームを目指していましたが、制作時間の見積もりが甘く、開発途中で方向転換を決断。結果的に、1ステージ完結型かつ派手な演出で締めくくる構成に落ち着きました。
+                        </p>
+                        <p>
+                            制作時間の制約から仕様を絞った分、印象に残る演出や操作感を重視して設計しました。
+                        </p>
+                    </div>
+                    <div>
+                        <h4>🔸 こだわり・チャレンジ</h4>
+                        <p>
+                            <b>短期間でも印象に残る演出設計</b><br />
+                            当初の計画から方向転換したミニゲーム形式において、1ステージでも遊びごたえと達成感が得られるよう、ゲーム終盤には必殺技演出を導入。短期間でも「記憶に残る体験」を目指しました。
+                        </p>
+                        <p>
+                            <b>視認性への配慮：半透明化と軌道予測</b><br />
+                            カメラとプレイヤーの間にオブジェクトが入った際、それらを半透明化する処理を実装。加えて、弾道の予測線を描画することで、操作性を向上させています。
+                        </p>
+                        <p>
+                            <b>物理表現の自力実装</b><br />
+                            ステージにはわずかですが斜面を含む構造があり、当たり判定には変形や回転を考慮した処理が必要でした。当時授業ではAABBまでしか扱われていませんでしたが、必要性を感じ、自力で拡張しました。
+                        </p>
+                        <p>
+                            <b>技術検証のプロトタイプとしての位置づけ</b><br />
+                            『銀河激流ミルキーウェーブ』で本格的に使用した自作フレームワークのプロトタイプにあたる作品であり、「オリジナル3Dアセット変換CLIツール」や「開発と運用の効率化」といった機能をこの時点で試行していました。
                         </p>
                     </div>
                 </div>
