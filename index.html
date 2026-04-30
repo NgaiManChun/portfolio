@@ -6,597 +6,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="mii.png" type="image/png">
     <title>魏文俊の作品集</title>
+
+    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/279d58192c.js" crossorigin="anonymous"></script>
 
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
+    <!-- Style -->
+    <link rel="stylesheet" href="common.css">
 
-        body {
-            margin: 0;
-            color: #3c3c3c;
-            font-family: "Noto Sans JP", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-            -webkit-print-color-adjust: exact;
-        }
-
-            body > section {
-                margin: 20px;
-                position: relative;
-            }
-
-        h1 {
-            background-image: linear-gradient(135deg, #ABDCFF 10%, #ffffff 100%);
-            padding: 40px 20px;
-            margin: 0;
-        }
-
-        h2 {
-            background-image: linear-gradient(135deg, #ABDCFF 10%, #ffffff 90%);
-            padding: 20px;
-            max-width: 500px;
-        }
-
-        h3 {
-            font-size: 1.2em;
-            text-decoration: underline;
-            text-decoration-thickness: 0.3em;
-            text-decoration-color: rgba(255, 228, 0, 0.4);
-        }
-
-        h4 {
-            font-size: 1.1em;
-        }
-
-        a {
-            color: inherit;
-        }
-
-            a[href^="http"]::after {
-                content: "\f08e";
-                font-family: "Font Awesome 6 Free";
-                font-weight: 900;
-                display: inline-block;
-                padding-left: 5px;
-            }
-
-            a:hover {
-                color: #b5ae73;
-            }
-
-        img {
-            vertical-align: bottom;
-            max-width: 100%;
-            box-shadow: rgb(0 0 0 / 54%) 0 0 6px 2px;
-        }
-
-        th, td {
-            border-bottom: 1px dashed #5AA0D6;
-            line-height: 1.6;
-            padding: 6px 18px;
-        }
-
-        th {
-            vertical-align: top;
-            white-space: nowrap;
-            text-align: right;
-        }
-
-        #profile_img {
-            width: 500px;
-            filter: opacity(0) blur(8px) contrast(1);
-            transition-duration: 1000ms;
-            transition-delay: 500ms;
-            transition-timing-function: ease-out;
-            transition-property: filter, transform;
-            transform: translateY(100px);
-        }
-
-            #profile_img.animated {
-                filter: opacity(1) blur(0px) contrast(0.5);
-                transform: translateY(0px);
-            }
-
-        section#profile, section#index {
-            max-width: 1140px;
-            background-color: #ffffffe3;
-            --col-width: 560px;
-            --gap: 20px;
-            --cols: 2;
-        }
-
-        #profile dl {
-            margin: 0;
-            padding: 0;
-        }
-
-        #profile > div.contents {
-            flex-wrap: wrap-reverse;
-        }
-
-        section#profile td {
-            border-bottom: 1px dashed #5AA0D6;
-            line-height: 1.6;
-            padding: 6px 20px;
-        }
-
-        section#index ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-
-            section#index ul ul {
-                padding-left: 20px;
-                margin-bottom: 18px;
-            }
-
-                section#index ul ul li {
-                    border-bottom: 1px dashed #5AA0D6;
-                    margin-bottom: 0;
-                    list-style-type: none;
-                    line-height: 1.6;
-                    padding: 6px 20px 6px 0;
-                    margin: 5px 0px;
-                }
-
-                    section#index ul ul li:before {
-                        content: '◆';
-                        padding: 10px;
-                        font-weight: 900;
-                        color: #5AA0D6;
-                    }
-
-        section#index > ul > li {
-            padding-bottom: 20px;
-        }
-
-        .works > ul {
-            list-style: none;
-            padding: 0;
-            --col-width: 560px;
-            --gap: 20px;
-            --cols: 2;
-        }
-
-            .works > ul > li {
-                padding-bottom: 40px;
-                page-break-after: always;
-            }
-
-            .works > ul .contents, section > .contents {
-                display: flex;
-                flex-wrap: wrap;
-                gap: var(--gap);
-                max-width: calc(var(--col-width) * var(--cols) + var(--gap) * (var(--cols) - 1));
-            }
-
-                .works > ul .contents::after {
-                    content: "◆　◆　◆　◆　◆　◆";
-                    display: block;
-                    text-align: center;
-                    margin-top: 40px;
-                    width: 100%;
-                }
-
-                .works > ul .contents > *, section > .contents > * {
-                    width: var(--col-width);
-                    position: relative;
-                }
-
-                .works > ul .contents > :nth-child(1) > iframe {
-                    aspect-ratio: 560 / 315;
-                    width: 100%;
-                }
-
-                .works > ul .contents p {
-                    background-color: #ffffffa6;
-                    backdrop-filter: blur(4px);
-                }
-
-                    .works > ul .contents p:has(.float_left, .float_right) {
-                        position: relative;
-                        z-index: 1;
-                    }
-
-                .works > ul .contents b {
-                    color: #0f67ab;
-                    font-size: 1.1em;
-                }
-
-                .works > ul .contents .float_area {
-                    display: flow-root;
-                }
-
-                .works > ul .contents .float_left {
-                    float: left;
-                    margin-right: 10px;
-                }
-
-                .works > ul .contents .float_right {
-                    float: right;
-                    margin-left: 10px;
-                }
-
-                .works > ul .contents .float_left,
-                .works > ul .contents .float_right,
-                .works > ul .contents .paragraph_image,
-                .works > ul .contents .print_float_left {
-                    max-width: 52%;
-                }
-
-        .alt_images {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: none;
-            gap: 10px;
-        }
-
-            .alt_images.gallery {
-                display: flex;
-            }
-
-        a.gallery_image {
-            cursor: zoom-in;
-        }
-
-        .works {
-            page-break-before: always;
-        }
-
-            .works .contents > :nth-child(2) > dl {
-                width: 100%;
-                border-style: dashed;
-                border-radius: 5px;
-                background-color: #e0f1feb3;
-                backdrop-filter: blur(4px);
-            }
-
-        .contents dl {
-            padding: 5px;
-            box-sizing: border-box;
-        }
-
-            .contents dl > dt {
-                font-weight: bold;
-                padding: 5px;
-            }
-
-            .contents dl > dd {
-                margin: 0;
-                padding: 5px 20px;
-            }
-
-                .contents dl > dd a {
-                    display: inline-block;
-                    max-width: 100%;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-
-
-        .team_job + h3::after, #index a.team_job::after,
-        .personal_job + h3::after, #index a.personal_job::after {
-            font-size: 0.7em;
-            font-style: italic;
-            font-weight: bold;
-            display: inline-block;
-            margin-left: 5px;
-        }
-
-        .team_job + h3::after, #index a.team_job::after {
-            content: "チーム制作";
-            color: #4750a1;
-        }
-
-        .personal_job + h3::after, #index a.personal_job::after {
-            content: "個人制作";
-            color: #a14747;
-        }
-
-        .directx_tag {
-            background-color: #107c0f;
-            color: #fff;
-        }
-
-        .tag {
-            display: inline-block;
-            font-size: 0.5em;
-            font-weight: 400;
-            padding: 0 5px;
-            border-radius: 5px;
-            margin-left: 5px;
-            user-select: none;
-        }
-
-        .openGL_tag {
-            background-color: #e9091a;
-            color: #fff;
-        }
-
-        .unity_tag {
-            background-color: #7272a6;
-            color: #fff;
-        }
-
-        .console_tag {
-            background-color: #000;
-            color: #fff;
-        }
-
-        .cpp_tag {
-            background-color: #0037be;
-            color: #fff;
-        }
-
-        .cShape_tag {
-            background-color: #bff547;
-            color: #000;
-        }
-
-        .maya_tag {
-            background-color: #32a5c7;
-            color: #fff;
-        }
-
-        .python_tag {
-            color: #013b5e;
-            background-color: #ffd966;
-            z-index: 2;
-        }
-
-        #qrcode_container {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
-        }
-
-        #qrcode {
-            width: 160px;
-        }
-
-        .trailer_qr {
-            width: 120px;
-            right: 3px;
-            top: 3px;
-            position: absolute;
-            display: none;
-        }
-
-            .trailer_qr::after {
-                content: "↑動画";
-            }
-
-            .trailer_qr a[href^="http"]::after {
-                content: none;
-            }
-
-        span.print_page_break {
-            display: none;
-        }
-
-        .print_only {
-            display: none;
-        }
-
-        @keyframes flip-easeOutElastic {
-            0% {
-                transform: rotateZ(180deg);
-            }
-
-            16% {
-                transform: rotateZ(-23deg);
-            }
-
-            44% {
-                transform: rotateZ(9deg);
-            }
-
-            59% {
-                transform: rotateZ(-4deg);
-            }
-
-            73% {
-                transform: rotateZ(2deg);
-            }
-
-            88% {
-                transform: rotateZ(0deg);
-            }
-
-            100% {
-                transform: rotateZ(0deg);
-            }
-        }
-
-        @keyframes flip-back {
-            0% {
-                transform: rotateZ(0deg);
-            }
-
-            100% {
-                transform: rotateZ(180deg);
-            }
-        }
-
-        .pop_logo {
-            box-shadow: none;
-            position: fixed;
-            right: 20px;
-            top: 20%;
-            width: 300px;
-            filter: drop-shadow(2px 4px 6px black);
-            transform: rotateZ(180deg);
-            transform-origin: calc(100% + 60px) 50%;
-            animation-fill-mode: forwards;
-            animation-duration: 0ms;
-            user-select: none;
-        }
-
-            .pop_logo.back {
-                animation-name: flip-back;
-                animation-duration: 700ms;
-            }
-
-                .pop_logo.back.show {
-                    animation-name: flip-easeOutElastic;
-                    animation-duration: 1000ms;
-                }
-
-        @media only screen and (max-width: 1190px) {
-            .works > ul .contents > * {
-                width: 100%;
-            }
-
-            #qrcode_container {
-                display: none;
-            }
-
-            .pop_logo {
-                display: none;
-            }
-        }
-
-        @media only screen and (max-width: 600px) {
-            .works > ul .contents .float_left:not(.print_only), .works > ul .contents .float_right:not(.print_only), .works > ul .contents .paragraph_image:not(.print_only) {
-                float: none;
-                margin: 0;
-                display: block;
-                max-width: 100%;
-                width: 100%;
-            }
-        }
-
-
-
-        @media only print {
-
-            .print_only {
-                display: inline-block;
-            }
-
-            .print_hide {
-                display: none;
-            }
-
-            .print_short {
-                font-size: 0.9em;
-            }
-
-            .works > ul .contents > .print_full {
-                width: 100%;
-            }
-
-            .works > ul .contents .print_float_left {
-                float: right;
-                margin-left: 10px;
-                max-width: 30%;
-            }
-
-            .works {
-                border-top: none;
-                padding-top: 0;
-                margin-top: 0;
-                margin-bottom: 0;
-            }
-
-                .works > ul .contents > :nth-child(1) > iframe {
-                    display: none;
-                }
-
-            .alt_images, .alt_images.gallery {
-                display: grid;
-            }
-
-            #qrcode_container {
-                display: none;
-            }
-
-            .print_page_break {
-                display: inline-block;
-                page-break-after: always;
-            }
-
-            .works > ul > li {
-                padding-bottom: 0;
-            }
-
-            .works > ul .contents.short dt {
-                padding: 0 5px;
-            }
-
-            .works > ul .contents.short dd {
-                padding: 0 20px;
-            }
-
-            .works > ul .contents.short p {
-                margin: 10px 0;
-            }
-
-            .works > ul .contents.short::after {
-                margin-top: 0;
-            }
-
-
-            .works .contents > :nth-child(2) > dl,
-            .works > ul .contents p {
-                backdrop-filter: none;
-            }
-
-            .pop_logo {
-                display: none;
-            }
-        }
-    </style>
-
-
+    <!-- PhotoSwipe -->
     <link rel="stylesheet" href="photoswipe.css">
     <script src="photoswipe.umd.min.js"></script>
     <script src="photoswipe-lightbox.umd.min.js"></script>
 
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
             crossorigin="anonymous"></script>
-
-    <script src="https://kit.fontawesome.com/279d58192c.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <script>
+        
         $(document).ready(function () {
+
+            // =======================================================
+            // スクロール位置に応じてロゴを切り替える処理
+            // =======================================================
             function popLogoHandle() {
-                let minOffset = Number.MAX_VALUE;
-                let showName = '';
+                let minOffset = Number.MAX_VALUE; // 一番近い要素との距離を記録
+                let showName = '';                // 表示するロゴのセレクタ
+
+                // pop-logo属性を持つ要素を全てチェック
                 $('[pop-logo]').each(function (index, element) {
+
+                    // 要素の現在のスクロール位置からの距離を取得
                     let offset = $(element).offset().top - window.scrollY;
+
+                    // 画面上部から200px以内にあり、かつ一番近いものを選択
                     if (offset < 200 && Math.abs(offset) < minOffset) {
                         minOffset = Math.abs(offset);
                         showName = $(element).attr('pop-logo');
                     }
                 });
+
+                // 一旦すべてのロゴの表示状態をリセット
                 $('.pop_logo').removeClass('show');
+
+                // 表示対象があれば、そのロゴを表示
                 if (showName != '') {
                     $(showName).addClass('back').addClass('show');
                 }
             }
+
+            // スクロール時にロゴ更新
             $(document).on('scroll', popLogoHandle);
+
+            // 初回実行（ページロード時）
             popLogoHandle();
 
+            // =======================================================
+            // PhotoSwipeの初期化
+            // =======================================================
+            var lightbox = new PhotoSwipeLightbox({
+                gallery: '.contents',
+                children: '.gallery_image',
+                pswpModule: PhotoSwipe
+            });
+            lightbox.init();
+
+            // =======================================================
+            // プロフィール画像のアニメーション開始
+            // =======================================================
             $('#profile_img').addClass('animated');
         });
     </script>
 
-
-    <!-- <h1>魏文俊の作品集</h1> -->
     <div id="qrcode_container">
         <img id="qrcode" src="qrcode_ngaimanchun.github.io.png" />
     </div>
@@ -1869,16 +1358,5 @@
             </li>
         </ul>
     </section>
-
-    <script type="text/javascript">
-        var lightbox = new PhotoSwipeLightbox({
-            gallery: '.contents',
-            children: '.gallery_image',
-            // dynamic import is not supported in UMD version
-            pswpModule: PhotoSwipe
-        });
-        lightbox.init();
-    </script>
-
 </body>
 </html>
