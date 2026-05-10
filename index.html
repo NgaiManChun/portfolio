@@ -555,16 +555,43 @@
                                 プレイヤーの動きに対してわずかな遅れを持たせることで、視覚的な重量感と滑らかさを表現しています。
                             </p>
                         </div>
+                        <div class="float_area">
+                            <p>
+                                <a class="gallery_image" href="mg2_outline.png" data-pswp-width="364" data-pswp-height="347">
+                                    <img src="mg2_outline.png" class="float_left">
+                                </a>
+                            </p>
+                            <p>
+                                <b>アウトライン表現</b><br />
+                                キャラクターの視認性向上を目的としてアウトライン描画を実装しています。
+                                アニメ的なルックを意識し、色味は映画『サマーウォーズ』を参考に赤系で調整してみました。
+                            </p>
+                        </div>
+
+
+                        <h4>🔸 便利ユーティリティ</h4>
                         <p>
-                            <a class="gallery_image" href="mg2_outline.png" data-pswp-width="364" data-pswp-height="347">
-                                <img src="mg2_outline.png" class="float_left">
-                            </a>
+                            <b>TimeLineクラス</b>　<a target="_blank" href="https://github.com/NgaiManChun/MG2/blob/main/source/MG2/timeline.h">source/MG2/timeline.h</a>
+                            <br />
+                            0.0f～1.0fの進行率として扱う軽量タイムラインクラスです。
+                            クランプ処理や進行率計算を内部で行い、インスタンス自体をfloatとして暗黙変換できるため、補間やUI演出などで直感的に扱えるよう設計しています。
                         </p>
                         <p>
-                            <b>アウトライン表現</b><br />
-                            キャラクターの視認性向上を目的としてアウトライン描画を実装しています。
-                            アニメ的なルックを意識し、色味は映画『サマーウォーズ』を参考に赤系で調整してみました。
+                            <b>CSVResourceクラス</b>　<a target="_blank" href="https://github.com/NgaiManChun/MG2/blob/main/source/MG2/csvResource.h">source/MG2/csvResource.h</a>
+                            <br />
+                            CSVデータを二次元配列感覚で扱えるリソースクラスです。
+                            行・列の名前やインデックスによるアクセス、イテレータ対応、型変換などを実装しており、用途に応じて柔軟かつ直感的にデータを扱えるよう設計しています。
                         </p>
+                        <p>
+                            <b>MGResourceクラス</b>　<a target="_blank" href="https://github.com/NgaiManChun/MG2/blob/main/source/MG2/MGResource.h">source/MG2/MGResource.h</a>
+                                                 <a target="_blank" href="https://github.com/NgaiManChun/MG2/blob/main/source/MG2/MGResource.cpp">MGResource.cpp</a>
+                            <br />
+                            複数の外部ファイルを1つの独自バイナリ形式にまとめて管理するリソースパッケージクラスです。
+                            ファイル名によるアクセスや一括ロードに対応しており、シェーダや設定ファイルなどを効率的に管理できるよう設計しています。
+                        </p>
+                    </div>
+                    <div>
+                        
                     </div>
                 </div>
             </li>
