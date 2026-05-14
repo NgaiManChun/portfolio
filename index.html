@@ -507,6 +507,7 @@
                                 描画に必要なデータを一箇所に集約し、一括でGPUへ転送することによって転送回数の削減を実現しています。
                                 それと同時に、データへのアクセスはハンドルを通じて参照する構成を採用していて、
                                 大量に描画されつつも、キャラクターを一体一体個別管理可能な設計になります。
+                                
                             </p>
                         </div>
                         <p>
@@ -519,6 +520,30 @@
                             <b>GPUを活用した描画最適化</b><br />
                             GPUメッシュアニメーションやIndirectDraw、インスタンシングなど、並列処理を積極的に活用することで描画コストを抑えています。
                             また、GPUカリング、LOD、デファードレンダリングを組み合わせ、大量描画時の処理負荷を軽減しています。
+                        </p>
+                        <p>
+                            <ul class="alt_images gallery">
+                                <li>
+                                    <a class="gallery_image" href="DynamicMatrix.png" data-pswp-width="1447" data-pswp-height="1087">
+                                        <img src="DynamicMatrix.png" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="gallery_image" href="DivisionBuffer.png" data-pswp-width="1447" data-pswp-height="1087">
+                                        <img src="DivisionBuffer.png" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="gallery_image" href="ECS.png" data-pswp-width="1447" data-pswp-height="1000">
+                                        <img src="ECS.png" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="gallery_image" href="ModelRenderer.png" data-pswp-width="1447" data-pswp-height="1087">
+                                        <img src="ModelRenderer.png" />
+                                    </a>
+                                </li>
+                            </ul>
                         </p>
                         <p>
                             <b>データの前処理</b><br />
